@@ -1,0 +1,143 @@
+:root{
+    --web-green-color :#8EFDDC;
+    --web-red-color :#FB1111;
+    --web-green-color2 :#278A6D;
+    --web-green-color3: #27B91A;
+}
+
+html{
+    font-family: 'Oswald' cursive;
+}
+
+header img{
+    width: 60%;
+    height: 60%;
+    background-color: white;
+}
+
+#menu-header a{
+    margin : 0 2rem;
+    color : black;
+
+}
+
+#menu-header a li.account{
+    background-color: var(--web-green-color);
+    border-radius: 8px;
+    width: 120%;
+    height : 30px;
+    line-height: 30px;
+
+    text-align: center;
+}
+
+.border-seperate {
+    margin: 0 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    
+}
+
+main{
+    padding: 5px 10px;
+}
+
+main #session1 .column1 .hinhAnh{
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color : var(--web-green-color2)
+
+}
+main #session1 .column2 .column2-1{
+    margin-left: 25px;
+}
+
+main #session1 .column1 img{
+    width: 100%;
+   
+    
+}
+main #session1 .lastInfo{
+    padding-top: 1rem;
+}
+
+main #session1 .lastInfo .field{
+    
+    padding-left: 2rem;
+}
+
+
+main #session1 .column2 .fixMargin{
+    padding-top:  4em;
+    
+}
+
+main #session1  .field{
+    
+    color : var(--web-green-color3)
+}
+
+
+
+main #session1 .column2 .column2-1 .star{
+    background-color: var(--web-green-color);
+    
+}
+
+main #session1 .column2 .column2-2 #numberOfEmptySeats{
+    float: right;
+    margin-right: 4rem;
+    font-weight: bold;
+    font-size: 20px;
+    
+    color : red
+ 
+}
+
+
+
+/* css cho menu main */
+
+
+#menu-main a{
+
+    
+    text-decoration-line: underline;
+    text-decoration-color: rgba(39,138,109, 0.3) ;
+
+    margin: 0 4.5rem;
+    font-style: italic;
+
+    color : var(--web-green-color2)
+    
+    
+}
+
+#menu-main .active{
+    text-decoration-color :rgba(39,138,109, 1) ;
+    font-weight: bold;
+}
+
+/*css cho session4 */
+
+#slideImage{
+    width: 50%;
+    padding-top: 2rem;
+    
+    margin: 0 auto;
+    
+}
+
+
+/*session4*/
+
+#session4 img{
+    width: 19%;
+    padding: 1rem 1rem;
+}
+
+
+
+
+
+
