@@ -1,0 +1,91 @@
+:root{
+    --web-green-color :#8EFDDC;
+    --web-red-color :#FB1111;
+    --web-green-color2 :#278A6D;
+    --web-green-color3: #27B91A;
+}
+
+html{
+    font-family: 'Oswald' cursive;
+    height: 100%;
+    position: relative;
+  
+}
+
+header img{
+    width: 60%;
+    height: 60%;
+    background-color: white;
+}
+
+#menu-header a{
+    margin : 0 2rem;
+    color : black;
+
+}
+
+#menu-header a li.account{
+    background-color: var(--web-green-color);
+    border-radius: 8px;
+    width: 120%;
+    height : 30px;
+    line-height: 30px;
+
+    text-align: center;
+}
+
+.border-seperate {
+    margin: 0 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    
+}
+
+main{
+    
+    margin-top : 2rem
+    
+}
+
+#account{
+    font-size: 3rem;
+    padding-right: 0.5rem;
+}
+
+#user-name{
+    font-size: 2rem;
+    padding-left: 0.5rem;
+}
+
+.avatar{
+    display: inline-block;
+    border-radius: 5px;
+    
+    background-color: var(--web-green-color);
+}
+
+.column1 div > button, .column2 form > div{
+    margin-top: 3rem;
+}
+
+.column1 div > button{
+    background-color: var(--web-green-color);
+    border-radius: 5px;
+}
+
+.column2 form div .info{
+    width: 100%;
+}
+
+.column2 form button{
+    position : absolute;
+    right : 1rem;
+    bottom: 1rem;
+    background-color: var(--web-green-color);
+    border-radius: 5px;
+}
+
+
+.column3 button{
+    background-color: var(--web-green-color);
+    border-radius: 5px;
+}

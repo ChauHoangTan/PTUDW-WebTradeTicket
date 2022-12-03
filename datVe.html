@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Thông tin chuyến xe</title>
+  <title>Đặt vé</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,6 +14,13 @@
     <!-- Font awesome-->
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" 
     integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+   
+
+
+
+
 
     <!-- link font family-->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +55,7 @@
                         <a class="nav-link" href="#">Bến xe</a>
                     </li>
                    
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="taiKhoan.html">
                         <li class ="nav-item account">
                             <i class="fas fa-user-circle"></i> Tài khoản
                                
@@ -161,8 +168,22 @@
 
        
         <div class = "container ticket">
-            <div class="row justify-content-center align-items-center g-2">
-                <div class="col">Column</div>
+            <div class="row">
+                <div id ="notice" class="col">
+                    <div class = "note">Loại ghế !</div>
+                    <div>
+                        <span class = "note">Ghế trống : </span>
+                        <div id = "empty-seats"></div>
+                    </div>
+                    <div>
+                        <span class = "note">Ghế đã được đặt : </span>
+                        <div id = "is-ordered-seats"></div>
+                    </div>
+                    <div>
+                        <span class = "note">Ghế đang chọn : </span>
+                        <div id = "is-choosing-seats"><i class="fa-sharp fa-solid fa-square-check"></i></div>
+                    </div>
+                </div>
                 
                 <div class="col">
                     <div class = "mx-5">Tầng dưới</div>
@@ -334,10 +355,72 @@
                 </div>
             </div>
         </div>
+
+        <br>
+        <div class = "border-seperate"></div>
+
+            
+            <div class = "container-fluid footer">  
+                <br>
+            
+                <!-- Modal trigger button -->
+                    <button type="button" class="btn btn-primary btn-lg button-pay" data-bs-toggle="modal" data-bs-target="#order-ticket">
+                        Thanh toán
+                    </button>
+                    
+                    <!-- Modal Body -->
+                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                    <div class="modal fade" id="order-ticket" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" r ole="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">Thanh toán</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="" method="get">
+                                        <label for="full-name">Họ và tên : </label><br>
+                                        <input type = "text" id = "full-name" name = "full-name" required >
+
+                                        <label for="sdt">Số điện thoại : </label><br>
+                                        <input type = "number" id = "sdt" name = "sdt"  required>
+
+                                        <label for="email-address">Địa chỉ email : </label><br>
+                                        <input type = "email" id = "email-address" name = "email-address" required>
+
+                                        <button class="btn btn-secondary form-button" type="submit">Xác nhận</button>
+                                        <button type="button" class="btn btn-secondary form-button" data-bs-dismiss="modal">Close</button>
+                                        
+                                    </form>
+                                </div>
+                               
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Optional: Place to the bottom of scripts -->
+                    <script>
+                        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+                    
+                    </script>
+
+                <div id = "price">
+                    Giá vé : 290.000đ / 1 vé
+                </div>
+                <br><br><br><br>
+
+            </div>
+        </div>
+
+        
     </main>
 
 <footer>
-  
+    
   <!-- place footer here -->
 </footer>
 

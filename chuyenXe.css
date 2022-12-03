@@ -81,7 +81,7 @@ main #session1  .field{
 
 
 
-main #session1 .column2 .column2-1 .star{
+.star{
     background-color: var(--web-green-color);
     
 }
@@ -147,25 +147,60 @@ main #session1  {
     padding: 1rem 1rem;
 }
 
+/*css cho tab mô tả*/
+
+#description li, #route li{
+    list-style-type: circle;
+    margin-top: 1rem;
+}
+
+/*css cho tab lộ trình */
+#route ul{
+    padding-top: 1rem;
+}
+
+/*css cho tab service */
+
+.service-item > div{
+    margin: 2rem 10rem;
+
+}
+
+/*  css cho tab đánh giá */
+.user{
+    font-size: 3rem;
+}
+
 /*css cho nút đặt vé */
 
 
-#session2 .container-fluid .button-price{
+.button-price{
     margin-right : 5rem;
     margin-bottom: 1rem;
     background-color: #8EFDDC;
     border-radius: 5px;
+    
     float :right;
-
+    color : black
 }
 
-#session2 .container-fluid .button-price a{
+.button-pay{
+    margin-right : 2rem;
+    margin-bottom: 1rem;
+    background-color: #8EFDDC;
+    border-radius: 5px;
+    
+    float :right;
+    color : black
+}
+
+.button-price a{
  
     text-decoration-line: none;
     color : black
 }
 
-#session2 .container-fluid #price{
+#price{
     clear: right;
     margin-right : 2rem;
     margin-bottom: 1rem;
@@ -206,6 +241,7 @@ main #session1  {
 .choose-ticket .row .col input{
     width: 2rem;
     height: 2rem;
+    color : red;
 }
 
 .choose-ticket .row .driver {
@@ -214,9 +250,39 @@ main #session1  {
     color : blue
 }
 
+#notice > div{
+    margin-top: 3rem;
+}
+
+.note{
+    color : var(--web-green-color2)
+}
+
+#notice div > div{
+    width : 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 1rem;
+    
+}
+#empty-seats{
+    border : 2px solid gray
+}
+
+#is-ordered-seats{
+    border : 2px solid red
+}
+
+#is-choosing-seats i{
+    font-size: 20px;
+    height: 20px;
+}
 
 
 
 
-
-
+.form-button{
+    margin-top : 1rem ;
+    margin-left: 1rem;
+    float : right
+}
