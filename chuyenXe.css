@@ -1,3 +1,5 @@
+
+/*Css cho file chuyenXe.html*/
 :root{
     --web-green-color :#8EFDDC;
     --web-red-color :#FB1111;
@@ -94,26 +96,33 @@ main #session1 .column2 .column2-2 #numberOfEmptySeats{
  
 }
 
+main #session1  {
+    width: 100%;
+ 
+}
 
 
-/* css cho menu main */
 
+/* css cho session2  */
 
-#menu-main a{
+/* css cho tab hình ảnh */
+#session2 #myTab {
+    margin-top: 1rem;
+
+}
+
+#session2 #myTab li .nav-link{
 
     
     text-decoration-line: underline;
     text-decoration-color: rgba(39,138,109, 0.3) ;
-
-    margin: 0 4.5rem;
     font-style: italic;
-
     color : var(--web-green-color2)
     
     
 }
 
-#menu-main .active{
+#session2 #myTab li .active{
     text-decoration-color :rgba(39,138,109, 1) ;
     font-weight: bold;
 }
@@ -128,13 +137,83 @@ main #session1 .column2 .column2-2 #numberOfEmptySeats{
     
 }
 
+#session2 #image-tab-2{
+    display: flex;
+    justify-content: space-around;
+}
 
-/*session4*/
-
-#session4 img{
+#session2 #image-tab-2 img{
     width: 19%;
     padding: 1rem 1rem;
 }
+
+/*css cho nút đặt vé */
+
+
+#session2 .container-fluid .button-price{
+    margin-right : 5rem;
+    margin-bottom: 1rem;
+    background-color: #8EFDDC;
+    border-radius: 5px;
+    float :right;
+
+}
+
+#session2 .container-fluid .button-price a{
+ 
+    text-decoration-line: none;
+    color : black
+}
+
+#session2 .container-fluid #price{
+    clear: right;
+    margin-right : 2rem;
+    margin-bottom: 1rem;
+    background-color: #8EFDDC;
+    float : right
+
+}
+
+ /* main{
+    background-image: url('ImagesChuyenXe/background.jpg');
+}  */
+
+
+/*  Css cho file datVe.html */
+.ticket{
+    margin-top: 2rem;
+}
+
+.choose-ticket{
+
+    border-top-left-radius:20px;
+    border-top-right-radius: 20px;
+    border: 2px solid black;
+    width : 50%
+    
+    
+}
+
+.choose-ticket .row{
+    margin : auto
+    
+}
+
+.choose-ticket .row .col{
+    padding-left: 2rem;
+}
+
+.choose-ticket .row .col input{
+    width: 2rem;
+    height: 2rem;
+}
+
+.choose-ticket .row .driver {
+ 
+    font-size: 2rem;
+    color : blue
+}
+
 
 
 

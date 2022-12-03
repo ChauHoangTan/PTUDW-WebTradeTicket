@@ -70,8 +70,10 @@
     <div class="border-seperate"></div>
   
     <main>
+        
+
         <!-- Session1 -->
-        <session class="container-fluid"  id = "session1">
+        <div class="container-fluid"  id = "session1">
             
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col-sm-4 column1" >
@@ -150,107 +152,137 @@
 
             
     
-        </session>
+        </div>
 
         <!-- Tạo border ngăn cách 2 session -->
+        <br>
         <div class="border-seperate"></div>
 
 
-        <session id = "session2">
-            <nav class="navbar navbar-expand-sm navbar-light">
-                  <div class="container">
-                    
-                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menu-main" aria-controls="menu-main"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div id="menu-main">
-                        <ul class="navbar-nav mt-2 mt-lg-0 containerFlex">
-                            
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#" aria-current="page">Hình ảnh <span class="visually-hidden">(current)</span></a>
-                            </li>
+        <div id = "session2">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Mô tả</a>
-                            </li>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="image-tab" data-bs-toggle="tab" data-bs-target="#image" type="button" role="tab" aria-controls="home" aria-selected="true">Hình ảnh</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="profile" aria-selected="false">Mô tả</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="route-tab" data-bs-toggle="tab" data-bs-target="#route" type="button" role="tab" aria-controls="messages" aria-selected="false">Lộ trình</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="messages" aria-selected="false">Dịch vụ</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="rate-tab" data-bs-toggle="tab" data-bs-target="#rate" type="button" role="tab" aria-controls="messages" aria-selected="false">Đánh giá</button>
+                </li>
+               
+            </ul>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Điểm đi / Điểm đến</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Dịch vụ</a>
-                            </li>
+            <!-- Tab panes -->
+            <div class="tab-content">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Đánh giá</a>
-                            </li>
-                        </ul>
+                <!-- tab hình ảnh -->
+                <div class="tab-pane active" id="image" role="tabpanel" aria-labelledby="Imagetab">
+
+                    <session id = "image-tab-1">
+            
+                        <div class = "container justify-content-center">
+                            <div id="slideImage" class="carousel slide d-block" data-bs-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-bs-target="#slideImage" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+                                    <li data-bs-target="#slideImage" data-bs-slide-to="1" aria-label="Second slide"></li>
+                                    <li data-bs-target="#slideImage" data-bs-slide-to="2" aria-label="Third slide"></li>
+                                    <li data-bs-target="#slideImage" data-bs-slide-to="3" aria-label="Four slide"></li>
+                                    <li data-bs-target="#slideImage" data-bs-slide-to="4" aria-label="Five slide"></li>
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active">
+                                        <img src="ImagesChuyenXe/phuongtrang1.jpg" class="w-100 d-block" alt="First slide">
+                                    </div>
+                                    <div class="carousel-item"> 
+                                        <img src="ImagesChuyenXe/phuongtrang2.jpg" class="w-100 d-block" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="ImagesChuyenXe/phuongtrang3.jpg" class="w-100 d-block" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="ImagesChuyenXe/phuongtrang4.jpg" class="w-100 d-block" alt="Four slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="ImagesChuyenXe/phuongtrang5.jpg" class="w-100 d-block" alt="Five slide">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#slideImage" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#slideImage" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+
+                        </div>
                         
-                    </div>
-              </div>
-            </nav>
             
-
-        </session>
-
-        <session id = "session3">
+                    </session>
             
-            <div class = "container justify-content-center">
-                <div id="slideImage" class="carousel slide d-block" data-bs-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#slideImage" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-                        <li data-bs-target="#slideImage" data-bs-slide-to="1" aria-label="Second slide"></li>
-                        <li data-bs-target="#slideImage" data-bs-slide-to="2" aria-label="Third slide"></li>
-                        <li data-bs-target="#slideImage" data-bs-slide-to="3" aria-label="Four slide"></li>
-                        <li data-bs-target="#slideImage" data-bs-slide-to="4" aria-label="Five slide"></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img src="ImagesChuyenXe/phuongtrang1.jpg" class="w-100 d-block" alt="First slide">
+            
+                    <session id = "image-tab-2">
+                        <div class = "container-fluid">
+                            <img class = "d-inline" src = "ImagesChuyenXe/phuongtrang1.jpg" alt = "Ảnh chuyến xe số 1">
+                            <img class = "d-inline" src = "ImagesChuyenXe/phuongtrang2.jpg" alt = "Ảnh chuyến xe số 2">
+                            <img class = "d-inline" src = "ImagesChuyenXe/phuongtrang3.jpg" alt = "Ảnh chuyến xe số 3">
+                            <img class = "d-inline" src = "ImagesChuyenXe/phuongtrang4.jpg" alt = "Ảnh chuyến xe số 4">
+                            <img class = "d-inline" src = "ImagesChuyenXe/phuongtrang5.jpg" alt = "Ảnh chuyến xe số 5">
                         </div>
-                        <div class="carousel-item"> 
-                            <img src="ImagesChuyenXe/phuongtrang2.jpg" class="w-100 d-block" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="ImagesChuyenXe/phuongtrang3.jpg" class="w-100 d-block" alt="Third slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="ImagesChuyenXe/phuongtrang4.jpg" class="w-100 d-block" alt="Four slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="ImagesChuyenXe/phuongtrang5.jpg" class="w-100 d-block" alt="Five slide">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#slideImage" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#slideImage" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    </session>
                 </div>
+
+                <!-- tab mô tả -->
+                <div class="tab-pane" id="description" role="tabpanel" aria-labelledby="description-tab"> profile </div>
+
+                <!-- tab lộ trình -->
+                <div class="tab-pane" id="route" role="tabpanel" aria-labelledby="route-tab"> messages </div>
+
+                <!-- tab dịch vụ -->
+                <div class="tab-pane" id="service" role="tabpanel" aria-labelledby="service-tab"> service </div>
+
+                <!-- tab đánh giá -->
+                <div class="tab-pane" id="rate" role="tabpanel" aria-labelledby="rate-tab"> rate </div>
+
+            
+
+            <div class = "border-seperate"></div>
+
+            
+            <div class = "container-fluid footer">  
+                <br>
+
+                <button class = "button-price"> <a href="#">Đặt vé</a></button>
+
+                <div id = "price">
+                    Giá vé : 290.000đ / 1 vé
+                </div>
+                <br><br><br><br>
+
             </div>
             
 
-        </session>
+        </div>
+           
 
-
-        <session id = "session4">
-            <div class = "container-fluid">
-                <img src = "ImagesChuyenXe/phuongtrang1.jpg" alt = "Ảnh chuyến xe số 1">
-                <img src = "ImagesChuyenXe/phuongtrang2.jpg" alt = "Ảnh chuyến xe số 2">
-                <img src = "ImagesChuyenXe/phuongtrang3.jpg" alt = "Ảnh chuyến xe số 3">
-                <img src = "ImagesChuyenXe/phuongtrang4.jpg" alt = "Ảnh chuyến xe số 4">
-                <img src = "ImagesChuyenXe/phuongtrang5.jpg" alt = "Ảnh chuyến xe số 5">
-            </div>
-        </session>
+        
+        
+        
 
 
   </main>
   <footer>
+    
     <!-- place footer here -->
   </footer>
 
