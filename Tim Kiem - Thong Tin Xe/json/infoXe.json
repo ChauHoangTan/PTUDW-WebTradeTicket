@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Chuyến xe 1",
+        "start": "Hà Nội",
+        "end": "Hồ Chí Minh",
+        "time": "10:00",
+        "date": "2022-12-12",
+        "price": 100000,
+        "seat": 10,
+        "seat_booked": 0,
+        "seat_available": 10,
+        "seat_booked_list": []
+    },
+    {
+        "name": "Chuyến xe 2",
+        "start": "Hà Nội",
+        "end": "Hồ Chí Minh",
+        "time": "10:00",
+        "date": "2022-12-12",
+        "price": 100000,
+        "seat": 10,
+        "seat_booked": 0,
+        "seat_available": 10,
+        "seat_booked_list": []
+    }
+]
