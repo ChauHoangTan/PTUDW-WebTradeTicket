@@ -1,0 +1,278 @@
+*:focus {
+    outline: none;
+}
+
+.header {
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) ), url(../images/sapa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#navbar {
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.navbar-brand > img {
+    height: 50%;
+}
+
+.nav-link {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #22BA19;
+}
+
+.hero {
+    padding-bottom: 100px;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    margin: 0 0 100px 0;
+    color: white;
+}
+
+#btn-bus {
+    width: 180px;
+    height: 52px;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    background-color: white;
+    color: #22BA19;
+    font-weight: 700;
+}
+
+.hero-search-bottom {
+    display: flex;
+}
+
+#input-starting {
+    padding-right: 0;
+}
+
+#input-destination {
+    padding: 0;
+}
+
+.dropdown > input {
+    height: 56px;
+    border: none;
+}
+
+#input-starting > input {
+    border-radius: 0 0 0 5px;
+}
+
+#input-destination > input {
+    border-radius: 0;
+}
+
+.dropdown-input {
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 240px;
+    width: 300px;
+}
+
+.dropdown-header {
+    color: black;
+    font-weight: 700;
+}
+
+.dropdown-item {
+    font-size: 0.9rem;
+}
+
+#btn-swap {
+    border-radius: 0;
+    background-color: white;
+    color: #22BA19;
+}
+
+#input-date {
+    padding: 0;
+}
+
+#input-date > input {
+    height: 56px;
+    border-width: 0 0 0 1px;
+    border-radius: 0;
+}
+
+#btn-submit {
+    background-color: #22BA19;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.usp {
+    margin: 80px 0;
+}
+
+/* .usp > .container {
+    border: 1px solid black;
+    border-width: 0 0 1px 0;
+} */
+
+#usp-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#usp-title {
+    color: #22BA19;
+}
+
+.usp-list-item {
+    margin: 10px 0;
+}
+
+.usp-list-item > i {
+    line-height: inherit;
+    font-size: 50px;
+}
+
+.usp-list-item:nth-child(1) > i {
+    color: #2A79F0;
+}
+
+.usp-list-item:nth-child(2) > i {
+    color: #FF0000;
+}
+
+.usp-list-item:nth-child(3) > i {
+    color: #22BA19;
+}
+
+.usp-list-item:nth-child(4) > i {
+    color: #F6ED0E;
+}
+
+.usp-list-item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.usp-list-item-text > * {
+    margin: 0;
+}
+
+.fdl {
+    background-color: #f8f8f8;
+}
+
+.fdl > .container {
+    padding: 80px 0;
+}
+
+.fdl-title {
+    color: #22BA19;
+}
+
+.fdl-item {
+    padding: 5px;
+}
+
+.card:hover {
+    top: -3px;
+    left: -3px;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    margin-bottom: 5px;
+    display: flex;
+    overflow: hidden;
+    background-color: white;
+}
+
+.card-img {
+    object-fit: contain; /* Do not scale the image */
+    object-position: center; /* Center the image within the element */
+
+}
+
+.card-label {
+    font-weight: 600;
+}
+
+.main-card > .card-body {
+    display: flex;
+    align-items: center;
+}
+
+.footer > .container > .row {
+    padding: 40px 0;
+}
+
+.footer > .container:first-child > .row {
+    border-bottom: 1px solid #333;
+}
+
+.footer-list {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-list > li {
+    margin-top: 6px;
+}
+
+.footer-list > li > a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-list > li > a:hover {
+    color: #22BA19;
+}
+
+.social-media-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.social-media-list > li {
+    margin: 0px 30px 0 0;
+    text-decoration: none;
+}
+
+.social-media-list > li > a {
+    font-size: 1.2rem;
+}
+
+.social-media-list > li:nth-child(1) > a {
+    color: #3b5998;
+}
+
+.social-media-list > li:nth-child(2) > a {
+    color: #dd4b39;
+}
+
+.social-media-list > li:nth-child(3) > a {
+    color: #0082ca;
+}
+
+.social-media-list > li:nth-child(4) > a {
+    color: #333333;
+}

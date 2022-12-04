@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Homepage</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!--Font Awesome 6.2.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <link rel="stylesheet" href=".\Handlebars-StaticFiles\stylesheets\nha_xe.css">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Header start-->
+    <div class="header">
+        <!-- Navbar Start -->
+        <div class="container-fluid" id="navbar-container">
+            <nav class="container navbar navbar-expand-md navbar-light" id="navbar">
+                <!-- for Bootstrap4: .mr-auto -->
+                <div class="navbar-nav me-auto" id="navbar-start">
+                    <a href="#" class="navbar-brand">
+                        <img class="" src=".\Handlebars-StaticFiles\images\logo.png" alt="vexemac logo">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-end" aria-controls="navbar-end" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- for Bootstrap4: .ml-auto -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-end">
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item nav-link ms-5">Thông tin</a>
+                        <a href="#" class="nav-item nav-link ms-5">Tuyến xe</a>
+                        <a href="#" class="nav-item nav-link ms-5">Nhà xe</a>
+                        <div class="nav-item dropdown ms-5">
+                            <!-- for Bootstrap4: data-toggle: "dropdown" -->
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Người dùng</a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Thông tin tài khoản</a>
+                                <a href="#" class="dropdown-item">Lịch sử đặt vé</a>
+                                <a href="#" class="dropdown-item">Đăng xuất</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+    </div>
+    <!-- Header end -->
+
+    <!-- Operator section start -->
+    <div class="operator">
+        <div class="container">
+            <div class="row">
+                <div class="operator-info shadow-sm">
+                    <div class="row operator-info-header">
+                        <div class="col operator-info-header-start">
+                            <!-- Operator name | Tên nhà xe -->
+                            <h3>Nhà xe Tiến Oanh</h3>
+                            <!-- Office address | Địa chỉ văn phòng chính -->
+                            <p>Trụ sở: 266 Đồng Đen ,P10.Q.Tân Bình</p>
+                        </div>
+                        <div class="col operator-info-header-end">
+                            <div class="operator-rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="operator-review-count">
+                                <span>28</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Images | Hình ảnh -->
+                    <div id="carousel-container" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel-container" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carousel-container" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carousel-container" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src=".\Handlebars-StaticFiles\images\saigon.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src=".\Handlebars-StaticFiles\images\dalat.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src=".\Handlebars-StaticFiles\images\danang.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-container" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-container" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!-- Information | Thông tin -->
+                    <div class="operator-info-item">
+                        <h4>Giới thiệu nhà xe</h4>
+                        <p>Nhà xe Tiến Oanh luôn nổi bật với dịch vụ vận tải hành khách trên tuyến đường Sài Gòn <> Buôn Mê Thuột. Ngày nay, hãng xe Tiến Oanh đã mở rộng dịch vụ sang tuyến đường Sài Gòn <> Đà Lạt. Phục vụ dòng xe limousine giường nằm chất lượng cao, nhà xe vẫn cam kết mang lại cho hành khách những dịch vụ chất lượng, an toàn và thoải mái nhất.</p>
+                    </div>
+                    <!-- Office address list -->
+                    <div class="operator-info-item">
+                        <h4>Văn phòng</h4>
+                        <p>Địa điểm đón trả khách của nhà xe Tiến Oanh</p>
+                        <ul>
+                            <li>Văn phòng Tân Bình: 266 Đồng Đen, Tân Bình, TP.HCM</li>
+                            <li>Văn phòng Thủ Đức: 804 Song Hành Hà Nội, Quận 9, TP.HCM</li>
+                            <li>134 Hai Bà Trưng, Buôn Mê Thuột</li>
+                            <li>272 Phù Đổng Thiên Vương, Đà Lạt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Operator section end -->
+
+        <!-- Footer start-->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <h5>Bến xe</h5>
+                        <ul class="footer-list">
+                            <li><a href="#">Bến xe Miền Đông</a></li>
+                            <li><a href="#">Bến xe Miền Tây</a></li>
+                            <li><a href="#">Bến xe Mỹ Đình</a></li>
+                            <li><a href="#">Bến xe Trung tâm Đà Nằng</a></li>
+                            <li><a href="#">Bến xe Gia Lâm</a></li>
+                            <li><a href="#">Bến xe An Sương</a></li>
+                            <li><a href="#">Bến xe Nước Ngầm</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <h5>Nhà xe</h5>
+                        <ul class="footer-list">
+                            <li><a href="#">Sao Việt</a></li>
+                            <li><a href="#">Sao Mai</a></li>
+                            <li><a href="#">Quốc Đạt</a></li>
+                            <li><a href="#">Hạ Long Travel</a></li>
+                            <li><a href="#">Phương Trang</a></li>
+                            <li><a href="#">Tiến Oanh</a></li>
+                            <li><a href="#">Thiện Thành</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <h5>Tuyến đường</h5>
+                        <ul class="footer-list">
+                            <li><a href="#">Sài Gòn - Đồng Nai</a></li>
+                            <li><a href="#">Sài Gòn - Đà Lạt</a></li>
+                            <li><a href="#">Sài Gòn - Vũng Tàu</a></li>
+                            <li><a href="#">Sài Gòn - Đà Nẵng</a></li>
+                            <li><a href="#">Sài Gòn - Hà Nội</a></li>
+                            <li><a href="#">Quảng Bình - Quảng Trị</a></li>
+                            <li><a href="#">Đà Nẵng - Hà Nội</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <h5><br></h5>
+                        <ul class="footer-list">
+                            <li><a href="#">Đà Nẵng - Quảng Ninh</a></li>
+                            <li><a href="#">Ninh Bình - Hải Phòng</a></li>
+                            <li><a href="#">Quảng Bình - Quảng Trị</a></li>
+                            <li><a href="#">Vinh - Hà Nội</a></li>
+                            <li><a href="#">Ninh Bình - Hải Phòng</a></li>
+                            <li><a href="#">Hà Nội - Lạng Sơn</a></li>
+                            <li><a href="#">Hà Nội - Lào Cai</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="#" class="navbar-brand">
+                            <img class="" src=".\Handlebars-StaticFiles\images\logo.png" alt="vexemac logo">
+                        </a>
+                        <ul class="social-media-list">
+                            <li>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-google"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h5>Các thành viên nhóm 11</h5>
+                        <ul class="footer-list">
+                            <li>20127621 - Châu Hoàng Tấn</li>
+                            <li>20127455 - Hứa Lâm Chí Cường</li>
+                            <li>20127166 - Nguyễn Huy Hoàn</li>
+                            <li>20127669 - Ngô Anh Vũ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer end-->
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
