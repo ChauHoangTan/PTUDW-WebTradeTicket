@@ -35,7 +35,7 @@ header{
     outline:none;
     border:none;
     appearance: none;
-    color: midnightblue;
+    color: black;
     font-size: 15px;
 }
 
@@ -55,7 +55,7 @@ header{
     display: block;
     width: 20%;
     text-align: center;
-    background-color: lightcyan;
+    background-color: white;
     font-size: 25px;
     margin-top: 30px;
     padding: 7px;
@@ -72,7 +72,7 @@ header{
     width: 100%;
     font-size: 20px;
     text-align: center;
-    color: blue
+    color: blue;
 }
 
 a{
