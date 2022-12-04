@@ -63,11 +63,11 @@ main{
     background-color: var(--web-green-color);
 }
 
-.column1 div > button, .column2 form > div{
+.column1 div  button, .column2 form > div{
     margin-top: 3rem;
 }
 
-.column1 div > button{
+.column1 div button{
     background-color: var(--web-green-color);
     border-radius: 5px;
 }
