@@ -35,7 +35,7 @@ header{
     outline:none;
     border:none;
     appearance: none;
-    color: midnightblue;
+    color: black;
     font-size: 15px;
 }
 
@@ -58,7 +58,7 @@ header{
     width: 100%;
     font-size: 20px;
     text-align: center;
-    color: blue
+    color: blue;
 }
 
 a{
