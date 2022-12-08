@@ -270,12 +270,15 @@ main #session1  {
 }
 
 #is-ordered-seats{
-    border : 2px solid red
+    accent-color: var(--web-red-color);
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
-#is-choosing-seats i{
-    font-size: 20px;
-    height: 20px;
+#is-choosing-seats{
+    accent-color: var(--web-green-color3);
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 
@@ -285,4 +288,13 @@ main #session1  {
     margin-top : 1rem ;
     margin-left: 1rem;
     float : right
+}
+
+input[type = "checkbox"]{
+    accent-color: var(--web-green-color3);
+}
+
+#c1{
+    accent-color: var(--web-red-color);
+    
 }
