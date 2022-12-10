@@ -88,7 +88,7 @@
                     <div class = "hinhAnh">
                         Hình ảnh
                     </div>
-                    <img src ="ImagesChuyenXe/phuongtrang1.jpg" alt="Ảnh chuyến xe">
+                    <img src ="handlebars-staticFile/ImagesChuyenXe/phuongtrang1.jpg" alt="Ảnh chuyến xe">
 
                     
     
@@ -177,11 +177,11 @@
                     </div>
                     <div>
                         <span class = "note">Ghế đã được đặt : </span>
-                        <div id = "is-ordered-seats"></div>
+                        <input id = "is-ordered-seats" type="checkbox" onclick="this.checked=!this.checked;" checked = "checked">
                     </div>
                     <div>
                         <span class = "note">Ghế đang chọn : </span>
-                        <div id = "is-choosing-seats"><i class="fa-sharp fa-solid fa-square-check"></i></div>
+                        <input id = "is-choosing-seats" type="checkbox" onclick="this.checked=!this.checked;" checked = "checked">
                     </div>
                 </div>
                 
@@ -263,7 +263,7 @@
                                 <input type = "checkbox" >
                             </div>
                             <div class="col">
-                                <input type = "checkbox" >
+                                <input id = "c1" type = "checkbox"  onclick="this.checked=!this.checked;" checked="checked" >
                             </div>
                             
                         </div>

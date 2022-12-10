@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/tuyen_Xe.css">
+    <link rel="stylesheet" href="../Trang chu - Nha xe/Handlebars-StaticFiles/stylesheets/trang_chu.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!--Font Awesome 6.2.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Tuyến Xe</title>
+</head>
+
+
+<!-- Navbar Start -->
+<div class="container" id="navbar-container">
+    <nav class="navbar navbar-expand-md navbar-light" id="navbar">
+        <!-- for Bootstrap4: .mr-auto -->
+        <div class="navbar-nav me-auto" id="navbar-start">
+            <a href="../Trang chu - Nha xe/trang_chu.html" class="navbar-brand">
+                <img class="" src="../Trang chu - Nha xe/Handlebars-StaticFiles/images/logo.png" alt="vexemac logo">
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-end"
+            aria-controls="navbar-end" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- for Bootstrap4: .ml-auto -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-end">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link ms-5">Thông tin</a>
+                <a href="../Tuyen Xe/tuyen_xe.html" class="nav-item nav-link ms-5">Tuyến xe</a>
+                <a href="#" class="nav-item nav-link ms-5">Nhà xe</a>
+                <div class="nav-item dropdown ms-5">
+                    <!-- for Bootstrap4: data-toggle: "dropdown" -->
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Người
+                        dùng</a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a href="#" class="dropdown-item">Thông tin tài khoản</a>
+                        <a href="#" class="dropdown-item">Lịch sử đặt vé</a>
+                        <a href="#" class="dropdown-item">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+<style>
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero-image {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://as2.ftcdn.net/v2/jpg/02/68/98/23/1000_F_268982380_dW6N0iER2iLcotRTENboWa2Rt3dWrYTL.jpg");
+        height: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+</style>
+</head>
+<div class="hero-image">
+    <div class="hero-text">
+        <h2 style="font-size:30px" class="text-center">Dịch vụ thuê xe uy tín và chuyên nghiệp, khổ cái nó mắc thôi</h2>
+    </div>
+</div>
+
+<!--content area-->
+<h1 class="text-center">Các tuyến xe phổ biến</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://cdn3.ivivu.com/2022/07/h%E1%BB%93-g%C6%B0%C6%A1m-du-l%E1%BB%8Bch-H%C3%A0-N%E1%BB%99i-ivivu.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title
+                            ">Tuyến Xe đi Hà Nội</h5>
+                            <a href="#" class="btn btn-primary">Đặt xe</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://alocanhosg.com/wp-content/uploads/2021/06/to-ng-ho-p-ca-c-khu-do-thi-ven-so-ng-sa-i-go-n-tp-hcm.jpeg"
+                            class="card-img-top" alt="..." width=50%>
+                        <div class="card-body">
+                            <h5 class="card-title
+                            ">Tuyến xe đi TPHCM</h5>
+                            <a href="#" class="btn btn-primary">Đặt xe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center">Đa dạng lựa chọn dòng xe</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://img1.oto.com.vn/2021/07/07/OpzfnMD2/e200-exclusive-9f1e.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title
+                                ">Mercedes Benz E Class</h5>
+                                <p class="card-text">Giá: 1.000.000 VNĐ</p>
+                                <p class="card-text">Số chỗ: 4 chỗ</p>
+                                <p class="card-text">Số ghế: 4 ghế</p>
+                                <p class="card-text">Số lượng: 10 xe</p>
+                                <a href="#" class="btn btn-primary">Đặt xe</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://i1-vnexpress.vnecdn.net/2021/11/26/MBC27207jpg-1637901851.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=ROr5Pyl_xjG7kxaNvdB7zQ"
+                                class="card-img-top" alt="..." width="200%">
+                            <div class="card-body">
+                                <h5 class="card-title
+                                ">Mercedes Benz E Class</h5>
+                                <p class="card-text">Giá: 1.000.000 VNĐ</p>
+                                <p class="card-text">Số chỗ: 4 chỗ</p>
+                                <p class="card-text">Số ghế: 4 ghế</p>
+                                <p class="card-text">Số lượng: 10 xe</p>
+                                <a href="#" class="btn btn-primary">Đặt xe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--content area end-->
+
+    <!-- Footer start-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h5>Bến xe</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Bến xe Miền Đông</a></li>
+                        <li><a href="#">Bến xe Miền Tây</a></li>
+                        <li><a href="#">Bến xe Mỹ Đình</a></li>
+                        <li><a href="#">Bến xe Trung tâm Đà Nằng</a></li>
+                        <li><a href="#">Bến xe Gia Lâm</a></li>
+                        <li><a href="#">Bến xe An Sương</a></li>
+                        <li><a href="#">Bến xe Nước Ngầm</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h5>Nhà xe</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Sao Việt</a></li>
+                        <li><a href="#">Sao Mai</a></li>
+                        <li><a href="#">Quốc Đạt</a></li>
+                        <li><a href="#">Hạ Long Travel</a></li>
+                        <li><a href="#">Phương Trang</a></li>
+                        <li><a href="#">Tiến Oanh</a></li>
+                        <li><a href="#">Thiện Thành</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h5>Tuyến đường</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Sài Gòn - Đồng Nai</a></li>
+                        <li><a href="#">Sài Gòn - Đà Lạt</a></li>
+                        <li><a href="#">Sài Gòn - Vũng Tàu</a></li>
+                        <li><a href="#">Sài Gòn - Đà Nẵng</a></li>
+                        <li><a href="#">Sài Gòn - Hà Nội</a></li>
+                        <li><a href="#">Quảng Bình - Quảng Trị</a></li>
+                        <li><a href="#">Đà Nẵng - Hà Nội</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h5><br></h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Đà Nẵng - Quảng Ninh</a></li>
+                        <li><a href="#">Ninh Bình - Hải Phòng</a></li>
+                        <li><a href="#">Quảng Bình - Quảng Trị</a></li>
+                        <li><a href="#">Vinh - Hà Nội</a></li>
+                        <li><a href="#">Ninh Bình - Hải Phòng</a></li>
+                        <li><a href="#">Hà Nội - Lạng Sơn</a></li>
+                        <li><a href="#">Hà Nội - Lào Cai</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <a href="#" class="navbar-brand">
+                        <img class="" src="../Trang chu - Nha xe/Handlebars-StaticFiles/images/logo.png" alt="vexemac logo">
+                    </a>
+                    <ul class="social-media-list">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-google"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <h5>Các thành viên nhóm 11</h5>
+                    <ul class="footer-list">
+                        <li>20127621 - Châu Hoàng Tấn</li>
+                        <li>20127455 - Hứa Lâm Chí Cường</li>
+                        <li>20127166 - Nguyễn Huy Hoàn</li>
+                        <li>20127669 - Ngô Anh Vũ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer end-->
+</body>
+
+</html>
