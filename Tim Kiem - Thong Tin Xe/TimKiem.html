@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="style/TimKiem.css">
+
     <title>Tìm kiếm</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
     <!--Font Awesome 6.2.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-    <link rel="stylesheet" href=".\Handlebars-StaticFiles\stylesheets\trang_chu.css">
+    <link rel="stylesheet" href="/Trang chu - Nha xe/Handlebars-StaticFiles/stylesheets/trang_chu.css">
 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -25,43 +25,36 @@
 
 <body>
     <header class="container-fluid">
-        <nav class="navbar navbar-expand-sm navbar-light ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/Trang chu - Nha xe/index.html">
-                    <img src="../Trang chu - Nha xe/Handlebars-StaticFiles/images/logo.png" alt="Trang chủ">
-                </a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#menu-header" aria-controls="menu-header" aria-expanded="false"
-                    aria-label="Toggle navigation">
+        <div class="container" id="navbar-container">
+            <nav class="navbar navbar-expand-md navbar-light" id="navbar">
+                <!-- for Bootstrap4: .mr-auto -->
+                <div class="navbar-nav me-auto" id="navbar-start">
+                    <a href="/Trang chu - Nha xe/index.html" class="navbar-brand">
+                        <img class="" src="/Trang chu - Nha xe/Handlebars-StaticFiles/images/logo.png" alt="vexemac logo">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-end" aria-controls="navbar-end" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="menu-header">
-                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0 ">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Thông tin</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nhà xe</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Bến xe</a>
-                        </li>
-
-                        <a class="nav-link" href="/Chuyen xe - Dat ve - Tai khoan/taiKhoan.html">
-                            <li class="nav-item account">
-                                <i class="fas fa-user-circle"></i> Tài khoản
-
-                            </li>
-                        </a>
-
-                    </ul>
-
+                <!-- for Bootstrap4: .ml-auto -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-end">
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item nav-link ms-5">Thông tin</a>
+                        <a href="#" class="nav-item nav-link ms-5">Tuyến xe</a>
+                        <a href="/Trang chu - Nha xe/nha_xe.html" class="nav-item nav-link ms-5">Nhà xe</a>
+                        <div class="nav-item dropdown ms-5">
+                            <!-- for Bootstrap4: data-toggle: "dropdown" -->
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Người dùng</a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="/Chuyen xe - Dat ve - Tai khoan/taiKhoan.html" class="dropdown-item">Thông tin tài khoản</a>
+                                <a href="#" class="dropdown-item">Lịch sử đặt vé</a>
+                                <a href="/LogIn-SignUp/Log-in.html" class="dropdown-item">Đăng xuất</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <body>
