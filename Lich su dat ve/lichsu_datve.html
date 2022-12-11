@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lịch sử đặt vé</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!--Font Awesome 6.2.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    
+    <link rel="stylesheet" href=".\Handlebars-StaticFiles\stylesheets\lichsu_datve.css">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- Header start-->
+    <div class="header">
+        <!-- Navbar Start -->
+        <div class="container-fluid" id="navbar-container">
+            <nav class="container navbar navbar-expand-md navbar-light" id="navbar">
+                <div class="navbar-nav me-auto" id="navbar-start">
+                    <a href="#" class="navbar-brand">
+                        <img class="" src=".\Handlebars-StaticFiles\images\logo.png" alt="vexemac logo">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-end" aria-controls="navbar-end" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-end">
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item nav-link ms-5">Thông tin</a>
+                        <a href="#" class="nav-item nav-link ms-5">Tuyến xe</a>
+                        <a href="#" class="nav-item nav-link ms-5">Nhà xe</a>
+                        <div class="nav-item dropdown ms-5">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Người dùng</a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Thông tin tài khoản</a>
+                                <a href="#" class="dropdown-item">Lịch sử đặt vé</a>
+                                <a href="#" class="dropdown-item">Đăng xuất</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+    </div>
+    <!-- Header end -->
+
+    <!-- Booking history start -->
+    <div class="container" id="history-container">
+        <div class="row m-auto d-flex align-items-center" id="history-navbar">
+            <div class="navbar-item col-4 d-flex justify-content-center">
+                <span>Chuyến xe</span>
+            </div>
+            <div class="col-4 row">
+                <div class="col d-flex justify-content-center">
+                    <span>Khởi hành</span>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <span>Thời gian</span>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <span>Đến nơi</span>
+                </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+                <span>Giá vé</span>
+            </div>
+            <div class="col-1 d-flex justify-content-center">
+                <span>Thông tin</span>
+            </div>
+            <div class="col-1 d-flex justify-content-center">
+                <span>Hủy vé</span>
+            </div>
+        </div>
+        <div class="row m-auto ticket-list">
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+            <div class="row ticket-item">
+                <div class="col-4 d-flex flex-column justify-content-center">
+                    <span class="ticket-operator">Nhà xe Phương Trang</span>
+                    <div class="ticket-route d-flex align-items">
+                        <span>Sài Gòn</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Hà Nội</span>
+                    </div>
+                    <!-- <span class="ticket-route">Sài Gòn - Hà Nội</span> -->
+                    <span class="ticket-date">Ngày xuất phát: 12/10/2022</span>
+                </div>
+                <div class="col-4 row">
+                    <div class="col ticket-content">
+                        <span>6:45</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>32:00</span>
+                    </div>
+                    <div class="col ticket-content">
+                        <span>14:00</span>
+                    </div>
+                </div>
+                <div class="col-2 ticket-content">
+                    <span>400.000đ</span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <span><a href="">Chi tiết</a></span>
+                </div>
+                <div class="col-1 ticket-content">
+                    <button class="btn btn-primary">Hủy vé</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking history end -->
+
+    <!-- Footer start-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h5>Bến xe</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Bến xe Miền Đông</a></li>
+                        <li><a href="#">Bến xe Miền Tây</a></li>
+                        <li><a href="#">Bến xe Mỹ Đình</a></li>
+                        <li><a href="#">Bến xe Trung tâm Đà Nằng</a></li>
+                        <li><a href="#">Bến xe Gia Lâm</a></li>
+                        <li><a href="#">Bến xe An Sương</a></li>
+                        <li><a href="#">Bến xe Nước Ngầm</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h5>Nhà xe</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Sao Việt</a></li>
+                        <li><a href="#">Sao Mai</a></li>
+                        <li><a href="#">Quốc Đạt</a></li>
+                        <li><a href="#">Hạ Long Travel</a></li>
+                        <li><a href="#">Phương Trang</a></li>
+                        <li><a href="#">Tiến Oanh</a></li>
+                        <li><a href="#">Thiện Thành</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h5>Tuyến đường</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Sài Gòn - Đồng Nai</a></li>
+                        <li><a href="#">Sài Gòn - Đà Lạt</a></li>
+                        <li><a href="#">Sài Gòn - Vũng Tàu</a></li>
+                        <li><a href="#">Sài Gòn - Đà Nẵng</a></li>
+                        <li><a href="#">Sài Gòn - Hà Nội</a></li>
+                        <li><a href="#">Quảng Bình - Quảng Trị</a></li>
+                        <li><a href="#">Đà Nẵng - Hà Nội</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h5><br></h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Đà Nẵng - Quảng Ninh</a></li>
+                        <li><a href="#">Ninh Bình - Hải Phòng</a></li>
+                        <li><a href="#">Quảng Bình - Quảng Trị</a></li>
+                        <li><a href="#">Vinh - Hà Nội</a></li>
+                        <li><a href="#">Ninh Bình - Hải Phòng</a></li>
+                        <li><a href="#">Hà Nội - Lạng Sơn</a></li>
+                        <li><a href="#">Hà Nội - Lào Cai</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <a href="#" class="navbar-brand">
+                        <img class="" src=".\Handlebars-StaticFiles\images\logo.png" alt="vexemac logo">
+                    </a>
+                    <ul class="social-media-list">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-google"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <h5>Các thành viên nhóm 11</h5>
+                    <ul class="footer-list">
+                        <li>20127621 - Châu Hoàng Tấn</li>
+                        <li>20127455 - Hứa Lâm Chí Cường</li>
+                        <li>20127166 - Nguyễn Huy Hoàn</li>
+                        <li>20127669 - Ngô Anh Vũ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer end-->
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
