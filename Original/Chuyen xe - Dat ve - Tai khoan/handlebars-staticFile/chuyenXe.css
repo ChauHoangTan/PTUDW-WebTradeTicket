@@ -1,0 +1,300 @@
+
+/*Css cho file chuyenXe.html*/
+:root{
+    --web-green-color :#8EFDDC;
+    --web-red-color :#FB1111;
+    --web-green-color2 :#278A6D;
+    --web-green-color3: #27B91A;
+}
+
+html{
+    font-family: 'Oswald' cursive;
+}
+
+header img{
+    width: 60%;
+    height: 60%;
+    background-color: white;
+}
+
+#menu-header a{
+    margin : 0 2rem;
+    color : black;
+
+}
+
+#menu-header a li.account{
+    background-color: var(--web-green-color);
+    border-radius: 8px;
+    width: 120%;
+    height : 30px;
+    line-height: 30px;
+
+    text-align: center;
+}
+
+.border-seperate {
+    margin: 0 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    
+}
+
+main{
+    padding: 5px 10px;
+}
+
+main #session1 .column1 .hinhAnh{
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color : var(--web-green-color2)
+
+}
+main #session1 .column2 .column2-1{
+    margin-left: 25px;
+}
+
+main #session1 .column1 img{
+    width: 100%;
+   
+    
+}
+main #session1 .lastInfo{
+    padding-top: 1rem;
+}
+
+main #session1 .lastInfo .field{
+    
+    padding-left: 2rem;
+}
+
+
+main #session1 .column2 .fixMargin{
+    padding-top:  4em;
+    
+}
+
+main #session1  .field{
+    
+    color : var(--web-green-color3)
+}
+
+
+
+.star{
+    background-color: var(--web-green-color);
+    
+}
+
+main #session1 .column2 .column2-2 #numberOfEmptySeats{
+    float: right;
+    margin-right: 4rem;
+    font-weight: bold;
+    font-size: 20px;
+    
+    color : red
+ 
+}
+
+main #session1  {
+    width: 100%;
+ 
+}
+
+
+
+/* css cho session2  */
+
+/* css cho tab hình ảnh */
+#session2 #myTab {
+    margin-top: 1rem;
+
+}
+
+#session2 #myTab li .nav-link{
+
+    
+    text-decoration-line: underline;
+    text-decoration-color: rgba(39,138,109, 0.3) ;
+    font-style: italic;
+    color : var(--web-green-color2)
+    
+    
+}
+
+#session2 #myTab li .active{
+    text-decoration-color :rgba(39,138,109, 1) ;
+    font-weight: bold;
+}
+
+/*css cho session4 */
+
+#slideImage{
+    width: 50%;
+    padding-top: 2rem;
+    
+    margin: 0 auto;
+    
+}
+
+#session2 #image-tab-2{
+    display: flex;
+    justify-content: space-around;
+}
+
+#session2 #image-tab-2 img{
+    width: 19%;
+    padding: 1rem 1rem;
+}
+
+/*css cho tab mô tả*/
+
+#description li, #route li{
+    list-style-type: circle;
+    margin-top: 1rem;
+}
+
+/*css cho tab lộ trình */
+#route ul{
+    padding-top: 1rem;
+}
+
+/*css cho tab service */
+
+.service-item > div{
+    margin: 2rem 10rem;
+
+}
+
+/*  css cho tab đánh giá */
+.user{
+    font-size: 3rem;
+}
+
+/*css cho nút đặt vé */
+
+
+.button-price{
+    margin-right : 5rem;
+    margin-bottom: 1rem;
+    background-color: #8EFDDC;
+    border-radius: 5px;
+    
+    float :right;
+    color : black
+}
+
+.button-pay{
+    margin-right : 2rem;
+    margin-bottom: 1rem;
+    background-color: #8EFDDC;
+    border-radius: 5px;
+    
+    float :right;
+    color : black
+}
+
+.button-price a{
+ 
+    text-decoration-line: none;
+    color : black
+}
+
+#price{
+    clear: right;
+    margin-right : 2rem;
+    margin-bottom: 1rem;
+    background-color: #8EFDDC;
+    float : right
+
+}
+
+ /* main{
+    background-image: url('ImagesChuyenXe/background.jpg');
+}  */
+
+
+/*  Css cho file datVe.html */
+.ticket{
+    margin-top: 2rem;
+}
+
+.choose-ticket{
+
+    border-top-left-radius:20px;
+    border-top-right-radius: 20px;
+    border: 2px solid black;
+    width : 50%
+    
+    
+}
+
+.choose-ticket .row{
+    margin : auto
+    
+}
+
+.choose-ticket .row .col{
+    padding-left: 2rem;
+}
+
+.choose-ticket .row .col input{
+    width: 2rem;
+    height: 2rem;
+    color : red;
+}
+
+.choose-ticket .row .driver {
+ 
+    font-size: 2rem;
+    color : blue
+}
+
+#notice > div{
+    margin-top: 3rem;
+}
+
+.note{
+    color : var(--web-green-color2)
+}
+
+#notice div > div{
+    width : 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 1rem;
+    
+}
+#empty-seats{
+    border : 2px solid gray
+}
+
+#is-ordered-seats{
+    accent-color: var(--web-red-color);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#is-choosing-seats{
+    accent-color: var(--web-green-color3);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+
+
+.form-button{
+    margin-top : 1rem ;
+    margin-left: 1rem;
+    float : right
+}
+
+input[type = "checkbox"]{
+    accent-color: var(--web-green-color3);
+}
+
+#c1{
+    accent-color: var(--web-red-color);
+    
+}
