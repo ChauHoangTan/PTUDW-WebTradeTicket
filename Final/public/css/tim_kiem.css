@@ -101,36 +101,6 @@ body {
     color: #333333;
 }
 
-/*
-    Main
-*/
-
-.operator > .container {
-    margin: 40px auto;
-}
-
-.operator-info {
-    padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-.operator-info-header-end {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.operator-rating {
-    display: flex;
-    align-items: center;
-    color: gold;
-    font-size: 1.2rem;
-}
-
-.operator-info-item {
-    margin: 20px 0 0 0;
-    padding: 20px 0;
-    border-top: 1px solid #333;
+#btn-submit a{
+    text-decoration: none;
 }

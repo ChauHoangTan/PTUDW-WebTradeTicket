@@ -7,29 +7,26 @@ app.engine('hbs', ehbs.engine({
     defaultLayout: 'layout',
     layoutsDir: __dirname + '/views/layouts',
     partialsDir: __dirname +  '/view/partials'
-}))
-app.set('view engine', 'hbs')
+}));
+app.set('view engine', 'hbs');
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
 
 app.get('/createTables', (req, res) => {
     let models = require('./models');
     models.sequelize.sync().then(() => {
         res.send('tables created');
     })
-})
+});
 
-app.get('/', (req,res) => {
-    res.render('index', {
-        style: '/css/trang_chu.css'
-    })
-})
-
-app.get('/nhaxe', (req,res) => {
-    res.render('nha_xe')
-})
+app.use('/', require('./routes/indexRoute'));
+app.use('/nhaxe', require('./routes/nhaxeRoute'));
+app.use('/chuyenxe', require('./routes/chuyenxeRoute'));
+app.use('/timkiem', require('./routes/timkiemRoute'));
+app.use('/datve', require('./routes/datveRoute'));
+app.use('/taikhoan', require('./routes/taikhoanRoute'));
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), () => {
     console.log(`server is listening on port ${app.get('port')}`);
-})
+});
