@@ -1,4 +1,28 @@
 
+#navbar {
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.navbar-brand > img {
+    height: 50%;
+}
+
+.nav-link {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #22BA19;
+}
+
 .footer {
     background-color: #9b3a3a;
     color: #ffffff;

@@ -11,11 +11,30 @@ html{
     font-family: 'Oswald' cursive;
 }
 
-header img{
-    width: 60%;
-    height: 60%;
-    background-color: white;
+#navbar {
+    padding: 0 20px;
 }
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.navbar-brand > img {
+    height: 50%;
+}
+
+.nav-link {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #22BA19;
+}
+
 
 #menu-header a{
     margin : 0 2rem;
@@ -75,8 +94,13 @@ main #session1 .column2 .fixMargin{
 }
 
 main #session1  .field{
-    
+    font-weight: bold;
     color : var(--web-green-color3)
+    
+}
+ 
+main #session1{
+    font-size: 18px;
 }
 
 
@@ -86,15 +110,7 @@ main #session1  .field{
     
 }
 
-main #session1 .column2 .column2-2 #numberOfEmptySeats{
-    float: right;
-    margin-right: 4rem;
-    font-weight: bold;
-    font-size: 20px;
-    
-    color : red
- 
-}
+
 
 main #session1  {
     width: 100%;
@@ -174,40 +190,7 @@ main #session1  {
 /*css cho nút đặt vé */
 
 
-.button-price{
-    margin-right : 5rem;
-    margin-bottom: 1rem;
-    background-color: #8EFDDC;
-    border-radius: 5px;
-    
-    float :right;
-    color : black
-}
 
-.button-pay{
-    margin-right : 2rem;
-    margin-bottom: 1rem;
-    background-color: #8EFDDC;
-    border-radius: 5px;
-    
-    float :right;
-    color : black
-}
-
-.button-price a{
- 
-    text-decoration-line: none;
-    color : black
-}
-
-#price{
-    clear: right;
-    margin-right : 2rem;
-    margin-bottom: 1rem;
-    background-color: #8EFDDC;
-    float : right
-
-}
 
  /* main{
     background-image: url('ImagesChuyenXe/background.jpg');

@@ -10,7 +10,7 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <!-- <script type="text/javascript" src="Log-in.js"></script> -->
-    <title>Đăng nhập</title>
+    <title>Confirm Phone Number</title>
 
 </head>
 
@@ -57,40 +57,50 @@
 
     <main>
 
-        <h2 class = "d-flex justify-content-center m-5">Đăng ký</h2>  
+        <h2 class = "d-flex justify-content-center m-5">Xác minh số điện thoại</h2>  
 
-        <div class = "d-flex justify-content-center ">
+        <div class = "d-flex flex-column align-items-center ">
 
             <div class="w-25">
+
+                
+
+                <form action="/action_page.php" id = "confirmPN" class = "was-validated d-flex justify-content-start">
+        
+                    
+        
+                    <div class="form-floating">
+                        
+                        <input class="form-control" type="number" id="sdt" placeholder="sdt" name="sdt" required>
+                        <label for="otpIN">Nhập vào số điện thoại</label>
+                        <div class="invalid-feedback text-danger">Số điện thoại không hợp lệ!</div>
+                        <div class="valid-feedback text-success" >Số điện thoại hợp lệ!</div>
+                    </div>
+                    
+                    
+                    
+                    <button type ="submit" class=" btn btn-warning ms-1" id = "sendBtn">Gửi mã OTP</button>
+            
+                </form> 
+        
+                
                
 
-                <form action="/action_page.php" class="was-validated d-flex flex-column justify-content-center">
+                <form action="/action_page.php" id = "confirmPN" class = "was-validated d-flex justify-content-start">
         
                     
         
-                    <div class="form-floating mt-1 mb-1">
-                        
-                        <input class="form-control" type="text" id="user-name" placeholder="user-name" name="user-name" required>
-                        <label for="user-name">Tên tài khoản </label>
-                        <div class = "invalid-feedback">Vui lòng nhập tài khoản!</div>
-
-
-                    </div>
-
                     <div class="form-floating">
-            
-
-                        <input class="form-control" type="number" id="password" placeholder="password" name="password" required>
-                        <label for="password">Số điện thoại </label>
-
-                        <div class="invalid-feedback text-danger">Vui lòng nhập đúng số điện thoại</div>
+                        
+                        <input class="form-control" type="text" id="otpIN" placeholder="otp" name="otpIN" required>
+                        <label for="otpIN">Nhập vào mã OTP </label>
+                        <div class="invalid-feedback text-danger">Mã OTP không hợp lệ!</div>
                         <div class="valid-feedback text-success" >Xác nhận thành công!</div>
-
                     </div>
                     
                     
                     
-                <button type ="submit" class="btn btn-primary " id = "sendBtn">Đăng ký</button>
+                    <a href="Set-password-FPW.html" type ="submit" class="btn btn-primary ms-1" id = "sendBtn">Xác nhận</a>
             
                 </form> 
         
@@ -104,10 +114,6 @@
             
         <div class="prevStep">
             <a class="text-decoration-none btn btn-info" href="Log-in.html">Quay lại</a>
-        </div>
-
-        <div class="nextStep">
-            <a class="text-decoration-none btn btn-info" href="Confirm-PhoneN.html">Tiếp theo</a>
         </div>
         
     </main>
@@ -125,12 +131,5 @@
     <link rel="stylesheet" type = "text/css" href="stylesheets/Confirm-PhoneN.css">
 </body>
 
-<!-- Bootstrap JavaScript Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-</script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-</script>
 </html>
