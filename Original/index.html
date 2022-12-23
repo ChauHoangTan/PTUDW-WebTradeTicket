@@ -14,7 +14,7 @@
     <!--Font Awesome 6.2.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     
-    <link rel="stylesheet" href=".\Handlebars-StaticFiles\stylesheets\trang_chu.css">
+    <link rel="stylesheet" href="Trang chu - Nha xe/Handlebars-StaticFiles/stylesheets/trang_chu.css">
 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -31,7 +31,7 @@
                 <!-- for Bootstrap4: .mr-auto -->
                 <div class="navbar-nav me-auto" id="navbar-start">
                     <a href="#" class="navbar-brand">
-                        <img class="" src=".\Handlebars-StaticFiles\images\logo.png" alt="vexemac logo">
+                        <img class="" src="Trang chu - Nha xe/Handlebars-StaticFiles/images/logo.png" alt="vexemac logo">
                     </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-end" aria-controls="navbar-end" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,16 +40,19 @@
                 <!-- for Bootstrap4: .ml-auto -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-end">
                     <div class="navbar-nav">
-                        <a href="#" class="nav-item nav-link ms-5">Thông tin</a>
-                        <a href="#" class="nav-item nav-link ms-5">Tuyến xe</a>
-                        <a href="nha_xe.html" class="nav-item nav-link ms-5">Nhà xe</a>
+                        <a href="#" class="nav-item nav-link ms-5  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                          </svg> 18001234</a>
+                        <a href="Tuyen Xe/tuyen_xe.html" class="nav-item nav-link ms-5">Tuyến xe</a>
+                        <a href="Trang chu - Nha xe/nha_xe.html" class="nav-item nav-link ms-5">Nhà xe</a>
                         <div class="nav-item dropdown ms-5">
                             <!-- for Bootstrap4: data-toggle: "dropdown" -->
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Người dùng</a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="/Chuyen xe - Dat ve - Tai khoan/taiKhoan.html" class="dropdown-item">Thông tin tài khoản</a>
-                                <a href="#" class="dropdown-item">Lịch sử đặt vé</a>
-                                <a href="/LogIn-SignUp/Log-in.html" class="dropdown-item">Đăng xuất</a>
+                                <a href="Chuyen xe - Dat ve - Tai khoan/taiKhoan.html" class="dropdown-item">Thông tin tài khoản</a>
+                                <a href="Lich su dat ve/lichsu_datve.html" class="dropdown-item">Lịch sử đặt vé</a>
+                                <a href="LogIn-SignUp/Log-in.html" class="dropdown-item">Đăng xuất</a>
                             </div>
                         </div>
                     </div>
@@ -114,12 +117,8 @@
                         <div class="col-3" id="input-date">
                             <input class="form-control" type="date">
                         </div>
-                        
-                            <button class="col-2 btn btn-primary" type="submit" id="btn-submit">
-                                <a href = "/Tim Kiem - Thong Tin Xe/TimKiem.html" class= "d-inline">Tìm vé</a>
-                            </button>
                        
-                            
+                            <a href="Tim Kiem - Thong Tin Xe/TimKiem.html" class = "col-2 btn btn-primary" id="btn-submit">Tìm vé</a>
                        
                         
                     </div>
@@ -184,7 +183,7 @@
                     <div class="row">
                         <div class="col-4 fdl-item">
                             <div class="card">
-                                <img class="card-img" src=".\Handlebars-StaticFiles\images\saigon.jpg" alt="">
+                                <img class="card-img" src="Trang chu - Nha xe/Handlebars-StaticFiles/images/saigon.jpg" alt="">
                                 <div class="card-body">
                                     <p class="card-label">Sài Gòn</p>
                                 </div>
@@ -192,7 +191,7 @@
                         </div>
                         <div class="col-4 fdl-item">
                             <div class="card">
-                                <img class="card-img" src=".\Handlebars-StaticFiles\images\dalat.jpg" alt="">
+                                <img class="card-img" src="Trang chu - Nha xe/Handlebars-StaticFiles/images/dalat.jpg" alt="">
                                 <div class="card-body">
                                     <p class="card-label">Đà Lạt</p>
                                 </div>
@@ -200,7 +199,7 @@
                         </div>
                         <div class="col-4 fdl-item">
                             <div class="card">
-                                <img class="card-img" src=".\Handlebars-StaticFiles\images\danang.jpg" alt="">
+                                <img class="card-img" src="Trang chu - Nha xe/Handlebars-StaticFiles/images/danang.jpg" alt="">
                                 <div class="card-body">
                                     <p class="card-label">Đà Nẵng</p>
                                 </div>
@@ -210,7 +209,7 @@
                     <div class="row">
                         <div class="col-4 fdl-item">
                             <div class="card">
-                                <img class="card-img" src=".\Handlebars-StaticFiles\images\sapa1.jpeg" alt="">
+                                <img class="card-img" src="Trang chu - Nha xe/Handlebars-StaticFiles/images/sapa.jpg" alt="">
                                 <div class="card-body">
                                     <p class="card-label">Sa Pa</p>
                                 </div>
@@ -218,7 +217,7 @@
                         </div>
                         <div class="col-4 fdl-item">
                             <div class="card">
-                                <img class="card-img" src=".\Handlebars-StaticFiles\images\hue.jpg" alt="">
+                                <img class="card-img" src="Trang chu - Nha xe/Handlebars-StaticFiles/images/hue.jpg" alt="">
                                 <div class="card-body">
                                     <p class="card-label">Huế</p>
                                 </div>
@@ -226,7 +225,7 @@
                         </div>
                         <div class="col-4 fdl-item">
                             <div class="card">
-                                <img class="card-img" src=".\Handlebars-StaticFiles\images\halong.jpg" alt="">
+                                <img class="card-img" src="Trang chu - Nha xe/Handlebars-StaticFiles/images/sapa1.jpg" alt="">
                                 <div class="card-body">
                                     <p class="card-label">Quảng Ninh</p>
                                 </div>
@@ -236,7 +235,7 @@
                 </div>
                 <div class="col-5 fdl-item">
                     <div class="card main-card h-100">
-                        <img class="card-img" src=".\Handlebars-StaticFiles\images\hanoi.jpg" alt="">
+                        <img class="card-img" src="Trang chu - Nha xe/Handlebars-StaticFiles/images/hanoi.jpg" alt="">
                         <div class="card-body">
                             <h1 class="card-label">Hà Nội</h1>
                         </div>

@@ -12,10 +12,28 @@ html{
   
 }
 
-header img{
-    width: 60%;
-    height: 60%;
-    background-color: white;
+#navbar {
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.navbar-brand > img {
+    height: 50%;
+}
+
+.nav-link {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #22BA19;
 }
 
 #menu-header a{
@@ -63,29 +81,26 @@ main{
     background-color: var(--web-green-color);
 }
 
-.column1 div  button, .column2 form > div{
-    margin-top: 3rem;
+
+#myTab li .nav-link{
+
+    
+    text-decoration-line: underline;
+    text-decoration-color: rgba(39,138,109, 0.3) ;
+    font-style: italic;
+    color : var(--web-green-color2)
+    
+    
 }
 
-.column1 div button{
-    background-color: var(--web-green-color);
-    border-radius: 5px;
-}
-
-.column2 form div .info{
-    width: 100%;
-}
-
-.column2 form button{
-    position : absolute;
-    right : 1rem;
-    bottom: 1rem;
-    background-color: var(--web-green-color);
-    border-radius: 5px;
+#myTab li .active{
+    text-decoration-color :rgba(39,138,109, 1) ;
+    font-weight: bold;
 }
 
 
-.column3 button{
-    background-color: var(--web-green-color);
-    border-radius: 5px;
+body{
+    background-image: url("ImagesChuyenXe/background-account.jpg") ;
+    background-repeat: no-repeat;
+    background-size: 100% ;
 }
