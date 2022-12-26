@@ -190,7 +190,7 @@ module.exports = {
                 Mo_ta: 'Xe 29A-12363, 32 chỗ ngồi',
                 Chinh_sach: ' ',
                 LoaiXeId: 1,
-                NhaXeId: 6,
+                NhaXeId: 5,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -200,7 +200,47 @@ module.exports = {
                 Mo_ta: 'Xe 29A-12364, 32 chỗ ngồi',
                 Chinh_sach: ' ',
                 LoaiXeId: 1,
+                NhaXeId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                Bien_So_xe: '29A-12365',
+                So_Luong_Ghe: 32,
+                Mo_ta: 'Xe 29A-12365, 32 chỗ ngồi',
+                Chinh_sach: ' ',
+                LoaiXeId: 1,
                 NhaXeId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                Bien_So_xe: '29A-12366',
+                So_Luong_Ghe: 32,
+                Mo_ta: 'Xe 29A-12366, 32 chỗ ngồi',
+                Chinh_sach: ' ',
+                LoaiXeId: 1,
+                NhaXeId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                Bien_So_xe: '29A-12367',
+                So_Luong_Ghe: 32,
+                Mo_ta: 'Xe 29A-12367, 32 chỗ ngồi',
+                Chinh_sach: ' ',
+                LoaiXeId: 1,
+                NhaXeId: 7,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                Bien_So_xe: '29A-12368',
+                So_Luong_Ghe: 32,
+                Mo_ta: 'Xe 29A-12368, 32 chỗ ngồi',
+                Chinh_sach: ' ',
+                LoaiXeId: 1,
+                NhaXeId: 7,
                 createdAt: new Date(),
                 updatedAt: new Date()
             }
