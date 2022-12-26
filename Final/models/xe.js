@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       Xe.belongsTo(models.Loai_Xe,{foreignKey:'LoaiXeId'});
       Xe.belongsTo(models.Nha_Xe,{foreignKey:'NhaXeId'});
       Xe.hasMany(models.Ghe,{foreignKey:'XeId'});
-      Xe.hasMany(models.ChuyenXe,{foreignKey:'XeId'});
+      Xe.hasMany(models.Chuyen_Xe,{foreignKey:'XeId'});
       Xe.hasMany(models.Xe_IMG,{foreignKey:'XeId'});
 
     }

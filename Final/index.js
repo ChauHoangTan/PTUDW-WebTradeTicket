@@ -26,7 +26,11 @@ app.use('/timkiem', require('./routes/timkiemRoute'));
 app.use('/datve', require('./routes/datveRoute'));
 app.use('/taikhoan', require('./routes/taikhoanRoute'));
 
+
+
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), () => {
     console.log(`server is listening on port ${app.get('port')}`);
+    
+    
 });
