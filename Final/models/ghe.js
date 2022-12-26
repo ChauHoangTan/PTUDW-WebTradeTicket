@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Ghe.init({
-    Tinh_Trang: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Ghe',
