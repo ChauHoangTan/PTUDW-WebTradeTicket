@@ -88,7 +88,7 @@ module.exports = {
       //1
       //1.1
 
-      for(let i = 1; i<= 4; i++ ){
+      for(let i = 0; i<= 4; i++ ){
       
         items.push({Gio_Bat_Dau:'08:00:00',Tong_Thoi_Gian_Hanh_Trinh:8,Diem_Di:'Sài Gòn',Diem_Den:'Đà Lạt',
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:290000,XeId:null}),
