@@ -8,10 +8,10 @@ module.exports = {
     for (let i =1; i <= 30; i++){
       for(let j=0;j<32;j++){
         if (j<16){
-          items[xe] = {XeId: null,LoaiGheId:'1'}
+          items[xe] = {XeId: i,LoaiGheId:'1'}
         }
         else{
-          items[xe] = {XeId: null,LoaiGheId:'2'}
+          items[xe] = {XeId: i,LoaiGheId:'2'}
         }
         xe = xe + 1;
       }

@@ -9,10 +9,10 @@ module.exports = {
       item.createdAt = Sequelize.literal('NOW()');
       item.updatedAt = Sequelize.literal('NOW()');
     })
-    await queryInterface.bulkInsert('Danh_Gias', items, {});
+    await queryInterface.bulkInsert('Danh_Gia', items, {});
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Danh_Gias', null, { truncate: true, cascade: true });
+    await queryInterface.bulkDelete('Danh_Gia', null, { truncate: true, cascade: true });
   }
 };
