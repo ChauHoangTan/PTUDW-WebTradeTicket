@@ -1,12 +1,19 @@
 const express = require('express');
 const app = express();
 const ehbs = require('express-handlebars');
+const helper = require('./controllers/helper');
 
 app.engine('hbs', ehbs.engine({
     extname: 'hbs',
     defaultLayout: 'layout',
     layoutsDir: __dirname + '/views/layouts',
-    partialsDir: __dirname +  '/view/partials'
+    partialsDir: __dirname +  '/view/partials',
+    helpers: {
+        generateStarList: helper.generateStarList
+    },
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true
+    }
 }));
 app.set('view engine', 'hbs');
 
@@ -31,6 +38,4 @@ app.use('/taikhoan', require('./routes/taikhoanRoute'));
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), () => {
     console.log(`server is listening on port ${app.get('port')}`);
-    
-    
 });
