@@ -1,15 +1,14 @@
-/* 
-    Header
-*/
+/* body {
+    background-color: #f8f8f8;
+} */
+
+/* Header */
 
 .header {
     background: white;
-    box-shadow: 0 1px 4px -2px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 5px -2px rgba(0,0,0,0.2);
 }
 
-body {
-    background-color: #f8f8f8;
-}
 
 #navbar {
     padding: 0 20px;
@@ -35,12 +34,10 @@ body {
     color: #22BA19;
 }
 
-/* 
-    Footer
-    */
+/* Footer */
 
 .footer {
-    background-color: white;
+    background-color: #f4f4f4;
 }
 
 .footer > .container > .row {
@@ -101,6 +98,196 @@ body {
     color: #333333;
 }
 
-#btn-submit a{
+/* Body section */
+
+/* .body {
+    height: 200vh;
+} */
+
+/* Change locations */
+
+.hero-search {
+    margin: 40px auto;
+}
+
+.hero-search input {
+    height: 56px;
+}
+
+.hero-search-bottom {
+    margin: 20px auto;
+    display: flex;
+}
+
+#starting-form {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#destination-form {
+    padding: 0;
+}
+
+#starting-form input {
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+
+#destination-form input {
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+.dropdown-input {
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 240px;
+    width: 300px;
+}
+
+.dropdown-header {
+    color: black;
+    font-weight: 700;
+}
+
+.dropdown-item {
+    font-size: 0.9rem;
+}
+
+#btn-swap {
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    background-color: white;
+    color: #22BA19;
+}
+
+#input-date {
+    padding: 0;
+    
+}
+
+#input-date input {
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 0;
+}
+
+#btn-submit {
+    background-color: #22BA19;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#btn-submit > a {
     text-decoration: none;
+    color: white;
+}
+
+/* Main section */
+
+#main-left {
+    padding: 0 16px 0 0;
+}
+
+/* Filter section */
+
+#filter {
+    height: 150vh;
+    border: 1px solid #ccc;
+}
+
+/* Sort section */
+#sort {
+    height: 56px;
+    border: 1px solid #ccc;
+}
+
+/* Result list */
+.result-item {
+    margin: 20px 0 0 0;
+    padding: 20px 0;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+.info-container {
+    height: 160px;
+}
+
+.result-img {
+    height: auto;
+    width: 100%;
+}
+
+.result-time {
+    margin-top: 20px;
+}
+
+.operator-name {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.bus-type {
+    font-size: 0.8rem;
+}
+
+.depart-time {
+    color: black;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.arrive-time {
+    color: #666;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.price {
+    color: #22BA19;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.seat-quantity {
+    margin: 5px 0;
+}
+
+.btn-select, .btn-select:hover {
+    background-color: #22BA19 !important;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-weight: 600;
+}
+
+.btn-select > span {
+    text-decoration: none;
+    color: white;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.pagination .page-item .page-link {
+    color: #3F69AA;
+    background: #ffffff;
+    border-color: #3F69AA;
+    border-radius: 0;
+}
+
+.pagination .page-item:hover .page-link,
+.pagination .page-item.active .page-link {
+    color: #ffffff;
+    background: #3F69AA;
 }

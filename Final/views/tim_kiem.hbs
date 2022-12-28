@@ -1,112 +1,145 @@
 <link rel="stylesheet" type="text/css" href="/css/tim_kiem.css" />
 
-<!--form-->
-<!--input ngày đi-->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="inputState">Ngày đi</label>
-                <input type="date" class="form-control" id="inputState">
-            </div>
-        </div>
-    </div>
-    <!--input điểm đi-->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="inputState">Điểm đi</label>
-                <select id="inputState1" class="form-control">
-                    <option selected>Chọn điểm đi</option>
-                    <option>Hồ Chí Minh</option>
-                    <option>Hà Nội</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <!--input điểm đến-->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="inputState">Điểm đến</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Chọn điểm đến</option>
-                    <option>Hồ Chí Minh</option>
-                    <option>Hà Nội</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <!--nút tìm kiếm-->
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <button type="button" class="btn btn-primary">Tìm kiếm</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--kết thúc form-->
 
-<!--hiện thị các card giới thiệu chuyến xe-->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="/img/nha_xe/phuongtrang1.jpg"
-                                class="img-fluid" alt="Responsive image">
-                        </div>
-                        <div class="col-md-9">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h5 class="card-title">Nhà Xe Phương Trang</h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="card-text">Nhà xe này đẹp, giá ổn định</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a href="/chuyenxe" class="btn btn-primary">Tham khảo ngay</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="body">
+    <form class="container hero-search" action="/timkiem" method="GET">
+        <h4>Vé xe khách > {{diem_di}} - {{diem_den}}</h4>
+        <h4>Số chuyến xe: {{chuyen_xes.length}}</h4>
+        <!-- Input section start -->
+        <div class="row hero-search-bottom">
+            <!-- Input starting point -->
+            <div class="col-3 dropdown" id="starting-form">
+                <input 
+                    class="form-control dropdown-toggle" 
+                    data-bs-toggle="dropdown"
+                    type="text"
+                    autocomplete="off"
+                    value="{{diem_di}}"
+                    name="diemdi"
+                    required
+                >
+                <div class="dropdown-menu dropdown-menu-start dropdown-input">
+                    <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
+                    {{#each dia_diems}}
+                    <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
+                        {{name}}
+                    </a>
+                    {{/each}}
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="/img/nha_xe/phuongtrang1.jpg"
-                                class="img-fluid" alt="Responsive image">
+            <!-- Swap starting point and destination point -->
+            <button class="col-1 btn btn-light" type="button" id="btn-swap">
+                <i class="fas fa-exchange-alt"></i>
+            </button>
+            <!-- Input destination point -->
+            <div class="col-3 dropdown" id="destination-form">
+                <input 
+                    class="form-control dropdown-toggle" 
+                    data-bs-toggle="dropdown" 
+                    type="text" 
+                    autocomplete="off"
+                    value="{{diem_den}}"
+                    name="diemden"
+                    required
+                >
+                <div class="dropdown-menu dropdown-menu-start dropdown-input">
+                    <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
+                    {{#each dia_diems}}
+                    <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
+                        {{name}}
+                    </a>
+                    {{/each}}
+                </div>
+            </div>
+            <!-- Input departure date -->
+            <div class="col-3" id="input-date">
+                <input class="form-control" type="date" value="{{ngay_di}}" name="ngaydi" required>
+            </div>
+            <button class="col-2 btn btn-primary" type="submit" id="btn-submit">
+                <a class= "d-inline">Tìm vé</a>
+            </button>   
+        </div>
+        <!-- Input section end -->
+
+        <!-- Filter & Listing section start -->
+        <div class="container">
+            <div class="row" id="main">
+                <div class="col-3" id="main-left">
+                    <div id="filter">
+                        <h5>Filter</h5>
+                    </div>
+                </div>
+                <div class="col-9" id="main-right">
+                    <div class="row d-flex align-items-center" id="sort">
+                        <span class="col-2">
+                            Sắp xếp theo
+                        </span>
+                        <div class="col-3">
+                            <select class="form-select" aria-label="Default select example" name="sortTime">
+                                <option selected disabled>Tất cả</option>
+                                <option value="earliest">Giờ đi sớm nhất</option>
+                                <option value="latest">Giờ đi trễ nhất</option>
+                            </select>
                         </div>
-                        <div class="col-md-9">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h5 class="card-title">Nhà Xe Thành Bưởi</h5>
+                        <div class="col-3">
+                            <select class="col-2 form-select" aria-label="Default select example" name="sortPrice">
+                                <option selected disabled>Tất cả</option>
+                                <option value="priceASC">Giá tăng dần</option>
+                                <option value="priceDESC">Giá giảm dần</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" id="result-list">
+                        {{#each chuyen_xes}}
+                        <div class="row result-item">
+                            <div class="col-3 info-container d-flex align-items-center">
+                                <img class="m-auto result-img" src="/img/chuyen_xe/phuongtrang1.jpg" alt="">
+                            </div>
+                            <div class="col-6 info-container d-flex flex-column justify-content-center">
+                                <div>
+                                    <a class="operator-name">Phương Trang</a>
+                                    <span class="operator-rating">Rating</span>
+                                </div>
+                                <span class="bus-type">Xe 50 chỗ</span>
+                                <div class="d-flex flex-column result-time">
+                                    <span class="depart-time">{{Gio_Bat_Dau}}</span>
+                                    <span class="travel-time">{{Tong_Thoi_Gian_Hanh_Trinh}}h</span>
+                                    <span class="arrive-time">15:40</span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="card-text">Nhà xe này đẹp, giá ổn định</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a href="/chuyenxe" class="btn btn-primary">Tham khảo ngay</a>
+                            <div class="col-3 info-container d-flex flex-column justify-content-between align-items-end">
+                                <span class="price">Từ {{Gia_Ve}}đ</span>
+                                <div class="d-flex flex-column justify-content-center align-items-end">
+                                    <span class="seat-quantity">Còn 5 chỗ trống</span>
+                                    <button class="btn btn-primary btn-select" action="">
+                                        <span class="d-inline">Chọn chuyến</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- Filter & Listing section end -->
+    </form>
 </div>
-<!--kết thúc hiện thị các card giới thiệu chuyến xe-->
+
+<script>
+    function handleLocationInput() {
+        let form_control = event.target
+            .parentNode.parentNode.querySelector('input');
+        let text = event.target.innerHTML;
+        form_control.value = text.trim();
+    }
+    function swapLocationInput() {
+        let first_form = event.target.parentNode.querySelector('#first_form');
+        let first_input = first_form.querySelector('input');
+        let second_form = event.target.parentNode.querySelector('#destination_form');
+        let second_input = second_form.querySelector('input');
+        let temp = first_input.value;
+        first_input.value = second_input.value;
+        second_input.value = temp;
+    }
+</script>
