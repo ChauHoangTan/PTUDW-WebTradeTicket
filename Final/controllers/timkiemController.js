@@ -22,6 +22,9 @@ controller.showResultList = async (req, res) => {
     let diem_di = req.query.diemdi;
     let diem_den = req.query.diemden;
     let ngay_di = new Date(req.query.ngaydi);
+    let nha_xe = req.query.nhaxe;
+    let filter_time = req.query.filterTime;
+    let filter_price = req.query.filterPrice;
     let sort_time = req.query.sortTime;
     let sort_price = req.query.sortPrice;
 
@@ -37,6 +40,30 @@ controller.showResultList = async (req, res) => {
         priceDESC: ['Gia_Ve', 'DESC']
     };
 
+    let time_range = {
+        dawn: ['00:00:00', '06:00:00'],
+        morning: ['06:01:00', '12:00:00'],
+        evening: ['12:01:00', '18:00:00'],
+        night: ['18:01:00', '23:59:00']
+    };
+
+    let price_range = {
+        pricerange1: [0, 250000],
+        pricerange2: [250000, 500000],
+        pricerange3: [500000, 1000000],
+        pricerange4: [1000000, 999999999]
+    };
+
+    if (filter_time) {
+        options.where.Gio_Bat_Dau = {
+            [Op.between]: time_range[filter_time]
+        };
+    }
+    if (filter_price) {
+        options.where.Gia_Ve = {
+            [Op.between]: price_range[filter_price]
+        };
+    }
     if (sort_time) {
         options.order.push(orders[sort_time]);
     }
@@ -78,16 +105,17 @@ controller.showResultList = async (req, res) => {
     // let chuyen_xes = rows;
 
     let chuyen_xes = await models.Chuyen_Xe.findAll(options);
-
     let dia_diems = await models.Dia_Diem.findAll();
+    let nha_xes = await models.Nha_Xe.findAll();
     
     res.render('tim_kiem', {
         Title,
         diem_di,
         diem_den,
         ngay_di: formatDate(ngay_di),
+        chuyen_xes,
         dia_diems,
-        chuyen_xes
+        nha_xes
     });
 }
 

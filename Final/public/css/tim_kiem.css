@@ -199,14 +199,58 @@
 /* Filter section */
 
 #filter {
-    height: 150vh;
     border: 1px solid #ccc;
+}
+
+.filter-head {
+    margin: 0 0 20px 12px;
+    height: 56px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.filter-section {
+    margin-bottom: 40px;
+}
+
+.filter-label {
+    margin: 0 0 20px 12px;
+    font-weight: 450;
+}
+
+.btn-filter {
+    margin: 0 0 12px 0px;
+    height: 56px;
+    width: 120px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.filter-check {
+    margin-left: 12px;
+    height: 30px;
+}
+
+.form-check-input {
+    margin: 0;
+    height: 16px !important;
+    width: 16px;
+}
+
+.form-check-label {
+    margin-left: 20px;
 }
 
 /* Sort section */
 #sort {
     height: 56px;
     border: 1px solid #ccc;
+}
+
+.sort-head {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 /* Result list */
