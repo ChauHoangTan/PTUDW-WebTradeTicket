@@ -11,16 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association her
-<<<<<<< HEAD
-      Chuyen_Xe.belongsTo(models.Xe, {foreignkey : 'XeID'});
-      Chuyen_Xe.hasMany(models.CT_Dat_Cho, {foreignKey: 'ChuyenXeId'});
-      Chuyen_Xe.belongsTo(models.Nha_Xe,{foreignKey:"NhaXeId"});
-=======
+
       Chuyen_Xe.belongsTo(models.Xe, {foreignkey : 'XeID'})
       Chuyen_Xe.hasMany(models.CT_Dat_Cho, {foreignKey: 'ChuyenXeId'})
       Chuyen_Xe.belongsTo(models.Dia_Diem, {foreignkey : 'Diem_Di'})
       Chuyen_Xe.belongsTo(models.Dia_Diem, {foreignkey : 'Diem_Den'})
->>>>>>> 02d65e6aa75c100730cdc9aa89f4f12ca6646970
+      Chuyen_Xe.belongsTo(models.Nha_Xe,{foreignKey:"NhaXeId"});
+
     }
   }
   Chuyen_Xe.init({
