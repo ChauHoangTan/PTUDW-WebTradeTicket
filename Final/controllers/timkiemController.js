@@ -30,7 +30,11 @@ controller.showResultList = async (req, res) => {
 
     let options = {
         where: {},
-        order: []
+        order: [],
+        include: [
+            { model: models.Xe, include: [ models.Nha_Xe ] },
+            { model: models.Xe, include: [ models.Loai_Xe ] }
+        ]
     };
 
     let orders = {
