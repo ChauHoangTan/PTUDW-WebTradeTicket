@@ -109,7 +109,7 @@ module.exports = {
       //1
       //1.1
 
-      const DiaDiem = ["Sài Gòn","Hà Nội","Đà Lạt","Đồng Nai","Vũng Tàu","Đà Nẵng","Quảng Bình","Quảng Trị","Ninh Bình","Hải Phòng","Quảng Ninh","Vinh","Lạng Sơn","Lào Cai"];
+      //const DiaDiem = ["Sài Gòn","Hà Nội","Đà Lạt","Đồng Nai","Vũng Tàu","Đà Nẵng","Quảng Bình","Quảng Trị","Ninh Bình","Hải Phòng","Quảng Ninh","Vinh","Lạng Sơn","Lào Cai"];
 
       for(let i = 0; i <= 4; i++){
         for(let j = 0; j <7*14; j++ ){
@@ -138,13 +138,13 @@ module.exports = {
 
           let totalTimeTravel = Math.floor(Math.random() * 20) + 2;
 
-          items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:DiaDiem[randomDiemDi],Diem_Den:DiaDiem[randomDiemDen],
+          items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:randomDiemDi,Diem_Den:randomDiemDen,
           Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe1,XeId:randomXeId,NhaXeId:randomNhaXeId}),
 
           randomXeId = Math.floor(Math.random() * 30) + 1;
           randomNhaXeId = findNhaXeByIdXe(randomXeId);
 
-          items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:DiaDiem[randomDiemDen],Diem_Den:DiaDiem[randomDiemDi],
+          items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:randomDiemDen,Diem_Den:randomDiemDi,
           Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe1,XeId:randomXeId,NhaXeId:randomNhaXeId}),
 
           randomXeId = Math.floor(Math.random() * 30) + 1;
@@ -158,13 +158,13 @@ module.exports = {
             time1 = time1.toString()+":00:00";
           }
 
-          items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:DiaDiem[randomDiemDi],Diem_Den:DiaDiem[randomDiemDen],
+          items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:randomDiemDi,Diem_Den:randomDiemDen,
           Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe2,XeId:randomXeId,NhaXeId:randomNhaXeId}),
 
           randomXeId = Math.floor(Math.random() * 30) + 1;
           randomNhaXeId = findNhaXeByIdXe(randomXeId);
 
-          items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:DiaDiem[randomDiemDen],Diem_Den:DiaDiem[randomDiemDi],
+          items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:randomDiemDen,Diem_Den:randomDiemDi,
           Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe2,XeId:randomXeId,NhaXeId:randomNhaXeId})
         }
       }
