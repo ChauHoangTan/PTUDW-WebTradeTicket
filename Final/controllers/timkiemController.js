@@ -22,7 +22,7 @@ controller.showResultList = async (req, res) => {
     let diem_di = req.query.diemdi;
     let diem_den = req.query.diemden;
     let ngay_di = new Date(req.query.ngaydi);
-    let nha_xe = req.query.nhaxe;
+    let nha_xe = req.query.nhaxe || '';
     let filter_time = req.query.filterTime;
     let filter_price = req.query.filterPrice;
     let sort_time = req.query.sortTime;
@@ -32,7 +32,19 @@ controller.showResultList = async (req, res) => {
         where: {},
         order: [],
         include: [
-            { model: models.Xe, include: [ models.Nha_Xe ] },
+            { 
+                model: models.Xe,
+                required: true,
+                include: [{ 
+                    model: models.Nha_Xe,
+                    required: true,
+                    where: {
+                        ten_Nha_Xe: {
+                            [Op.iLike]: `%${nha_xe}%`
+                        }
+                    }
+                }]
+            },
             { model: models.Xe, include: [ models.Loai_Xe ] }
         ]
     };
