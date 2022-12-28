@@ -1,11 +1,29 @@
 <link rel="stylesheet" type="text/css" href="/css/trang_chu.css" />
 
+<script>
+    function handleLocationInput() {
+        let form_control = event.target
+            .parentNode.parentNode.querySelector('input');
+        let text = event.target.innerHTML;
+        form_control.value = text.trim();
+    }
+    function swapLocationInput() {
+        let first_input = event.target
+            .parentNode.querySelector('#starting-form').querySelector('input'); 
+        let second_input = event.target
+            .parentNode.querySelector('#destination-form').querySelector('input');
+        var temp = first_input.value;
+        first_input.value = second_input.value;
+        second_input.value = temp;
+    }
+</script>
+
 <!-- Hero Start -->
 <div class="hero m-auto" >
     <!-- Ticket booking section -->
     <div class="container">
         <h2 class="hero-title text-center">Đi khắp mọi miền Tổ quốc bằng xe buýt</h2>
-        <form class="container hero-search">
+        <form class="container hero-search" action="/timkiem" method="GET">
             <!-- Current transporation -->
             <div class="hero-search-top">
                 <button class="btn btn-light" id="btn-bus">Xe khách</button>
@@ -13,21 +31,24 @@
             <!-- Input section -->
             <div class="row hero-search-bottom">
                 <!-- Input starting point -->
-                <div class="col-3 dropdown" id="input-starting">
-                    <input class="form-control dropdown-toggle" data-bs-toggle="dropdown" type="text" placeholder="Tỉnh, thành phố nơi đi">
+                <div class="col-3 dropdown" id="starting-form">
+                    <input 
+                        class="form-control dropdown-toggle" 
+                        data-bs-toggle="dropdown"
+                        type="text"
+                        placeholder="Tỉnh, thành phố nơi đi"
+                        autocomplete="off"
+                        value="{{diem_di}}"
+                        name="diemdi"
+                        required
+                    >
                     <div class="dropdown-menu dropdown-menu-start dropdown-input">
                         <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
-                        <a href="#" class="dropdown-item">Hà Nội</a>
-                        <a href="#" class="dropdown-item">Quảng Ninh</a>
-                        <a href="#" class="dropdown-item">Ninh Bình</a>
-                        <a href="#" class="dropdown-item">Đà Nẵng</a>
-                        <a href="#" class="dropdown-item">Sài Gòn</a>
-                        <h4 class="dropdown-header">Quận - Huyện</h4>
-                        <a href="#" class="dropdown-item">Sapa</a>
-                        <a href="#" class="dropdown-item">Vũng Tàu</a>
-                        <a href="#" class="dropdown-item">Đà Lạt</a>
-                        <a href="#" class="dropdown-item">Nha Trang</a>
-                        <a href="#" class="dropdown-item">Phan Thiết</a>
+                        {{#each dia_diems}}
+                        <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
+                            {{name}}
+                        </a>
+                        {{/each}}
                     </div>
                 </div>
                 <!-- Swap starting point and destination point -->
@@ -35,29 +56,32 @@
                     <i class="fas fa-exchange-alt"></i>
                 </button>
                 <!-- Input destination point -->
-                <div class="col-3 dropdown" id="input-destination">
-                    <input class="form-control dropdown-toggle" data-bs-toggle="dropdown" type="text" placeholder="Tỉnh, thành phố nơi đến">
+                <div class="col-3 dropdown" id="destination-form">
+                    <input 
+                        class="form-control dropdown-toggle" 
+                        data-bs-toggle="dropdown" 
+                        type="text" 
+                        placeholder="Tỉnh, thành phố nơi đến"
+                        autocomplete="off"
+                        value="{{diem_den}}"
+                        name="diemden"
+                        required
+                    >
                     <div class="dropdown-menu dropdown-menu-start dropdown-input">
                         <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
-                        <a href="#" class="dropdown-item">Hà Nội</a>
-                        <a href="#" class="dropdown-item">Quảng Ninh</a>
-                        <a href="#" class="dropdown-item">Ninh Bình</a>
-                        <a href="#" class="dropdown-item">Đà Nẵng</a>
-                        <a href="#" class="dropdown-item">Sài Gòn</a>
-                        <h4 class="dropdown-header">Quận - Huyện</h4>
-                        <a href="#" class="dropdown-item">Sapa</a>
-                        <a href="#" class="dropdown-item">Vũng Tàu</a>
-                        <a href="#" class="dropdown-item">Đà Lạt</a>
-                        <a href="#" class="dropdown-item">Nha Trang</a>
-                        <a href="#" class="dropdown-item">Phan Thiết</a>
+                        {{#each dia_diems}}
+                        <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
+                            {{name}}
+                        </a>
+                        {{/each}}
                     </div>
                 </div>
                 <!-- Input departure date -->
                 <div class="col-3" id="input-date">
-                    <input class="form-control" type="date">
+                    <input class="form-control" type="date" value="{{ngay_di}}" name="ngaydi" required>
                 </div>
                 <button class="col-2 btn btn-primary" type="submit" id="btn-submit">
-                    <a href = "/timkiem" class= "d-inline">Tìm vé</a>
+                    <a class= "d-inline">Tìm vé</a>
                 </button>   
             </div>
         </form>

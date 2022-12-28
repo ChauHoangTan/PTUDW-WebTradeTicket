@@ -134,11 +134,11 @@
     display: flex;
 }
 
-#input-starting {
+#starting-form {
     padding-right: 0;
 }
 
-#input-destination {
+#destination-form {
     padding: 0;
 }
 
@@ -147,11 +147,11 @@
     border: none;
 }
 
-#input-starting > input {
+#starting-form input {
     border-radius: 0 0 0 5px;
 }
 
-#input-destination > input {
+#destination-form input {
     border-radius: 0;
 }
 
