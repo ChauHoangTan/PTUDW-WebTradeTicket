@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       Nha_Xe.hasMany(models.Nha_Xe_IMG,{foreignKey:'NhaXeId'});
       Nha_Xe.hasMany(models.Danh_Gia,{foreignKey:'NhaXeId'});
       Nha_Xe.hasMany(models.Xe,{foreignKey:'NhaXeId'});
+      Nha_Xe.hasMany(models.Chuyen_Xe,{foreignKey:"NhaXeId"});
       
     }
   }
