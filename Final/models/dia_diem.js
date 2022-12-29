@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Dia_Diem.hasMany(models.Chuyen_Xe, {foreignKey: 'Diem_Di'})
       Dia_Diem.hasMany(models.Chuyen_Xe, {foreignKey: 'Diem_Den'})
-    }
+    } 
   }
   Dia_Diem.init({
     name: DataTypes.STRING

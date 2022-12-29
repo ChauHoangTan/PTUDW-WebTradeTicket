@@ -15,12 +15,6 @@ module.exports = {
       Tong_Thoi_Gian_Hanh_Trinh: {
         type: Sequelize.DECIMAL
       },
-      Diem_Di: {
-        type: Sequelize.STRING
-      },
-      Diem_Den: {
-        type: Sequelize.STRING
-      },
       Ngay_Di: {
         type: Sequelize.DATE
       },
