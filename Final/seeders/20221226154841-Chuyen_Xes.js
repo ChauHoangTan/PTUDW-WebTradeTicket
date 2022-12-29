@@ -114,10 +114,10 @@ module.exports = {
       for(let i = 0; i <= 4; i++){
         for(let j = 0; j <7*14; j++ ){
 
-          let randomDiemDi = Math.floor(Math.random() * 13);
+          let randomDiemDi = Math.floor(Math.random() * 13) + 1;
           let randomDiemDen;
           while(true){
-            randomDiemDen = Math.floor(Math.random() * 13);
+            randomDiemDen = Math.floor(Math.random() * 13) + 1;
             if(randomDiemDen != randomDiemDi){
               break;
             }
