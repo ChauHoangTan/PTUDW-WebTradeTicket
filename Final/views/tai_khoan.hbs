@@ -1,67 +1,128 @@
+<link rel="stylesheet" type="text/css" href="/css/trang_chu.css" />
 <link rel="stylesheet" type="text/css" href="/css/tai_khoan.css" />
 
-<div class="container">
-        <div class="row">
-            <div class="col-sm-4 column1">
-                <div class="avatar">
-                    <i class="fas fa-user-circle" id = "account"></i>
-                    <i class="fad fa-edit"></i>
-                    <span id = "user-name">User name</span>
-                </div>
-                <div>
-                    <button class = "tag"><i class="fas fa-user-circle"></i> Thông tin tài khoản</button>
-                </div>
-                
-                <div>
-                    <button class = "tag"><i class="fad fa-ticket"></i> Vé đã đặt</button>
-                </div>
-                
-                <div>
-                    <button class = "tag"><i class="fad fa-tags"></i> Ưu đãi</button>
-                </div>
-                
-                <div>
-                    <a href="/LogIn-SignUp/Log-in.html"> <button class = "tag"><i class="fad fa-sign-out"></i> Đăng xuất</button> </a>
-                </div>
-                
-                
-            </div>
-            <div class="col-sm-6 column2">
-                <form >
-                    <div >
-                        <label for="full-name">Họ và tên :</label><br>
-                        <input class = "info" type = "text" id = "full-name" name = "full-name">
-                    </div>
-                    
-                    <div>
-                        <label for="sdt">Số điện thoại :</label><br>
-                        <input class = "info" type = "number" id = "sdt" name = "sdt">
-                    </div>
-                    
-                    <div class = "info">
-                        <label for="email-address">Địa chỉ email :</label><br>
-                        <input class = "info" type = "email" id = "email-address" name = "email-address">
-                    </div>
-                    
-                    <div>
-                        <label for="male">Nam</label>
-                        <input type = "radio" id = "male" name = "sex" value="Nam">
-    
-                        <label for="female">Nữ</label>
-                        <input type = "radio" id = "female" name = "sex" value="Nữ">
-                    </div>
-                    
-                    <button type="submit"> Lưu </button>
 
-                </form>
-            </div>
-            <div class="col-sm-2 column3">
-                
-                    <button>
-                        <i class="far fa-clock"></i> Lịch sử đặt vé
-                    </button>
-                
-                
-            </div>
-        </div>
+  <main>
+    <div class="border-seperate mb-2"></div> 
+    
+    <div class="clearfix me-5" >
+        <a class = "btn btn-outline-success float-end" type="submit" href = "../Lich su dat ve/lichsu_datve.html">Lịch sử đặt vé</a>
     </div>
+    
+
+
+    <div class="container float-none">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs d-flex justify-content-around" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active btn btn-outline-success" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Thông tin tài khoản</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="ticket-tab" data-bs-toggle="tab" data-bs-target="#ticket" type="button" role="tab" aria-controls="ticket" aria-selected="false">Vé đã đặt</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="discount-tab" data-bs-toggle="tab" data-bs-target="#discount" type="button" role="tab" aria-controls="discount" aria-selected="false">Ưu đãi</button>
+          </li>
+       
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="profile" role="tabpanel" aria-labelledby="profile-tab"> 
+
+            <div class="clearfix">
+                <button class="float-end mb-3 mt-3 btn btn-outline-success" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                  </svg></button>
+            </div>
+            
+            <form class = "was-validated" >
+                <div class = "form-floating mt-3 mb-5 ">
+                    <input class = "info form-control" type = "text" id = "full-name" placeholder="Enter full name" name = "full-name" required>
+                    <label for="full-name">Họ và tên</label>
+                    <div class="invalid-feedback">Tên không hợp lệ!</div>
+                    <div class="valid-feedback">Tên hợp lệ.</div>
+                </div>
+                
+                <div class = "form-floating mt-5 mb-5">
+                    <input class = "info form-control" type = "number" id = "sdt" placeholder="Enter phone number" name = "sdt" required>
+                    <label for="sdt">Số điện thoại</label>
+                    <div class="invalid-feedback">Số điện thoại không hợp lệ!</div>
+                    <div class="valid-feedback">Số điện thoại hợp lệ.</div>
+                    
+                </div>
+                
+                <div class = "form-floating info mt-5 mb-5">
+                    <input class = "info form-control" type = "email" id = "email-address" placeholder="Enter email" name = "email-address" required>
+                    <label for="email-address">Địa chỉ email </label>
+                    <div class="invalid-feedback">Địa chỉ email không hợp lệ!</div>
+                    <div class="valid-feedback">Địa chỉ email hợp lệ.</div>
+                    
+                </div>
+                
+                <div class = "mt-5 mb-3">
+
+                    <label for="male" class="text-body">Nam</label>
+                    <input type = "radio" id = "male" name = "sex" value="Nam" required>
+
+                    <label class="ms-2 text-body" for="female">Nữ</label>
+                    <input type = "radio" id = "female" name = "sex" value="Nữ" required>
+
+                    <label class="ms-2 text-body" for="none">Không xác định</label>
+                    <input type = "radio" id = "none" name = "sex" value="Không xác định" required>
+
+                    <div class="invalid-feedback">Vui lòng chọn giới tính!</div>
+                    <div class="valid-feedback">Hợp lệ!</div>
+                </div>
+
+                <div class="clearfix">
+                    <button class="btn btn-success mb-3 float-end px-4 py-2" type="submit"> Save </button>
+                </div>
+                
+
+            </form>
+
+           
+          </div>
+            
+
+          <div class="tab-pane" id="ticket" role="tabpanel" aria-labelledby="ticket-tab">
+             <ul class="d-flex justify-content-center my-2">
+              <li class="text-success fw-bold">
+                Bạn chưa đặt vé nào!  <a href="/Tim Kiem - Thong Tin Xe/TimKiem.html">Đặt vé ngay nào !</a>
+              </li>
+             </ul>
+                
+             
+           </div>
+
+
+          <div class="tab-pane" id="discount" role="tabpanel" aria-labelledby="discount-tab">
+            <ul class="d-flex justify-content-center my-2">
+              <li class="text-success fw-bold">
+                Hiện chưa có ưu đãi!
+              </li>
+             </ul>
+           </div>
+
+           
+        </div>
+
+        
+    </div>
+    <div class="border-seperate"></div> 
+  </main>
+
+
+
+  <link rel="stylesheet" href="handlebars-staticFile/taiKhoan.css">
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
