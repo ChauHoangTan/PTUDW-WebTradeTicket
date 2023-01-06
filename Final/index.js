@@ -38,6 +38,7 @@ app.use('/chuyenxe', require('./routes/chuyenxeRoute'));
 app.use('/timkiem', require('./routes/timkiemRoute'));
 app.use('/chuyenxe/:id/datve', require('./routes/datveRoute'));
 app.use('/taikhoan', require('./routes/taikhoanRoute'));
+app.use('/login',require('./routes/loginRoute'));
 app.use('/taikhoan/lichsudatve', require('./routes/lichsudatveRoute'));
 
 app.set('port', process.env.PORT || 5000);
