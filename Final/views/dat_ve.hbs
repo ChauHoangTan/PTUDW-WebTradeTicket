@@ -1,337 +1,363 @@
 <link rel="stylesheet" type="text/css" href="/css/chuyen_xe.css" />
+<link rel="stylesheet" type="text/css" href="/css/trang_chu.css" />
 
+
+<!-- Import jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous">
+    </script>
 <!-- Session1 -->
-<div class="container-fluid"  id = "session1">
-    
-    <div class="row justify-content-center align-items-center g-2">
-        <div class="col-sm-4 column1" >
-            <div class = "hinhAnh">
-                Hình ảnh
-            </div>
-            <img src ="/img/chuyen_xe/phuongtrang1.jpg" alt="Ảnh chuyến xe">
 
+
+    <main>
+        <form action="/chuyenxe/{{detailsChuyenXe.id}}/datve/Thanh_Toan" method="post" class="was-validated ">
+        <div class="border-seperate"></div>
+
+        <!-- Session1 -->
+        <div class="container-fluid"  id = "session1">
             
-
-        </div>
-        <div class="col-sm-8 column2">
-            <div class="row g-2">
-
-                <div class="col column2-1">
-                    <div>
-                        <span class = "field">Nhà xe: </span>
-
-                        <span>Phương Trang</span>
-
-                        <span class = "star">4.6 (1502) <i class="fas fa-star"></i></span>
-                    </div>
-
-                    <div class = "fixMargin">
-                        <span class = "field">Đi từ: </span>
-                        
-                        <span>Sài Gòn, 8h30 02/12/2022</span>
-                    </div>
-
-                    <div class = "fixMargin">
-                        <span class = "field">Đến: </span>
-                        
-                        <span>Đà Lạt, 16h30 02/12/2022 </span>
-                    </div>
-
-                    <div class = "fixMargin">
-                        <span class = "field">Tổng thời gian hành trình :</span>
-
-                        <span>8 tiếng</span>
-                    </div>
-                </div>
-
-                <div class="col column2-2">
-                    <div id = "numberOfEmptySeats">Chỉ còn 11 ghế trống</div>
-                    
-                    <div class = "clear">
-                        <span class = "field">Giá vé : </span>
-
-                        <span>Chỉ 290.000đ / vé</span>
-                    </div>
-
-                    <div class = "fixMargin">
-                        <span class = "field">Liên hệ : </span>
-                        
-                        <span>1900996678</span>
-                    </div>
-
-                    <div class = "fixMargin">
-                        <span class = "field">Số lượng ghế : </span>
-                        
-                        <span>16 ghế</span>
-                    </div>
-
-                    <div class = "fixMargin">
-                        <span class = "field">Loại xe : </span>
-                        
-                        <span>Giường nằm</span>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col-sm-4 column1" >
+                    <div class = "hinhAnh">
+                        Hình ảnh
                     </div>
                     
-                </div>
-                
-            </div>
-        </div>
-    </div>
+                    <img src = "{{imgChuyenXe1}}" alt="Ảnh chuyến xe">
+                    
+                    
     
-
-    
-
-</div>
-
-<!-- Tạo border ngăn cách 2 session -->
-<br>
-<div class="border-seperate"></div>
-
-
-<div class = "container ticket">
-    <div class="row">
-        <div id ="notice" class="col">
-            <div class = "note">Loại ghế !</div>
-            <div>
-                <span class = "note">Ghế trống : </span>
-                <div id = "empty-seats"></div>
-            </div>
-            <div>
-                <span class = "note">Ghế đã được đặt : </span>
-                <input id = "is-ordered-seats" type="checkbox" onclick="this.checked=!this.checked;" checked = "checked">
-            </div>
-            <div>
-                <span class = "note">Ghế đang chọn : </span>
-                <input id = "is-choosing-seats" type="checkbox" onclick="this.checked=!this.checked;" checked = "checked">
-            </div>
-        </div>
-        
-        <div class="col">
-            <div class = "mx-5">Tầng dưới</div>
-            <div class = "choose-ticket ">
-                <div class="row justify-content-around align-items-center g-2">
-                    <div class="col driver">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
                 </div>
+                <div class="col-sm-8 column2">
+                    <div class="row g-2">
 
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
+                        {{#with general1}}
+                        
+                            <div class="col column2-1">
+                                <div>
+                                    <span class = "field">Nhà xe: </span>
 
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
+                                    <span>{{Nha_Xe}}</span>
 
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
+                                    <span class = "star">4.6 (1502) <i class="fas fa-star"></i></span>
+                                </div>
 
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
+                                <div class = "fixMargin">
+                                    <span class = "field">Đi từ: </span>
+                                    
+                                    <span>{{Diem_Di}}, {{Thoi_Gian_Bat_Dau}}h00 {{Ngay_Di}}</span>
+                                </div>
 
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
+                                <div class = "fixMargin">
+                                    <span class = "field">Đến: </span>
+                                    
+                                    <span>{{Diem_Den}}, {{Thoi_Gian_Den_Noi}}h00 {{Ngay_Den}} </span>
+                                </div>
 
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
+                                <div class = "fixMargin">
+                                    <span class = "field">Tổng thời gian hành trình :</span>
 
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input id = "c1" type = "checkbox"  onclick="this.checked=!this.checked;" checked="checked" >
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class = "mx-5">Tầng trên</div>
-            <div class = "choose-ticket">
-                <div class="row justify-content-around align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
+                                    <span>{{Tong_Thoi_Gian_Hanh_Trinh}} tiếng</span>
+                                </div>
+                            </div>
 
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
-
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
-
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
-
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
-
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
-
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
-
-                <div class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    <div class="col">
-                        <input type = "checkbox" >
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<br>
-<div class = "border-seperate"></div>
-
-    
-    <div class = "container-fluid footer">  
-        <br>
-    
-        <!-- Modal trigger button -->
-            <button type="button" class="btn btn-primary btn-lg button-pay" data-bs-toggle="modal" data-bs-target="#order-ticket">
-                Thanh toán
-            </button>
-            
-            <!-- Modal Body -->
-            <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-            <div class="modal fade" id="order-ticket" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" r ole="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalTitleId">Thanh toán</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="" method="get">
-                                <label for="full-name">Họ và tên : </label><br>
-                                <input type = "text" id = "full-name" name = "full-name" required >
-
-                                <label for="sdt">Số điện thoại : </label><br>
-                                <input type = "number" id = "sdt" name = "sdt"  required>
-
-                                <label for="email-address">Địa chỉ email : </label><br>
-                                <input type = "email" id = "email-address" name = "email-address" required>
-
-                                <button class="btn btn-secondary form-button" type="submit">Xác nhận</button>
-                                <button type="button" class="btn btn-secondary form-button" data-bs-dismiss="modal">Close</button>
+                        {{/with}}
+                        
+                        {{#with general2}}
+                            <div class="col column2-2">
+                                <div class="float-end text-danger border border-danger border-2 rounded-pill p-1 bg-light" id = "numberOfEmptySeats">Chỉ còn {{So_Luong_Ghe_Trong}} ghế trống</div>
                                 
-                            </form>
-                        </div>
-                        
-                            
-                            
-                        </div>
+                                <div class = "clear">
+                                    <span class = "field">Giá vé : </span>
+
+                                    <span>Chỉ {{Gia_Ve}}.000đ / vé</span>
+                                </div>
+
+                                <div class = "fixMargin">
+                                    <span class = "field">Liên hệ : </span>
+                                    
+                                    <span>{{Lien_He}}</span>
+                                </div>
+
+                                <div class = "fixMargin">
+                                    <span class = "field">Số lượng ghế : </span>
+                                    
+                                    <span>{{So_Luong_Ghe}} ghế</span>
+                                </div>
+
+                                <div class = "fixMargin">
+                                    <span class = "field">Loại xe : </span>
+                                    
+                                    <span>{{Loai_Xe}}</span>
+                                </div>
+                                
+                            </div>
+                        {{/with}}
                     </div>
                 </div>
             </div>
-            
-            
-            <!-- Optional: Place to the bottom of scripts -->
-            <script>
-                const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
-            
-            </script>
+           
 
-        <div id = "price">
-            Giá vé : 290.000đ / 1 vé
+            
+    
         </div>
-        <br><br><br><br>
 
-    </div>
-</div>
+        
+        <!-- Tạo border ngăn cách 2 session -->
+        <br>
+        <div class="border-seperate"></div>
+
+       
+        <div class = "container ticket">
+            <div class="row">
+                <div id ="notice" class="col">
+                    <div class = "note fw-bold fs-5">Loại ghế !</div>
+                    <div>
+                        <span class = "fw-bold note">Ghế trống : </span>
+                        <div id = "empty-seats"></div>
+                    </div>
+                    <div>
+                        <span class = "fw-bold note">Ghế đã được đặt : </span>
+                        <input id = "is-ordered-seats" type="checkbox" onclick="this.checked=!this.checked;" checked = "checked">
+                    </div>
+                    <div>
+                        <span class = "fw-bold note">Ghế đang chọn : </span>
+                        <input id = "is-choosing-seats" type="checkbox" onclick="this.checked=!this.checked;" checked = "checked">
+                    </div>
+                    <div>
+                        <span class = "fw-bold note">Giá vé tầng dưới : <span class="fw-bold fst-italic text-danger text-decoration-underline">{{general2.Gia_Ve_Duoi}}.000đ/vé</span> </span>
+                        
+                    </div>
+                    <div>
+                        <span class = "fw-bold note">Giá vé tầng trên : <span class="fw-bold fst-italic text-danger text-decoration-underline">{{general2.Gia_Ve}}.000đ/vé</span> </span>
+                        
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    
+                        <div class="row" id="check_checkbox">
+                            <div class="col">
+                                <div class = "mx-5">Tầng dưới</div>
+                                <div class = "choose-ticket w-75 ">
+                                    
+                                    
+                                    {{#each Tinh_Trang_Ghe_Duoi}}
+                                        <div class="row justify-content-center align-items-center g-2"> 
+                                            
+                                            <div class="col"> 
+                                                    <input class="TangDuoi" type = "checkbox" value = "{{Ghe.GheId1}}" name ="ghe" {{{generateSeat Ghe.Tinh_Trang1}}}>
+                                            </div>
+                                            <div class="col"> 
+                                                    <input class="TangDuoi" type = "checkbox" value = "{{Ghe.GheId2}}" name ="ghe" {{{generateSeat Ghe.Tinh_Trang2}}}>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+
+                                    
+                                        
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class = "mx-5">Tầng trên</div>
+                                <div class = "choose-ticket w-75">
+                                    {{#each Tinh_Trang_Ghe_Tren}}
+                                        <div class="row justify-content-center align-items-center g-2"> 
+                                            
+                                            <div class="col"> 
+                                                    <input class="TangTren" type = "checkbox" value = "{{Ghe.GheId1}}" class="ghe" name ="ghe" {{{generateSeat Ghe.Tinh_Trang1}}}>
+                                            </div>
+                                            <div class="col"> 
+                                                    <input class="TangTren" type = "checkbox" value = "{{Ghe.GheId2}}" class="ghe" name ="ghe" {{{generateSeat Ghe.Tinh_Trang2}}}>
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal trigger button -->
+                        
+                    
+                </div>
+            
+            
+            </div>
+        </div>
+
+
+        <br>
+            
+            <div class = "container-fluid footer">  
+                <br>
+            
+                        <div class="clearfix">
+                            <div id="btnModal" class="text-decoration-none btn btn-success float-end my-3 mx-1 px-3 py-2" data-bs-toggle="modal" data-bs-target="#order-ticket">
+                                        Thanh toán
+                            </div>
+                        </div>
+                    <!-- Modal Body -->
+                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                    <div class="modal fade" id="order-ticket" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" r ole="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">Thanh toán</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                   
+                                    <div>
+                                        <div class="text-center text-success ">
+                                            <span class="col">Nhà xe {{general1.Nha_Xe}}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-around mt-3 text-success ">
+                                            <span>Điểm đi : {{general1.Diem_Di}}</span>
+                                            <span>Điểm đến : {{general1.Diem_Den}}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-around mt-3 text-success ">
+                                            <span> Thời gian khởi hành : {{general1.Thoi_Gian_Bat_Dau}}h00,ngày {{general1.Ngay_Di}}</span>
+                                            <span>Thời gian đến nơi : {{general1.Thoi_Gian_Den_Noi}}h00,ngày {{general1.Ngay_Den}}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-around mt-3 text-success ">
+                                            <span>Giá vé : {{general2.Gia_Ve}}.000đ/vé</span>
+                                            <span>Số lượng vé đặt : <span id="soLuongVe"></span> </span>
+                                            <span>Loại xe : {{general2.Loai_Xe}}</span>
+                                        </div>
+                                        <div class="d-flex justify-content-around mt-3 text-danger fw-bold fst-italic text-decoration-underline">
+                                            <span>Thành Tiền: <span id="Thanh_Tien"></span></span>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <div class="form-floating my-2">
+                                            <input type="hidden" name="ChuyenXeId" value="{{detailsChuyenXe.id}}"> 
+                                            <input id="TongTien" type="hidden" name="TongTien" value=""> 
+                                            <input type="hidden" name="GiaVe" value="{{general2.Gia_Ve}}000"> 
+                                            <input type="hidden" name="GheOld" value={{isOrdered}}>
+
+                                            <input class="form-control" type = "text" id = "fullname" name = "fullname" placeholder="full-name" value="{{Thong_Tin_Tai_Khoan.Ho_Ten}}" required >
+                                            <label for="full-name">Họ và tên : </label>
+                                            <div class="valid-feedback">Họ tên hợp lệ!</div>
+                                            <div class = "invalid-feedback">Họ tên không hợp lệ!</div>
+                                        </div>
+                                        
+                                        <div class="form-floating my-2">
+                                            
+                                            <input class="form-control" type = "number" id = "sdt" name = "sdt" placeholder="sdt" value="{{Thong_Tin_Tai_Khoan.SDT}}" required>
+                                            <label for="sdt">Số điện thoại : </label>
+                                            <div class="valid-feedback">Số điện thoại hợp lệ!</div>
+                                            <div class = "invalid-feedback">Số điện thoại không hợp lệ!</div>
+                                        </div>
+
+                                        <div class="form-floating my-2">
+                                            
+                                            <input class="form-control" type = "email" id = "emailaddress" name = "emailaddress" placeholder="email" value="{{Thong_Tin_Tai_Khoan.email}}" required>
+                                            <label for="email-address">Địa chỉ email : </label>
+                                            <div class="valid-feedback">Email hợp lệ!</div>
+                                            <div class = "invalid-feedback">Email không hợp lệ!</div>
+                                        </div>
+
+                                        
+                                        
+                                        <button class="btn btn-secondary form-button" type="submit">Xác nhận</a>
+                                        <button type="button" class="btn btn-secondary form-button" data-bs-dismiss="modal">Close</button>
+                                        
+                                    
+                                </div>
+                               
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Optional: Place to the bottom of scripts -->
+                    <script>
+                        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+                    
+                    </script>
+
+
+
+
+
+
+                <div class="clearfix">
+                    <div class="float-end text-body text-decoration-underline fst-italic">Giá vé : {{general2.Gia_Ve}}.000đ / 1 vé</div>
+                </div>
+                <br>
+                <br>
+                <div class = "border-seperate"></div>
+
+            </div>
+        </div>
+
+        <div class="c1">  </div>
+
+        </form>
+        
+
+        
+        
+    </main>
+
+    <script type = "text/javascript">
+
+            $("#btnModal").click(function() {
+                
+                var list = $("input[name='ghe']:checked").map(function () {
+                    return this.value;
+                }).get();
+
+                var listTangDuoi = $("input[name='ghe']:checked.TangDuoi").map(function () {
+                    return this.value;
+                }).get();
+
+                var listTangTren = $("input[name='ghe']:checked.TangTren").map(function () {
+                    return this.value;
+                }).get();
+                
+                let stringMoney = (listTangDuoi.length - {{GheDuoiOrdered}})*{{general2.Gia_Ve_Duoi}} + (listTangTren.length - {{GheTrenOrdered}})*{{general2.Gia_Ve}}
+                let result = String(stringMoney)
+                let length = result.length
+
+                for( i = length - 1; i >= 0; i = i - 3){
+                    
+                        let left = result.slice(0,i+1)
+                        let right = result.slice(i+1)
+
+                        result = left + "." + right
+
+                
+                }
+                
+             
+
+                let Thanh_Tien = result
+
+            
+                $("#soLuongVe").html(list.length - {{amountOrdered}});
+         
+   
+                $("#Thanh_Tien").html( Thanh_Tien+"000vnđ");
+                $("#TongTien").val(stringMoney+"000")
+
+                
+            });
+
+            
+                
+    </script>

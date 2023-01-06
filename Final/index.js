@@ -11,8 +11,8 @@ app.engine('hbs', ehbs.engine({
     partialsDir: __dirname +  '/view/partials',
     helpers: {
         generateStarList: helper.generateStarList,
-        ifCond: helper.ifCond,
-        createPagination: paginateHelper.createPagination
+        createPagination: paginateHelper.createPagination,
+        generateSeat : helper.generateSeat
     },
     runtimeOptions: {
         allowProtoPropertiesByDefault: true
@@ -36,8 +36,10 @@ app.use('/', require('./routes/indexRoute'));
 app.use('/nhaxe', require('./routes/nhaxeRoute'));
 app.use('/chuyenxe', require('./routes/chuyenxeRoute'));
 app.use('/timkiem', require('./routes/timkiemRoute'));
-app.use('/datve', require('./routes/datveRoute'));
+app.use('/chuyenxe/:id/datve', require('./routes/datveRoute'));
 app.use('/taikhoan', require('./routes/taikhoanRoute'));
+app.use('/login',require('./routes/loginRoute'));
+app.use('/taikhoan/lichsudatve', require('./routes/lichsudatveRoute'));
 
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), () => {
