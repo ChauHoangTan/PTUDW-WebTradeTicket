@@ -395,9 +395,6 @@ controller.showDetails = async (req, res) => {
       }
     })
 
-    console.log(Object.keys(listOrderedSeatsOnTop).length)
-    console.log(Object.keys(listOrderedSeatsUnder).length)
-
     let listOrdered = await models.CT_Dat_Cho.findAll({
       where:{
         GheId : {[Op.between] : [idGheDauTren,idGheCuoiDuoi]}

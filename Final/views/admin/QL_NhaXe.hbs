@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="container" id="navbar-container">
+    {{!-- <div class="container" id="navbar-container">
         <nav class="navbar navbar-expand-md navbar-light" id="navbar">
             <!-- for Bootstrap4: .mr-auto -->
             <div class="navbar-nav me-auto" id="navbar-start">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </nav>
-    </div>
+    </div> --}}
 
     <!-- menu for admin  -->
     <div class="container-fluid" id="menu-container">
@@ -152,24 +152,20 @@
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">ID</th>
                                                     <th scope="col">Tên nhà xe</th>
                                                     <th scope="col">Số lượng Xe</th>
                                                     <th scope="col">Số điện thoại</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <script>
-                                                    const controller = {}
-                                                    const models = require('../../../Final/models/nha_xe');
-
-                                                    controller.show = async (req, res) => {
-                                                        res.locals.NhaXe = await models.Nha_Xe.findAll();
-                                                        res.render('QL_NhaXe');
-                                                    }
-
-                                                    // 
-                                                </script>
+                                                {{!-- add data from model nha_xe.js --}}
+                                                {{#each nha_xes}}    
+                                                <tr>
+                                                    <td>{{ten_Nha_Xe}}</td>
+                                                    <td>{{So_Luong_Xe}}</td>
+                                                    <td>{{SDT}}</td>
+                                                </tr>
+                                                {{/each}}
                                             </tbody>
                                         </table>
                                     </div>
