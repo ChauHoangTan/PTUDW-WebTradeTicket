@@ -11,6 +11,7 @@ app.engine('hbs', ehbs.engine({
     partialsDir: __dirname +  '/view/partials',
     helpers: {
         generateStarList: helper.generateStarList,
+        ifCond: helper.ifCond,
         createPagination: paginateHelper.createPagination
     },
     runtimeOptions: {

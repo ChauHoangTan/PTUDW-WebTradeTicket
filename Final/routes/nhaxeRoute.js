@@ -10,4 +10,8 @@ route.get('/:id', (req, res) => {
     controller.showDetails(req,res);
 });
 
+route.post('/danhgia', (req,res) => {
+    controller.addReview(req,res);
+})
+
 module.exports = route;
