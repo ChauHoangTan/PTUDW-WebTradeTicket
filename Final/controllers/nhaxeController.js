@@ -3,7 +3,7 @@ const models = require('../models');
 
 controller.showList = async (req, res) => {
     let Title = 'Danh sách nhà xe';
-    let nha_xes = await models.NhaXe.findAll();
+    let nha_xes = await models.Nha_Xe.findAll();
     res.render('nha_xe', { Title, nha_xes });
 }
 
