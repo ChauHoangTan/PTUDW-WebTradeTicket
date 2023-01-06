@@ -38,9 +38,13 @@ app.use('/chuyenxe', require('./routes/chuyenxeRoute'));
 app.use('/timkiem', require('./routes/timkiemRoute'));
 app.use('/chuyenxe/:id/datve', require('./routes/datveRoute'));
 app.use('/taikhoan', require('./routes/taikhoanRoute'));
-app.use('/login',require('./routes/loginRoute'));
 app.use('/taikhoan/lichsudatve', require('./routes/lichsudatveRoute'));
 
+// admin routes
+app.use('/Dashboard', require('./routes/admin/DashboardRoute'));
+app.use('/QL_DatCho', require('./routes/admin/QL_DatChoRoute'));
+app.use('/QL_NhaXe', require('./routes/admin/QL_NhaXeRoute'));
+app.use('/QL_TuyenXe', require('./routes/admin/QL_TuyenXeRoute'));
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), () => {
     console.log(`server is listening on port ${app.get('port')}`);
