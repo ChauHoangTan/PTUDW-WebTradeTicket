@@ -23,7 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     SDT: DataTypes.STRING,
     stars: DataTypes.FLOAT,
     Mo_ta: DataTypes.TEXT,
-    Dia_Chi: DataTypes.TEXT
+    Dia_Chi: DataTypes.TEXT,
+    Lo_Trinh: DataTypes.TEXT,
+    Dich_Vu: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Nha_Xe',

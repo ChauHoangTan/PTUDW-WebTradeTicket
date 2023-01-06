@@ -17,7 +17,7 @@ module.exports = {
             {
                 Bien_So_xe: '29A-12346',
                 So_Luong_Ghe: 32,
-                Mo_ta: 'Xe 29A-12346    , 32 chỗ ngồi',
+                Mo_ta: 'Xe 29A-12346 , 32 chỗ ngồi',
                 Chinh_sach: 'Chính sách 2',
                 LoaiXeId: 1,
                 NhaXeId: 1,

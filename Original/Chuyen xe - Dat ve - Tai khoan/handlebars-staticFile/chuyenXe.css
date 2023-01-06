@@ -202,15 +202,17 @@ main #session1  {
     margin-top: 2rem;
 }
 
+
 .choose-ticket{
 
     border-top-left-radius:20px;
     border-top-right-radius: 20px;
     border: 2px solid black;
-    width : 50%
+    width : 100%
     
     
 }
+
 
 .choose-ticket .row{
     margin : auto
@@ -277,7 +279,7 @@ input[type = "checkbox"]{
     accent-color: var(--web-green-color3);
 }
 
-#c1{
+#check_checkbox #c1{
     accent-color: var(--web-red-color);
     
 }
