@@ -219,102 +219,18 @@
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">ID</th>
-                                                            <th scope="col">Tên tuyến</th>
+                                                            <th scope="col">Tên nhà xe</th>
                                                             <th scope="col">Điểm đi</th>
                                                             <th scope="col">Điểm đến</th>
                                                             <th scope="col">Giá vé</th>
-                                                            <th scope="col">Thời gian</th>
+                                                            <th scope="col">Giờ di</th>
                                                             <th scope="col">Trạng thái</th>
                                                             <th scope="col">Thao tác</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <script>
-                                                            // get data from server
-                                                            const data = [
-                                                                {
-                                                                    "id": 1,
-                                                                    "name": "Tuyến 1",
-                                                                    "start": "Hà Nội",
-                                                                    "end": "Hải Phòng",
-                                                                    "price": 100000,
-                                                                    "time": "6h30",
-                                                                    "status": "Hoạt động"
-                                                                },
-                                                                {
-                                                                    "id": 2,
-                                                                    "name": "Tuyến 2",
-                                                                    "start": "Hà Nội",
-                                                                    "end": "Hải Phòng",
-                                                                    "price": 100000,
-                                                                    "time": "6h30",
-                                                                    "status": "Hoạt động"
-                                                                },
-                                                                {
-                                                                    "id": 3,
-                                                                    "name": "Tuyến 3",
-                                                                    "start": "Hà Nội",
-                                                                    "end": "Hải Phòng",
-                                                                    "price": 100000,
-                                                                    "time": "6h30",
-                                                                    "status": "Hoạt động"
-                                                                },
-                                                                {
-                                                                    "id": 4,
-                                                                    "name": "Tuyến 4",
-                                                                    "start": "Hà Nội",
-                                                                    "end": "Hải Phòng",
-                                                                    "price": 100000,
-                                                                    "time": "6h30",
-                                                                    "status": "Hoạt động"
-                                                                },
-                                                                {
-                                                                    "id": 5,
-                                                                    "name": "Tuyến 5",
-                                                                    "start": "Hà Nội",
-                                                                    "end": "Hải Phòng",
-                                                                    "price": 100000,
-                                                                    "time": "6h30",
-                                                                    "status": "Hoạt động"
-                                                                },
-                                                                {
-                                                                    "id": 6,
-                                                                    "name": "Tuyến 6",
-                                                                    "start": "Hà Nội",
-                                                                    "end": "Hải Phòng",
-                                                                    "price": 100000,
-                                                                    "time": "6h30",
-                                                                    "status": "Hoạt động"
-                                                                },
-                                                                {
-                                                                    "id": 7,
-                                                                    "name": "Tuyến 7",
-                                                                    "start": "Hà Nội",
-                                                                    "end": "Hải Phòng",
-                                                                    "price": 100000,
-                                                                    "time": "6h30",
-                                                                    "status": "Hoạt động"
-                                                                },
-                                                            ]
-                                                            // show data
-                                                            for (let i = 0; i < data.length; i++) {
-                                                                document.write(`
-                                                                    <tr>
-                                                                        <th scope="row">${data[i].id}</th>
-                                                                        <td>${data[i].name}</td>
-                                                                        <td>${data[i].start}</td>
-                                                                        <td>${data[i].end}</td>
-                                                                        <td>${data[i].price}</td>
-                                                                        <td>${data[i].time}</td>
-                                                                        <td>${data[i].status}</td>
-                                                                        <td>
-                                                                            <a href="#" class="btn btn-primary">Sửa</a>
-                                                                            <a href="#" class="btn btn-danger">Xóa</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                `)
-                                                            }
-                                                        </script>
+                                                        {{#each chuyen_xes}}
+                                                        {{/each}}
                                                     </tbody>
                                                 </table>
                                             </div>
