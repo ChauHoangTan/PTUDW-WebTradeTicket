@@ -101,24 +101,23 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Tên khách hàng</th>
-                                            <th>Số điện thoại</th>
-                                            <th>ID vé</th>
+                                            <th>ID khách hàng</th>
+                                            <th>Ngày tạo</th>
+                                            <th>Ngày cập nhật</th>
                                             <th>Tổng tiền</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{#each Dat_Cho}}
+                                        {{#each dat_chos}}
                                         <tr>
                                             <td>{{id}}</td>
-                                            <td>{{tenKhachHang}}</td>
-                                            <td>{{soDienThoai}}</td>
-                                            <td>{{idVe}}</td>
+                                            <td>{{KhachHangId}}</td>
+                                            <td>{{createdAt}}</td>
+                                            <td>{{updatedAt}}</td>
                                             <td>{{Tong_Tien}}</td>
                                             <td>
-                                                <button type="button" class="btn btn-primary">Sửa</button>
-                                                <button type="button" class="btn btn-danger">Xóa</button>
+                                                <a href="/QL_DatCho/Remove/{{id}}" class="btn btn-danger">Xóa</a>
                                             </td>
                                         </tr>
                                         {{/each}}
