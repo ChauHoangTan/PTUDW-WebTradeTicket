@@ -3,9 +3,24 @@ const models = require('../../models');
 const Title = 'Quản lý đặt chỗ';
 
 controller.showQL_DatCho = async (req, res) => {
-    res.render('admin/QL_DatCho', { Title, Dat_Cho})
+    let dat_chos = await models.CT_Dat_Cho.findAll(
+        {
+            include: [
+                {
+                    model: models.Dat_Cho,
+                    required: true
+                },
+                {
+                    model: models.Chuyen_Xe,
+                    required: true
+                },
+            ]
+        }
+    );
+    res.render('admin/QL_DatCho', { Title, dat_chos })
+    // res.send(dat_chos);
 }
-
+    
 controller.Remove = async (req, res) => {
     models.Dat_Cho.destroy({
         where: {

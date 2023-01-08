@@ -61,8 +61,7 @@
         <div class="row">
             <div class="col-2" id="menu">
                 <div class="list-group list-group-flush">
-                    <a href="/Dashboard" class="list-group-item list-group-item-action dashboard"
-                        aria-current="true">
+                    <a href="/Dashboard" class="list-group-item list-group-item-action dashboard" aria-current="true">
                         <i class="fas fa-tachometer-alt"></i>
                         Dashboard
                     </a>
@@ -90,7 +89,59 @@
                             <h1>Dashboard</h1>
                         </div>
                     </div>
-                </div> 
+                </div>
+                <div class="container-fluid" id="content-container">
+                    {{!-- user card --}}
+                    <div class="row">
+                        <div class="col" id="content">
+                            <div class="card" style="width: 18rem; margin: 10px">
+                                <div class="card-body">
+                                    <h5 class="card-title
+                                    ">Tổng số khách hàng</h5>
+                                    <h2>{{count_khach_hang.length}}</h2>
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="col" id="content">
+                            <div class="card" style="width: 18rem; margin: 10px">
+                                <div class="card-body">
+                                    <h5 class="card-title
+                                    ">Tổng số xe</h5>
+                                    <h2>{{count_xe.length}}</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" id="content">
+                            <div class="card" style="width: 18rem; margin: 10px">
+                                <div class="card-body">
+                                    <h5 class="card-title
+                                    ">Tổng số Nhà xe</h5>
+                                    <h2>{{count_nha_xe.length}}</h2>
+                                </div>
+                            </div>
+                        </div>        
+                    </div>
+                    <div class="row">
+                        <div class="col" id="content">
+                            <div class="card" style="width: 18rem; margin: 10px">
+                                <div class="card-body">
+                                    <h5 class="card-title
+                                    ">Tổng số vé đã đặt</h5>
+                                    <h2>{{count_ve_xe.length}}</h2>
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="col-8" id="content">
+                            <div class="card" style="width: 18rem; margin: 10px">
+                                <div class="card-body">
+                                    <h5 class="card-title
+                                    ">Tổng số chuyến xe</h5>
+                                    <h2>{{count_tuyen_xe.length}}</h2>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+                </div>
             </div>
         </div>
     </div>

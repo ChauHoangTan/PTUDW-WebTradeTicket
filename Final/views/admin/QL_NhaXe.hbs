@@ -14,7 +14,7 @@
     <!--Font Awesome 6.2.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-    <link rel="stylesheet" href="../admin/css/Dashboard.css">
+    <link rel="stylesheet" href="../views/admin/css/Dashboard.css">
 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -62,21 +62,21 @@
         <div class="row">
             <div class="col-2" id="menu">
                 <div class="list-group list-group-flush">
-                    <a href="/Dashboard" class="list-group-item list-group-item-action dashboard"
+                    <a href="../admin/Dashboard.html" class="list-group-item list-group-item-action dashboard"
                         aria-current="true">
                         <i class="fas fa-tachometer-alt"></i>
                         Dashboard
                     </a>
-                    <a href="/QL_NhaXe" class="list-group-item list-group-item-action ">
+                    <a href="../admin/QL_NhaXe.html" class="list-group-item list-group-item-action ">
                         <i class="fas fa-bus
                         "></i>
                         Quản lý Nhà xe
                     </a>
-                    <a href="/QL_TuyenXe" class="list-group-item list-group-item-action">
+                    <a href="../admin/QL_TuyenXe.html" class="list-group-item list-group-item-action">
                         <i class="fas fa-route"></i>
                         Quản lý Tuyến xe
                     </a>
-                    <a href="../QL_DatCho" class="list-group-item list-group-item-action">
+                    <a href="../admin/QL_DatCho.html" class="list-group-item list-group-item-action">
                         <i class="fas fa-user"></i>
                         Quản lý Đặt Chỗ
                     </a>
@@ -102,45 +102,87 @@
                                         <h3>Thêm nhà xe</h3>
                                     </div>
                                     <div class="card-body">
-                                        <form>
+                                        <form method="POST" action="/QL_NhaXe/View"
                                             <!-- thêm nhà xe -->
                                             <div class="mb-3">
                                                 <label for="tenNhaXe" class="form-label
                                                 ">Tên nhà xe</label>
-                                                <input type="text" class="form-control" id="tenNhaXe">
+                                                <input type="text" class="form-control" id="tenNhaXe" name="ten_Nha_Xe">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="diaChi" class="form-label">Địa chỉ</label>
-                                                <input type="text" class="form-control" id="diaChi">
+                                                <label for="soXe" class="form-label">Số lượng xe</label>
+                                                <input type="text" class="form-control" id="soXe" name="So_Luong_Xe">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="soDienThoai" class="form-label
                                                 ">Số điện thoại</label>
-                                                <input type="text" class="form-control" id="soDienThoai">
+                                                <input type="text" class="form-control" id="soDienThoai" name="SDT">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="email" class="form-label">Email</label>
-                                                <input type="text" class="form-control" id="email">
+                                                <label for="soDienThoai" class="form-label
+                                                ">Địa chỉ</label>
+                                                <input type="text" class="form-control" id="soDienThoai" name="Dia_Chi">
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="website" class="form-label">Website</label>
-                                                <input type="text" class="form-control" id="website">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="soXe" class="form-label">Số xe</label>
-                                                <input type="text" class="form-control" id="soXe">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="soTuyen" class="form-label">Số tuyến</label>
-                                                <input type="text" class="form-control" id="soTuyen">
-
-                                            </div>
+                                            
                                             <button type="submit" class="btn btn-primary">Thêm</button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- sửa nhà xe --}}
+                        <div class="row">
+                            <div class="col-12" id="content">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Sửa nhà xe</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <form method="POST" action="/QL_NhaXe/Update">
+                                            {{!-- lựa chọn nhà xe để sửa --}}
+                                            <div class="mb-3">
+                                                <label for="tenNhaXe" class="form-label
+
+                                                ">Chọn nhà xe</label>
+                                                <select class="form-select" aria-label="Default select example" name="nha_xe_id">
+                                                    <option selected>Chọn nhà xe cần chỉnh sửa</option>
+                                                    {{#each nha_xes}}
+                                                    <option value="{{id}}" >{{ten_Nha_Xe}}</option>
+                                                    {{/each}}
+
+                                                </select>
+                                            </div>
+                                            {{!-- sửa nhà xe --}}
+                                            <h3>Chỉnh sửa thành</h3>
+                                            <div class="mb-3">
+                                                <label for="tenNhaXe" class="form-label
+                                                ">Tên nhà xe</label>
+                                                <input type="text" class="form-control" id="tenNhaXe" name="ten_Nha_Xe">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="soXe" class="form-label">Số lượng xe</label>
+                                                <input type="text" class="form-control" id="soXe" name="So_Luong_Xe">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="soDienThoai" class="form-label
+                                                ">Số điện thoại</label>
+                                                <input type="text" class="form-control" id="soDienThoai" name="SDT">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="soDienThoai" class="form-label
+                                                ">Địa Chỉ</label>
+                                                <input type="text" class="form-control" id="soDienThoai" name="Dia_Chi">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Sửa</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <!-- danh sách nhà xe -->
                         <div class="row">
                             <div class="col-12" id="content">
@@ -152,18 +194,25 @@
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
+                                                    <th scope="col">ID</th>
                                                     <th scope="col">Tên nhà xe</th>
                                                     <th scope="col">Số lượng Xe</th>
                                                     <th scope="col">Số điện thoại</th>
+                                                    <th scope="col">Thao tác</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 {{!-- add data from model nha_xe.js --}}
-                                                {{#each nha_xes}}    
+                                                {{#each nha_xes}}
                                                 <tr>
+                                                    <th>{{id}}</th>
                                                     <td>{{ten_Nha_Xe}}</td>
                                                     <td>{{So_Luong_Xe}}</td>
                                                     <td>{{SDT}}</td>
+                                                    {{!-- button update and delete --}}
+                                                    <td>
+                                                        <a href="/QL_NhaXe/Remove/{{id}}" class="btn btn-danger">Xóa</a>
+                                                    </td>
                                                 </tr>
                                                 {{/each}}
                                             </tbody>
