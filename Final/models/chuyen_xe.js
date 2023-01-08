@@ -14,8 +14,12 @@ module.exports = (sequelize, DataTypes) => {
 
       Chuyen_Xe.belongsTo(models.Xe, {foreignkey : 'XeId'})
       Chuyen_Xe.hasMany(models.CT_Dat_Cho, {foreignKey: 'ChuyenXeId'})
-      Chuyen_Xe.belongsTo(models.Dia_Diem, {foreignkey : 'Diem_Di'})
-      Chuyen_Xe.belongsTo(models.Dia_Diem, {foreignkey : 'Diem_Den'})
+      Chuyen_Xe.belongsTo(models.Dia_Diem, {
+        as: 'Diem_Di',
+      })
+      Chuyen_Xe.belongsTo(models.Dia_Diem, {
+        as: 'Diem_Den',
+      })
       Chuyen_Xe.belongsTo(models.Nha_Xe,{foreignKey:"NhaXeId"});
     }
   }

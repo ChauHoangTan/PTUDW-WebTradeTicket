@@ -92,7 +92,7 @@ controller.showResultList = async (req, res) => {
                 name: diem_di
             }
         });
-        options.where.Diem_Di = diem_di_id.id
+        options.where.DiemDiId = diem_di_id.id
     }
     if (diem_den != '') {
         let diem_den_id = await models.Dia_Diem.findOne({
@@ -100,7 +100,7 @@ controller.showResultList = async (req, res) => {
                 name: diem_den
             }
         });
-        options.where.Diem_Den = diem_den_id.id
+        options.where.DiemDenId = diem_den_id.id
     }
     options.where.Ngay_Di = ngay_di;
 
