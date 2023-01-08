@@ -22,16 +22,29 @@ controller.showQL_TuyenXe = async (req, res) => {
         //         // },
         //     },
         // ],
-        include: [
-            {
-                model: models.Dia_Diem,
-                as: 'Diem_Di',
-                attribute: [['name', 'ten_Diem_Di']],
-                required: true,
-            }
-        ]
+        // include: [
+        //     {
+        //         model: models.Dia_Diem,
+        //         as: 'Diem_Di',
+        //         attribute: [['name', 'ten_Diem_Di']],
+        //         required: true,
+        //     }
+        // ]
+
     });
     res.render('admin/QL_TuyenXe', {title, chuyen_xes});
 }
+
+controller.Remove = async (req, res) => {
+    models.Chuyen_Xe.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(() => {
+        res.redirect('/QL_TuyenXe');
+    }
+    );
+}
+
 
 module.exports = controller;

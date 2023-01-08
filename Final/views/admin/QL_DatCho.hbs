@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="container" id="navbar-container">
+    {{!-- <div class="container" id="navbar-container">
         <nav class="navbar navbar-expand-md navbar-light" id="navbar">
             <!-- for Bootstrap4: .mr-auto -->
             <div class="navbar-nav me-auto" id="navbar-start">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </nav>
-    </div>
+    </div> --}}
 
     <!-- menu for admin  -->
     <div class="container-fluid" id="menu-container">
@@ -100,52 +100,29 @@
                                 <table class="table table-striped table-sm">
                                     <thead>
                                         <tr>
-                                            <th>STT</th>
+                                            <th>ID</th>
                                             <th>Tên khách hàng</th>
                                             <th>Số điện thoại</th>
-                                            <th>Địa chỉ</th>
-                                            <th>Ngày đặt</th>
-                                            <th>Ngày đi</th>
-                                            <th>Giờ đi</th>
-                                            <th>Giá vé</th>
-                                            <th>Tuyến xe</th>
-                                            <th>Nhà xe</th>
-                                            <th>Chức năng</th>
+                                            <th>ID vé</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {{#each Dat_Cho}}
                                         <tr>
-                                            <td>1</td>
-                                            <td>Nguyễn Văn A</td>
-                                            <td>0123456789</td>
-                                            <td>Đà Nẵng</td>
-                                            <td>20/10/2021</td>
-                                            <td>20/10/2021</td>
-                                            <td>20:00</td>
-                                            <td>100.000</td>
-                                            <td>Đà Nẵng - Hà Nội</td>
-                                            <td>Thành Công</td>
+                                            <td>{{id}}</td>
+                                            <td>{{tenKhachHang}}</td>
+                                            <td>{{soDienThoai}}</td>
+                                            <td>{{idVe}}</td>
+                                            <td>{{Tong_Tien}}</td>
                                             <td>
-                                                <button type="button" class="btn btn-success">Xác nhận</button>
-                                                <button type="button" class="btn btn-danger">Hủy</button>
+                                                <button type="button" class="btn btn-primary">Sửa</button>
+                                                <button type="button" class="btn btn-danger">Xóa</button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Nguyễn Văn B</td>
-                                            <td>0123456789</td>
-                                            <td>Đà Nẵng</td>
-                                            <td>20/10/2021</td>
-                                            <td>20/10/2021</td>
-                                            <td>20:00</td>
-                                            <td>100.000</td>
-                                            <td>Đà Nẵng - Hà Nội</td>
-                                            <td>Thành Công</td>
-                                            <td>
-                                                <button type="button" class="btn btn-success">Xác nhận</button>
-                                                <button type="button" class="btn btn-danger">Hủy</button>
-                                            </td>
-                                        </tr>
+                                        {{/each}}
+
                                     </tbody>
                                 </table>
                             </div>

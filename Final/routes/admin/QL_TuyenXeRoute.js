@@ -6,5 +6,8 @@ route.get('/', (req, res) => {
     controller.showQL_TuyenXe(req,res);
 });
 
+route.get('/Remove/:id', (req, res) => {
+    controller.Remove(req,res);
+});
 
 module.exports = route;
