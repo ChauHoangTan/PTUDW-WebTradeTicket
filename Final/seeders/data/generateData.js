@@ -141,7 +141,7 @@ function newDate(addDay){
         let totalTimeTravel = Math.floor(Math.random() * 20) + 2;
 
         // push vào chuyến xe
-        items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:randomDiemDi,Diem_Den:randomDiemDen,DiaDiemId:1,
+        items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,DiemDiId:randomDiemDi,DiemDenId:randomDiemDen,DiaDiemId:1,
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe1,XeId:randomXeId,NhaXeId:randomNhaXeId}),
         idChuyenXe ++;
         // push vào Dat_Cho
@@ -179,7 +179,7 @@ function newDate(addDay){
         randomXeId = Math.floor(Math.random() * 30) + 1;
         randomNhaXeId = findNhaXeByIdXe(randomXeId);
         //push vào chuyến xe
-        items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:randomDiemDen,Diem_Den:randomDiemDi,DiaDiemId:1,
+        items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,DiemDiId:randomDiemDen,DiemDenId:randomDiemDi,DiaDiemId:1,
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe1,XeId:randomXeId,NhaXeId:randomNhaXeId}),
         idChuyenXe++;
         // push vào Dat_Cho
@@ -224,7 +224,7 @@ function newDate(addDay){
         }
 
         // push vào chuyến xe
-        items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:randomDiemDi,Diem_Den:randomDiemDen,DiaDiemId:1,
+        items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,DiemDiId:randomDiemDi,DiemDenId:randomDiemDen,DiaDiemId:1,
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe2,XeId:randomXeId,NhaXeId:randomNhaXeId}),
         idChuyenXe++;
         // push vào Đặt Chỗ
@@ -261,7 +261,7 @@ function newDate(addDay){
         randomNhaXeId = findNhaXeByIdXe(randomXeId);
 
         // push vào chuyến xe
-        items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Diem_Di:randomDiemDen,Diem_Den:randomDiemDi,DiaDiemId:1,
+        items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,DiemDiId:randomDiemDen,DiemDenId:randomDiemDi,DiaDiemId:1,
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe2,XeId:randomXeId,NhaXeId:randomNhaXeId})
         idChuyenXe++;
         // push vào Đặt Chỗ
