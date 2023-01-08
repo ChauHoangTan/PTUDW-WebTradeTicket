@@ -4,6 +4,7 @@ const ehbs = require('express-handlebars');
 const helper = require('./controllers/helper');
 const paginateHelper = require('express-handlebars-paginate')
 
+
 app.engine('hbs', ehbs.engine({
     extname: 'hbs',
     defaultLayout: 'layout',
@@ -26,9 +27,13 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.get('/createTables', (req, res) => {
+    
+    var generateData = require('./seeders/data/generateData')
+    
+
     let models = require('./models');
     models.sequelize.sync().then(() => {
-        res.send('tables created');
+        res.send(`tables created `);
     })
 });
 
