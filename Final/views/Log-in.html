@@ -3,9 +3,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type = "text/css" href="stylesheets/Sign-up.css">
+    <link rel="stylesheet" type = "text/css" href="stylesheets/Log-in.css">
     <!-- <script type="text/javascript" src="Log-in.js"></script> -->
-    <title>Sign Up</title>
+    <title>Login</title>
 
 </head>
 
@@ -24,24 +24,25 @@
         </div>    
 
         <header>
-            <h1>Đăng Ký</h1>
+            <h1>Đăng nhập</h1>
         </header>
 
         <main>
-            <form action="/action_page.php" id = "signUp">
+            <form action="/action_page.php" id = "login">
                 <label for="userN">Username:</label>
                 <input type="text" id="userN" required><br>
-                <label for="number">PhoneNumber:</label>
-                <input type="text" id="number" required><br>
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" required><br>
+                <a href="/Chuyen xe - Dat ve - Tai khoan/taiKhoan.html"  id="submit"  > Submit </a>
             </form> 
 
-            <div class="login-nextStep">
-                <div class="login">
-                    <a href="Log-in.html">Đăng nhập</a>
+            <div class="signUp-fPass">
+                <div id="signUp">
+                    <a href="Sign-up.html">Đăng kí</a>
                 </div>
 
-                <div class="nextStep">
-                    <a href="Confirm-PhoneN.html">Tiếp theo</a>
+                <div id="fPass">
+                    <a href="Confirm-PhoneN.html">Quên mật khẩu</a>
                 </div>
             </div>
         </main>

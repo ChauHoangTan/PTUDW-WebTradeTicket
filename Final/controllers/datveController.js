@@ -1,4 +1,5 @@
 
+
 const models = require('../models');
 const controller = {};
 const Sequelize = require('sequelize');
@@ -383,7 +384,6 @@ controller.showDetails = async (req, res) => {
 
     let listOrderedSeatsOnTop = await models.CT_Dat_Cho.findAll({
       where:{
-        ChuyenXeId: detailsChuyenXe.id,
         GheId : {[Op.between] : [idGheDauTren,idGheCuoiTren]}
         
       }
@@ -391,18 +391,13 @@ controller.showDetails = async (req, res) => {
 
     let listOrderedSeatsUnder = await models.CT_Dat_Cho.findAll({
       where:{
-        ChuyenXeId: detailsChuyenXe.id,
         GheId : {[Op.between] : [idGheDauDuoi,idGheCuoiDuoi]}
         
       }
     })
 
-    console.log(Object.keys(listOrderedSeatsOnTop).length)
-    console.log(Object.keys(listOrderedSeatsUnder).length)
-
     let listOrdered = await models.CT_Dat_Cho.findAll({
       where:{
-        ChuyenXeId: detailsChuyenXe.id,
         GheId : {[Op.between] : [idGheDauTren,idGheCuoiDuoi]}
         
       }
@@ -481,5 +476,6 @@ controller.addDatCho = async (req, res) => {
     res.redirect(`/chuyenxe/${req.body.ChuyenXeId}/datve/${req.body.ChuyenXeId}`)
 
 }
+
 
 module.exports = controller;

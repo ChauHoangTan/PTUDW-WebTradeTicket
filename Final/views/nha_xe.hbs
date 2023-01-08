@@ -4,71 +4,157 @@
 <div class="operator">
     <div class="container">
         <div class="row">
+            {{#with nha_xe}}
             <div class="operator-info shadow-sm">
                 <div class="row operator-info-header">
                     <div class="col operator-info-header-start">
                         <!-- Operator name | Tên nhà xe -->
-                        <h3>Nhà xe Tiến Oanh</h3>
+                        <h3>{{ten_Nha_Xe}}</h3>
                         <!-- Office address | Địa chỉ văn phòng chính -->
-                        <p>Trụ sở: 266 Đồng Đen ,P10.Q.Tân Bình</p>
+                        <p>{{Dia_Chi}}</p>
                     </div>
                     <div class="col operator-info-header-end">
-                        <div class="operator-rating">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star-half-stroke"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
+                        {{{generateStarList stars}}}
                         <div class="operator-review-count">
-                            <span>28</span>
+                            <span>28 đánh giá</span>
                         </div>
                     </div>
                 </div>
                 <!-- Images | Hình ảnh -->
-                <div id="carousel-container" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carousel-container" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carousel-container" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carousel-container" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div class="row">
+                    <div id="carousel-container" class="col carousel slide d-flex align-items-center" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            {{#each Nha_Xe_IMGs}}
+                            {{#if @first}}
+                            <button type="button" data-bs-target="#carousel-container" data-bs-slide-to={{@index}} class="active" aria-current="true"></button>
+                            {{else}}
+                            <button type="button" data-bs-target="#carousel-container" data-bs-slide-to={{@index}}></button>
+                            {{/if}}
+                            {{/each}}
+                        </div>
+                        <div class="carousel-inner">
+                            {{#each Nha_Xe_IMGs}}
+                            {{#if @first}}
+                            <div class="carousel-item active">
+                            {{else}}
+                            <div class="carousel-item">
+                            {{/if}}
+                                <img src="{{imgPath}}" class="d-block w-100" alt="...">
+                            </div>
+                            {{/each}}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-container" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-container" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="/img/dia_diem/saigon.jpg" class="d-block w-100" alt="...">
+                    <!-- Information | Thông tin -->
+                    <div class="col">
+                        <div class="operator-info-item">
+                            <h4>Giới thiệu nhà xe</h4>
+                            <p>{{Mo_ta}}</p>
                         </div>
-                        <div class="carousel-item">
-                            <img src="/img/dia_diem/dalat.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/img/dia_diem/danang.jpg" class="d-block w-100" alt="...">
+                        <div class="operator-info-item">
+                            <h4>Liên lạc</h4>
+                            <p>Số điện thoại: {{SDT}}</p>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-container" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-container" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <!-- Information | Thông tin -->
-                <div class="operator-info-item">
-                    <h4>Giới thiệu nhà xe</h4>
-                    <p>Nhà xe Tiến Oanh luôn nổi bật với dịch vụ vận tải hành khách trên tuyến đường Sài Gòn <> Buôn Mê Thuột. Ngày nay, hãng xe Tiến Oanh đã mở rộng dịch vụ sang tuyến đường Sài Gòn <> Đà Lạt. Phục vụ dòng xe limousine giường nằm chất lượng cao, nhà xe vẫn cam kết mang lại cho hành khách những dịch vụ chất lượng, an toàn và thoải mái nhất.</p>
-                </div>
-                <!-- Office address list -->
-                <div class="operator-info-item">
-                    <h4>Văn phòng</h4>
-                    <p>Địa điểm đón trả khách của nhà xe Tiến Oanh</p>
-                    <ul>
-                        <li>Văn phòng Tân Bình: 266 Đồng Đen, Tân Bình, TP.HCM</li>
-                        <li>Văn phòng Thủ Đức: 804 Song Hành Hà Nội, Quận 9, TP.HCM</li>
-                        <li>134 Hai Bà Trưng, Buôn Mê Thuột</li>
-                        <li>272 Phù Đổng Thiên Vương, Đà Lạt</li>
-                    </ul>
+                    <!-- Review | Đánh giá -->
+                    {{!-- <div id="reviews" class="container"><br>
+                        {{#each Reviews}}
+                        <div class="reviews-submitted">
+                            <div class="reviewer">{{name}} - <span>{{createdAt}}</span></div>
+                            {{{generateStarList rating}}}
+                            <p>
+                                {{comment}}
+                            </p>
+                        </div>
+                        {{/each}}
+                        <div class="reviews-submit">
+                            <h4>Give your Review:</h4>
+                            <form action="/products/reviews" method="POST">
+                                <input type="hidden" name="productId" value="{{id}}"></input>
+                                <div class="stars">
+                                    <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </div>
+                                <div class="row form">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Name" name="name" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" placeholder="Email" name="email" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea placeholder="Comment" name="comment" required></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button>Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> --}}
+                    <div class="reviews container">
+                        <h4>Đánh giá từ người dùng</h4>
+                        <p>{{Danh_Gia.length}} đánh giá</p>
+                        {{#each Danh_Gia}}
+                        <div class="reviews-submitted">
+                            <div class="reviewer">
+                                <strong>{{Khach_Hang.Ho_Ten}}</strong> - <span>{{createdAt}}</span>
+                            </div>
+                            {{{generateStarList stars}}}
+                            <p class="reviews-comment">{{Noi_Dung}}</p>
+                        </div>
+                        {{/each}}
+                        <div class="reviews-submit">
+                            <h4>Để lại đánh giá</h4>
+                            <form action="/nhaxe/danhgia" method="post">
+                                <input type="hidden" name="nhaXeId" value="{{id}}"></input>
+                                <div class="stars">
+                                    <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </div>
+                                <div class="row form">
+                                    <div class="col-sm-12">
+                                        <input class="reviews-input" type="text" placeholder="Tên" name="name" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input class="reviews-input" type="email" placeholder="Email" name="email" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea class="reviews-textarea" placeholder="Comment" name="comment" required></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
+            {{/with}}
         </div>
     </div>
 </div>

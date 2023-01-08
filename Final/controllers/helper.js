@@ -1,20 +1,20 @@
 const helper = {};
 
 helper.generateStarList = (stars) => {
-    let str = '<div class="ratting">';
+    let str = '<div class="rating">';
     let star = Math.floor(stars);
     let half = stars - star;
 
     for (i = 1; i <= star; i++) {
-        str += '<i class="fa fa-star"></i>';
+        str += '<i class="fa-solid fa-star"></i>';
     }
 
     if (half > 0) {
-        str += '<i class="fa fa-star-half-o"></i>';
+        str += '<i class="fa-regular fa-star-half-stroke"></i>';
     }
 
     for (i = 1; i <= 5 - stars; i++) {
-        str += '<i class="fa fa-star-o"></i>';
+        str += '<i class="fa-regular fa-star"></i>';
     }
 
     str += '</div>';
