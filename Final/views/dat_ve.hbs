@@ -3,15 +3,8 @@
 
 
 <!-- Import jquery cdn -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   
 <!-- Session1 -->
 
 
@@ -152,10 +145,10 @@
                                         <div class="row justify-content-center align-items-center g-2"> 
                                             
                                             <div class="col"> 
-                                                    <input class="TangDuoi" type = "checkbox" value = "{{Ghe.GheId1}}" name ="ghe" {{{generateSeat Ghe.Tinh_Trang1}}}>
+                                                    <input class="TangDuoi" type = "checkbox" value = "{{Ghe.GheId1}}" name ="ghe" {{{generateSeat Ghe.Tinh_Trang1}}}><div class="d-inline-block border border-1 mb-2 text-success">{{Ghe.GheId1}}</div>
                                             </div>
                                             <div class="col"> 
-                                                    <input class="TangDuoi" type = "checkbox" value = "{{Ghe.GheId2}}" name ="ghe" {{{generateSeat Ghe.Tinh_Trang2}}}>
+                                                    <input class="TangDuoi" type = "checkbox" value = "{{Ghe.GheId2}}" name ="ghe" {{{generateSeat Ghe.Tinh_Trang2}}}><div class="d-inline-block border border-1 mb-2 text-success">{{Ghe.GheId2}}</div>
                                             </div>
                                         </div>
                                     {{/each}}
@@ -171,10 +164,10 @@
                                         <div class="row justify-content-center align-items-center g-2"> 
                                             
                                             <div class="col"> 
-                                                    <input class="TangTren" type = "checkbox" value = "{{Ghe.GheId1}}" class="ghe" name ="ghe" {{{generateSeat Ghe.Tinh_Trang1}}}>
+                                                    <input class="TangTren" type = "checkbox" value = "{{Ghe.GheId1}}" class="ghe" name ="ghe" {{{generateSeat Ghe.Tinh_Trang1}}}><div class="d-inline-block border border-1 mb-2 text-success">{{Ghe.GheId1}}</div>
                                             </div>
                                             <div class="col"> 
-                                                    <input class="TangTren" type = "checkbox" value = "{{Ghe.GheId2}}" class="ghe" name ="ghe" {{{generateSeat Ghe.Tinh_Trang2}}}>
+                                                    <input class="TangTren" type = "checkbox" value = "{{Ghe.GheId2}}" class="ghe" name ="ghe" {{{generateSeat Ghe.Tinh_Trang2}}}><div class="d-inline-block border border-1 mb-2 text-success">{{Ghe.GheId2}}</div>
                                             </div>
                                         </div>
                                     {{/each}}

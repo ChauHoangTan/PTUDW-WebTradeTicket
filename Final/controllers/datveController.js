@@ -383,6 +383,7 @@ controller.showDetails = async (req, res) => {
 
     let listOrderedSeatsOnTop = await models.CT_Dat_Cho.findAll({
       where:{
+        ChuyenXeId: detailsChuyenXe.id,
         GheId : {[Op.between] : [idGheDauTren,idGheCuoiTren]}
         
       }
@@ -390,6 +391,7 @@ controller.showDetails = async (req, res) => {
 
     let listOrderedSeatsUnder = await models.CT_Dat_Cho.findAll({
       where:{
+        ChuyenXeId: detailsChuyenXe.id,
         GheId : {[Op.between] : [idGheDauDuoi,idGheCuoiDuoi]}
         
       }
@@ -400,6 +402,7 @@ controller.showDetails = async (req, res) => {
 
     let listOrdered = await models.CT_Dat_Cho.findAll({
       where:{
+        ChuyenXeId: detailsChuyenXe.id,
         GheId : {[Op.between] : [idGheDauTren,idGheCuoiDuoi]}
         
       }
