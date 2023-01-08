@@ -1,4 +1,4 @@
 node_modules/
-seeders/data/Chuyen_Xe.json
-seeders/data/Dat_Cho.json
-seeders/data/CT_Dat_Cho.json
+**/seeders/data/Chuyen_Xe.json
+**/seeders/data/Dat_Cho.json
+**/seeders/data/CT_Dat_Cho.json
