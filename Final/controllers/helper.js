@@ -1,9 +1,5 @@
 const helper = {};
 
-helper.toFixed = (value, offset) => {
-    return value.toFixed(offset);
-}
-
 helper.generateStarList = (stars) => {
     let str = '<div class="rating">';
     let star = Math.floor(stars);

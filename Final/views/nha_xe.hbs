@@ -15,17 +15,14 @@
                     </div>
                     <div class="col operator-info-header-end">
                         {{{generateStarList stars}}}
-                        <div>
-                            <span class="operator-stars">
-                                <i class="fa-solid fa-star"></i>{{toFixed stars 1}}
-                            </span class="operator-review-count">
-                            <span>{{Danh_Gia.length}} đánh giá</span>
+                        <div class="operator-review-count">
+                            <span>28 đánh giá</span>
                         </div>
                     </div>
                 </div>
                 <!-- Images | Hình ảnh -->
                 <div class="row">
-                    <div id="carousel-container" class="carousel slide d-flex align-items-center" data-bs-ride="carousel">
+                    <div id="carousel-container" class="col carousel slide d-flex align-items-center" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             {{#each Nha_Xe_IMGs}}
                             {{#if @first}}
@@ -56,10 +53,10 @@
                         </button>
                     </div>
                     <!-- Information | Thông tin -->
-                    <div class="row">
+                    <div class="col">
                         <div class="operator-info-item">
                             <h4>Giới thiệu nhà xe</h4>
-                            <p>{{{Mo_ta}}}</p>
+                            <p>{{Mo_ta}}</p>
                         </div>
                         <div class="operator-info-item">
                             <h4>Liên lạc</h4>
@@ -67,6 +64,49 @@
                         </div>
                     </div>
                     <!-- Review | Đánh giá -->
+                    {{!-- <div id="reviews" class="container"><br>
+                        {{#each Reviews}}
+                        <div class="reviews-submitted">
+                            <div class="reviewer">{{name}} - <span>{{createdAt}}</span></div>
+                            {{{generateStarList rating}}}
+                            <p>
+                                {{comment}}
+                            </p>
+                        </div>
+                        {{/each}}
+                        <div class="reviews-submit">
+                            <h4>Give your Review:</h4>
+                            <form action="/products/reviews" method="POST">
+                                <input type="hidden" name="productId" value="{{id}}"></input>
+                                <div class="stars">
+                                    <input class="star star-5" id="star-5" type="radio" name="star" value="5"/>
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="star" value="4"/>
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="star" value="3"/>
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="star" value="2"/>
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="star" value="1"/>
+                                    <label class="star star-1" for="star-1"></label>
+                                </div>
+                                <div class="row form">
+                                    <div class="col-sm-6">
+                                        <input type="text" placeholder="Name" name="name" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" placeholder="Email" name="email" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <textarea placeholder="Comment" name="comment" required></textarea>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button>Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div> --}}
                     <div class="reviews container">
                         <h4>Đánh giá từ người dùng</h4>
                         <p>{{Danh_Gia.length}} đánh giá</p>
@@ -96,14 +136,11 @@
                                     <label class="star star-1" for="star-1"></label>
                                 </div>
                                 <div class="row form">
-                                    {{!-- <div class="col-sm-12">
+                                    <div class="col-sm-12">
                                         <input class="reviews-input" type="text" placeholder="Tên" name="name" required>
                                     </div>
                                     <div class="col-sm-12">
                                         <input class="reviews-input" type="email" placeholder="Email" name="email" required>
-                                    </div> --}}
-                                    <div class="col-sm-12">
-                                        <input class="reviews-input" type="text" placeholder="ID" name="khachHangId" required>
                                     </div>
                                     <div class="col-sm-12">
                                         <textarea class="reviews-textarea" placeholder="Comment" name="comment" required></textarea>

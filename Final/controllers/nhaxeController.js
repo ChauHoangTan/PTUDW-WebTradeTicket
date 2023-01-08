@@ -34,7 +34,6 @@ controller.addReview = async (req, res) => {
     let id = req.body.nhaXeId;
     let danh_gia = {
         NhaXeId: req.body.nhaXeId,
-        KhachHangId: req.body.khachHangId,
         stars: req.body.star,
         // Ho_Ten: req.body.name,
         // email: req.body.email,
