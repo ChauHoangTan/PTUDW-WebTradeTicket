@@ -36,7 +36,7 @@
                 </div>
             </div>
             <!-- Swap starting point and destination point -->
-            <button class="col-1 btn btn-light" type="button" id="btn-swap">
+            <button class="col-1 btn btn-light" type="button" id="btn-swap" disabled>
                 {{!-- <i class="fas fa-exchange-alt"></i> --}}
                 <i class="fa-solid fa-right-long"></i>
             </button>
@@ -178,9 +178,21 @@
                                 </div>
                                 <span class="bus-type">{{Xe.Loai_Xe.Ten_Loai}}</span>
                                 <div class="d-flex flex-column result-time">
-                                    <span class="depart-time">{{Gio_Bat_Dau}}</span>
-                                    <span class="travel-time">{{Tong_Thoi_Gian_Hanh_Trinh}}h</span>
-                                    <span class="arrive-time">{{Gio_Den}}</span>
+                                    <div>
+                                        <i class="fa-solid fa-location-dot me-2"></i>
+                                        <span class="depart-time">{{{formatTime Gio_Bat_Dau}}}</span>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="d-flex flex-column justify-content-center ms-1 me-3">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                        <span class="travel-time">{{Tong_Thoi_Gian_Hanh_Trinh}}h</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-location-dot me-2"></i>
+                                        <span class="arrive-time">{{{formatTime Gio_Den}}}</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-3 info-container d-flex flex-column justify-content-between align-items-end">

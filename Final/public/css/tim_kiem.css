@@ -316,16 +316,19 @@ body {
     font-size: 0.8rem;
 }
 
-.depart-time {
+.depart-time,
+.arrive-time {
     color: black;
     font-size: 1.4rem;
     font-weight: 500;
 }
 
-.arrive-time {
-    color: #666;
-    font-size: 1.4rem;
-    font-weight: 500;
+.travel-time {
+    height: 32px;
+    line-height: 32px;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 450;
 }
 
 .price {

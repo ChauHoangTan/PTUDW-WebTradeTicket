@@ -4,6 +4,10 @@ helper.toFixed = (value, offset) => {
     return value.toFixed(offset);
 }
 
+helper.formatTime = (time) => {
+    return time.slice(0,-3);
+}
+
 helper.generateStarList = (stars) => {
     let str = '<div class="rating">';
     let star = Math.floor(stars);

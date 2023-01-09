@@ -136,6 +136,7 @@
 }
 
 #btn-swap {
+    cursor: default;
     border: 1px solid #ccc;
     border-left: none;
     border-right: none;
