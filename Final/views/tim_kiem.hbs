@@ -9,46 +9,63 @@
         <div class="row hero-search-bottom">
             <!-- Input starting point -->
             <div class="col-3 dropdown" id="starting-form">
-                <input 
-                    class="form-control dropdown-toggle" 
-                    data-bs-toggle="dropdown"
-                    type="text"
-                    autocomplete="off"
-                    value="{{diem_di}}"
-                    name="diemdi"
-                    required
-                >
-                <div class="dropdown-menu dropdown-menu-start dropdown-input">
-                    <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
-                    {{#each dia_diems}}
-                    <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
-                        {{name}}
-                    </a>
-                    {{/each}}
+                <div class="row">
+                    <div class="col-2 d-flex justify-content-center align-items-center input-icon">
+                        <i class="fa-solid fa-location-dot" style="color: blue;"></i>
+                    </div>
+                    <div class="col-10 p-0">
+                        <input 
+                            class="form-control dropdown-toggle" 
+                            data-bs-toggle="dropdown"
+                            type="text"
+                            autocomplete="off"
+                            value="{{diem_di}}"
+                            placeholder="Điểm đi"
+                            name="diemdi"
+                            required
+                        >
+                        <div class="dropdown-menu dropdown-menu-start dropdown-input">
+                            <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
+                            {{#each dia_diems}}
+                            <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
+                                {{name}}
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Swap starting point and destination point -->
             <button class="col-1 btn btn-light" type="button" id="btn-swap">
-                <i class="fas fa-exchange-alt"></i>
+                {{!-- <i class="fas fa-exchange-alt"></i> --}}
+                <i class="fa-solid fa-right-long"></i>
             </button>
             <!-- Input destination point -->
             <div class="col-3 dropdown" id="destination-form">
-                <input 
-                    class="form-control dropdown-toggle" 
-                    data-bs-toggle="dropdown" 
-                    type="text" 
-                    autocomplete="off"
-                    value="{{diem_den}}"
-                    name="diemden"
-                    required
-                >
-                <div class="dropdown-menu dropdown-menu-start dropdown-input">
-                    <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
-                    {{#each dia_diems}}
-                    <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
-                        {{name}}
-                    </a>
-                    {{/each}}
+                <div class="row">
+                    <div class="col-2 d-flex justify-content-center align-items-center input-icon">
+                        <i class="fa-solid fa-location-dot" style="color: red;"></i>
+                    </div>
+                    <div class="col-10 ps-0">
+                        <input 
+                            class="form-control dropdown-toggle" 
+                            data-bs-toggle="dropdown" 
+                            type="text" 
+                            autocomplete="off"
+                            value="{{diem_den}}"
+                            placeholder="Điểm đến"
+                            name="diemden"
+                            required
+                        >
+                        <div class="dropdown-menu dropdown-menu-start dropdown-input">
+                            <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
+                            {{#each dia_diems}}
+                            <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
+                                {{name}}
+                            </a>
+                            {{/each}}
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Input departure date -->
@@ -175,6 +192,10 @@
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                        {{else}}
+                        <div class="row result-empty d-flex align-items-center">
+                            <span class="mt-4">Không có kết quả.</span>
                         </div>
                         {{/each}}
                     </div>

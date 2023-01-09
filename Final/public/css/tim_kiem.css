@@ -130,8 +130,9 @@ body {
 
 #starting-form input {
     border: 1px solid #ccc;
+    border-left: none;
     border-right: none;
-    border-radius: 5px 0 0 5px;
+    border-radius: 0;
 }
 
 #destination-form input {
@@ -141,11 +142,27 @@ body {
     border-radius: 0;
 }
 
+.input-icon {
+    background: white;
+    border: 1px solid #ccc;
+    font-size: 1.5rem;
+}
+
+#starting-form .input-icon {
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+#destination-form .input-icon {
+    border-left: none;
+    border-right: none;
+}
+
 .dropdown-input {
     overflow: hidden;
     overflow-y: auto;
     max-height: 240px;
-    width: 300px;
+    width: 280px;
 }
 
 .dropdown-header {
