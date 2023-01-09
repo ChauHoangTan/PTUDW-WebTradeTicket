@@ -180,16 +180,18 @@
                                 <div class="d-flex flex-column result-time">
                                     <span class="depart-time">{{Gio_Bat_Dau}}</span>
                                     <span class="travel-time">{{Tong_Thoi_Gian_Hanh_Trinh}}h</span>
-                                    <span class="arrive-time">15:40</span>
+                                    <span class="arrive-time">{{Gio_Den}}</span>
                                 </div>
                             </div>
                             <div class="col-3 info-container d-flex flex-column justify-content-between align-items-end">
                                 <span class="price">Từ {{Gia_Ve}}đ</span>
                                 <div class="d-flex flex-column justify-content-center align-items-end">
                                     <span class="seat-quantity">Còn {{Xe.So_Luong_Ghe}} chỗ trống</span>
-                                    <button class="btn btn-primary btn-select" action="">
-                                        <span class="d-inline">Chọn chuyến</span>
-                                    </button>
+                                    <a href="/chuyenxe/{{id}}">
+                                        <button class="btn btn-primary btn-select" type="button">
+                                            <span class="d-inline">Chọn chuyến</span>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
