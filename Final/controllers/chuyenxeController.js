@@ -231,7 +231,6 @@ controller.showDetails= async (req, res) => {
     }
 
 
-    
     res.render('chuyen_xe',{Title})
    
     

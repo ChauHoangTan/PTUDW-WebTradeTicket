@@ -40,6 +40,30 @@ app.get('/createTables', (req, res) => {
     })
 });
 
+// body parser
+let bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false }));
+
+// cookie parser
+let cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+// session
+let session = require('express-session')
+app.use(session({
+    cookie: {httpOnly:true,  maxAge: 30*24*60*60*1000},
+    secret: 'VeXeMac',
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.use((req, res, next) =>{
+    
+    console.log(req.session.userId)
+    next();
+})
+
 app.use('/', require('./routes/indexRoute'));
 app.use('/nhaxe', require('./routes/nhaxeRoute'));
 app.use('/chuyenxe', require('./routes/chuyenxeRoute'));
