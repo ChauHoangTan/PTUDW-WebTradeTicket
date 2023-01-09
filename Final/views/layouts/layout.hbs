@@ -43,15 +43,21 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-end">
                     <div class="navbar-nav">
                         <a href="#" class="nav-item nav-link ms-5">Thông tin</a>
-                        <div class="nav-item dropdown ms-5">
-                            <!-- for Bootstrap4: data-toggle: "dropdown" -->
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Người dùng</a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a href="/taikhoan" class="dropdown-item">Thông tin tài khoản</a>
-                                <a href="#" class="dropdown-item">Lịch sử đặt vé</a>
-                                <a href="/LogIn-SignUp/Log-in.html" class="dropdown-item">Đăng xuất</a>
+                            {{#if isLoggedin}}
+                            <div class="nav-item dropdown ms-5">
+                                <!-- for Bootstrap4: data-toggle: "dropdown" -->
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Người dùng</a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="/taikhoan" class="dropdown-item">Thông tin tài khoản</a>
+                                    <a href="#" class="dropdown-item">Lịch sử đặt vé</a>
+                                    <form action="/logout" method="POST">
+                                        <button type="submit" class="dropdown-item">Đăng xuất</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
+                            {{else}}
+                            <a href="/login" class="nav-item nav-link ms-5 linkLogin">Login</a>
+                            {{/if}}
                     </div>
                 </div>
             </nav>

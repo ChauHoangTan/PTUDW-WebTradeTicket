@@ -59,8 +59,9 @@ app.use(session({
 }))
 
 app.use((req, res, next) =>{
-    
-    console.log(req.session.userId)
+    res.locals.username = req.session.userId ? req.session.userId : '';
+    res.locals.isLoggedin =  req.session.userId ? true : false;
+    console.log(req.session.userId );
     next();
 })
 
@@ -71,7 +72,8 @@ app.use('/timkiem', require('./routes/timkiemRoute'));
 app.use('/chuyenxe/:id/datve', require('./routes/datveRoute'));
 app.use('/taikhoan', require('./routes/taikhoanRoute'));
 app.use('/taikhoan/lichsudatve', require('./routes/lichsudatveRoute'));
-app.use('/login',require('./routes/loginRoute'))
+app.use('/login',require('./routes/loginRoute'));
+app.use('/logout',require('./routes/logoutRoute'));
 
 // admin routes
 app.use('/Dashboard', require('./routes/admin/DashboardRoute'));

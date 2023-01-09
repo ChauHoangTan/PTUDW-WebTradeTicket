@@ -30,9 +30,7 @@ controller.checkAccount = async (req,res)=>{
 
     for(i = 0; i < Object.keys(user).length; i++){
         if(username == user[i].username && password == user[i].password){
-
             req.session.userId = user[i].id
-            
             res.redirect('/');
             break;
         }
