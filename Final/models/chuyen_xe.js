@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   Chuyen_Xe.init({
     Gio_Bat_Dau: DataTypes.TIME,
     Tong_Thoi_Gian_Hanh_Trinh: DataTypes.DECIMAL,
+    Gio_Den: DataTypes.TIME,
     Ngay_Di: DataTypes.DATE,
     Gia_Ve: DataTypes.DECIMAL
   }, {

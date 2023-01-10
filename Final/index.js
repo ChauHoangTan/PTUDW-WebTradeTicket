@@ -12,6 +12,7 @@ app.engine('hbs', ehbs.engine({
     partialsDir: __dirname +  '/view/partials',
     helpers: {
         toFixed: helper.toFixed,
+        formatTime: helper.formatTime,
         generateStarList: helper.generateStarList,
         createPagination: paginateHelper.createPagination,
         generateSeat : helper.generateSeat,

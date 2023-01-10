@@ -131,17 +131,27 @@ function newDate(addDay){
         let randomXeId = Math.floor(Math.random() * 30) + 1;
         let randomNhaXeId = findNhaXeByIdXe(randomXeId);
 
+        let totalTimeTravel = Math.floor(Math.random() * 20) + 2;
+
         let time = Math.floor(Math.random() * 10) + 3;
+        let arriveHour = time + totalTimeTravel;
         if(time < 10 ){
           time ="0"+time.toString()+":00:00";
         }else{
           time = time.toString()+":00:00";
         }
-
-        let totalTimeTravel = Math.floor(Math.random() * 20) + 2;
+        let arriveTime = "";
+        if(arriveHour > 24){
+          arriveHour -= 24;
+        }
+        if(arriveHour < 10 ){
+          arriveTime ="0"+arriveHour.toString()+":00:00";
+        }else{
+          arriveTime = arriveHour.toString()+":00:00";
+        }
 
         // push vào chuyến xe
-        items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,DiemDiId:randomDiemDi,DiemDenId:randomDiemDen,DiaDiemId:1,
+        items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Gio_Den:`${arriveTime}`,DiemDiId:randomDiemDi,DiemDenId:randomDiemDen,DiaDiemId:1,
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe1,XeId:randomXeId,NhaXeId:randomNhaXeId}),
         idChuyenXe ++;
         // push vào Dat_Cho
@@ -179,7 +189,7 @@ function newDate(addDay){
         randomXeId = Math.floor(Math.random() * 30) + 1;
         randomNhaXeId = findNhaXeByIdXe(randomXeId);
         //push vào chuyến xe
-        items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,DiemDiId:randomDiemDen,DiemDenId:randomDiemDi,DiaDiemId:1,
+        items.push({Gio_Bat_Dau:`${time}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Gio_Den:`${arriveTime}`,DiemDiId:randomDiemDen,DiemDenId:randomDiemDi,DiaDiemId:1,
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe1,XeId:randomXeId,NhaXeId:randomNhaXeId}),
         idChuyenXe++;
         // push vào Dat_Cho
@@ -216,15 +226,24 @@ function newDate(addDay){
         randomNhaXeId = findNhaXeByIdXe(randomXeId);
 
         let time1 = Math.floor(Math.random() * 14) + 8;
-        
+        let arriveHour1 = time1 + totalTimeTravel;
         if(time1 < 10 ){
           time1 ="0"+time1.toString() +":00:00";
         }else{
           time1 = time1.toString()+":00:00";
         }
+        let arriveTime1 = "";
+        if(arriveHour1 > 24){
+          arriveHour1 -= 24;
+        }
+        if(arriveHour1 < 10 ){
+          arriveTime1 ="0"+arriveHour1.toString()+":00:00";
+        }else{
+          arriveTime1 = arriveHour1.toString()+":00:00";
+        }
 
         // push vào chuyến xe
-        items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,DiemDiId:randomDiemDi,DiemDenId:randomDiemDen,DiaDiemId:1,
+        items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Gio_Den:`${arriveTime1}`,DiemDiId:randomDiemDi,DiemDenId:randomDiemDen,DiaDiemId:1,
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe2,XeId:randomXeId,NhaXeId:randomNhaXeId}),
         idChuyenXe++;
         // push vào Đặt Chỗ
@@ -261,7 +280,7 @@ function newDate(addDay){
         randomNhaXeId = findNhaXeByIdXe(randomXeId);
 
         // push vào chuyến xe
-        items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,DiemDiId:randomDiemDen,DiemDenId:randomDiemDi,DiaDiemId:1,
+        items.push({Gio_Bat_Dau:`${time1}`,Tong_Thoi_Gian_Hanh_Trinh:totalTimeTravel,Gio_Den:`${arriveTime1}`,DiemDiId:randomDiemDen,DiemDenId:randomDiemDi,DiaDiemId:1,
         Ngay_Di:`${newDate(i).getFullYear()}-${newDate(i).getMonth() + 1}-${newDate(i).getDate()}`,Gia_Ve:randomGiaVe2,XeId:randomXeId,NhaXeId:randomNhaXeId})
         idChuyenXe++;
         // push vào Đặt Chỗ

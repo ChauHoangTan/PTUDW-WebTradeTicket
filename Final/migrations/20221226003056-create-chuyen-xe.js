@@ -15,6 +15,9 @@ module.exports = {
       Tong_Thoi_Gian_Hanh_Trinh: {
         type: Sequelize.DECIMAL
       },
+      Gio_Den: {
+        type: Sequelize.TIME
+      },
       Ngay_Di: {
         type: Sequelize.DATE
       },

@@ -47,7 +47,7 @@ controller.showResultList = async (req, res) => {
                     }
                 }]
             },
-            { model: models.Xe, include: [ models.Loai_Xe ] }
+            { model: models.Xe, include: [ models.Loai_Xe ] },
         ]
     };
 
