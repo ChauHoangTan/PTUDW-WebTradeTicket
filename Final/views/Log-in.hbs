@@ -51,7 +51,7 @@
         </div>
 
         <div class="nextStep">
-            <a class="text-decoration-none btn btn-info" href="Sign-up.html">Đăng ký</a>
+            <a class="text-decoration-none btn btn-info" href="/signup">Đăng ký</a>
         </div>
         
     </main>
@@ -72,7 +72,6 @@
 
         $("#sendBtn").click(function() {
 
-            
             let valueUsername = $("#username").val();
             let valuePassword = $("#password").val();
 
@@ -80,7 +79,6 @@
             let check = "false";
             for( i = 0; i < listPassword.length; i++){
                 if(listUsername[i] == valueUsername){
-                    
                     checkUsername = "true";
                    
                     if(listPassword[i] == valuePassword){
@@ -94,9 +92,7 @@
                     $("#check").html("Mật khẩu không chính xác!")
 
                 }else{
-                    $("#check").html("Tài khoản không tồn tại!")
-
-                    
+                    $("#check").html("Tài khoản không tồn tại!")      
                 }
             }
 

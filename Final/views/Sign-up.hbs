@@ -1,0 +1,115 @@
+<!-- Import jquery cdn -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<body>
+
+
+    <main>
+
+        <h2 class = "d-flex justify-content-center m-5">Đăng ký</h2>  
+
+        <div class = "d-flex justify-content-center ">
+
+            <div class="w-25">
+               
+
+                <form action="/signup" class="was-validated d-flex flex-column justify-content-center" method="POST">
+
+
+                    <div class="form-floating mt-1 mb-1">
+                        
+                        <input class="form-control" type="text" id="username" placeholder="username" name="username" required>
+                        <label for="user-name">Tên tài khoản </label>
+                        <div class = "invalid-feedback">Vui lòng nhập tài khoản!</div>
+
+
+                    </div>
+                    
+
+                    <div class="form-floating">
+            
+
+                        <input class="form-control" type="email" id="email" placeholder="email" name="email" required>
+                        <label for="email">Email </label>
+
+                        <div class="invalid-feedback text-danger">Vui lòng nhập đúng định dạng email</div>
+                        <div class="valid-feedback text-success" >Xác nhận thành công!</div>
+
+                    </div>
+
+
+                    <div class = "form-floating">
+                        <input class="form-control" type="password" id="password" placeholder="password" name="password" required>
+                        <label for="password">Password </label>
+
+                        <div class="invalid-feedback text-danger">Vui lòng nhập mật khẩu</div>
+                        <div class="valid-feedback text-success" >Xác nhận thành công!</div>
+                    </div>
+
+                    <div class = "form-floating">
+                        <input class="form-control" type="password" id="password2" placeholder="Nhập lại mật khẩu" name="password2" required>
+                        <label for="password2">Re-enter Password </label>
+
+                        <div class="invalid-feedback text-danger" id="check">Vui lòng lại nhập mật khẩu</div>
+                        <div class="valid-feedback text-success" >Xác nhận thành công!</div>
+                    </div>
+
+                    
+                    
+                 
+                <button type ="submit" class="btn btn-primary " id = "sendBtn">Đăng ký</button>
+            
+                </form> 
+        
+                
+            </div>
+            
+            
+        </div>
+ 
+        <div class="prevStep">
+            <a class="text-decoration-none btn btn-info" href="/login">Quay lại</a>
+        </div>
+
+        <div class="nextStep">
+            <a class="text-decoration-none btn btn-info" href="Confirm-PhoneN.html">Tiếp theo</a>
+        </div>
+        
+    </main>
+
+    <link rel="stylesheet" type = "text/css" href="/css/Confirm-PhoneN.css">
+
+
+</body>
+
+<script type = "text/javascript">
+    $(document).ready(function(){
+        let listUsername = "{{listUsername}}"
+        let listEmail = "{{listEmail}}"
+        listUsername = listUsername.split(",");
+        listEmail = listEmail.split(",");
+        $("#sendBtn").click(function() {
+            let valueUsername = $("#username").val();
+            let valueEmail = $("#email").val();
+            let password =  $("#password").val();
+            let password2 = $("#password2").val();
+            if (password != password2){
+               alert('Mật khẩu không khớp');
+            }
+            let checkUsername = "false";
+            for( i = 0; i < listUsername.length; i++){
+                if(listUsername[i] == valueUsername){
+                    alert('Tài khoản đã tồn tại');
+                    break;
+                }
+                if(listEmail[i] == valueEmail){
+                    alert('Email đã được sửu dụng');
+                    break;
+                }
+            } 
+            
+        });
+    })
+            
+                
+</script>

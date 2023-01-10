@@ -9,7 +9,6 @@ controller.logout =(req,res)=>{
         }
         return res.redirect('/login');
     })
-    
 }
 
 module.exports = controller;
