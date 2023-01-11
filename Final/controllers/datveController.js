@@ -430,6 +430,31 @@ controller.showDetails = async (req, res) => {
 
 controller.addDatCho = async (req, res) => {
 
+
+
+  // lấy danh sách các ghế checked từ post
+  let ghes = req.body.ghe
+
+  // lấy danh sách cách ghế đã được đặt bởi người khác
+  let ghesOld = req.body.GheOld.split(",")
+
+  // lấy danh sách ghế vừa mới chọn
+  let ghesNew = []
+  for(i = 0; i < ghes.length; i++){
+    let count = 0
+    for(j = 0; j < ghesOld.length; j++){
+      if(ghes[i] == ghesOld[j]){
+        count ++;
+        break;
+      }
+    }
+
+    if(count == 0){
+      ghesNew.push(ghes[i])
+    }
+  }
+
+
     let DatCho = {
         Tong_Tien: req.body.TongTien,
         KhachHangId: req.session.userId
@@ -442,27 +467,6 @@ controller.addDatCho = async (req, res) => {
     // tìm cái idVe vừa mới push vào bảng đặt chỗ
     let idVe = Object.keys(temp).length
 
-    // lấy danh sách các ghế checked từ post
-    let ghes = req.body.ghe
-
-    // lấy danh sách cách ghế đã được đặt bởi người khác
-    let ghesOld = req.body.GheOld.split(",")
-
-    // lấy danh sách ghế vừa mới chọn
-    let ghesNew = []
-    for(i = 0; i < ghes.length; i++){
-      let count = 0
-      for(j = 0; j < ghesOld.length; j++){
-        if(ghes[i] == ghesOld[j]){
-          count ++;
-          break;
-        }
-      }
-
-      if(count == 0){
-        ghesNew.push(ghes[i])
-      }
-    }
 
     for(i = 0; i < ghesNew.length; i++){
       let CT_DatCho = {

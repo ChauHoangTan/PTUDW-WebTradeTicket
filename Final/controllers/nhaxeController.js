@@ -26,7 +26,7 @@ controller.showDetails = async (req, res) => {
             { model: models.Nha_Xe_IMG }
         ]
     });
-    console.log(nha_xe);
+
     res.render('nha_xe', { Title, nha_xe });
 }
 
