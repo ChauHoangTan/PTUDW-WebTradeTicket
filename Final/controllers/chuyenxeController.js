@@ -125,7 +125,7 @@ controller.showDetails= async (req, res) => {
         return String(day) +"/" + String(month) +"/" + String(year)
     }
 
-    console.log(detailsChuyenXe.Ngay_Di)
+   
 
     function convertToDateEnd(){
         let date = new Date(detailsChuyenXe.Ngay_Di)

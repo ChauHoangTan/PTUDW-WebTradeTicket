@@ -371,7 +371,7 @@ controller.showDetails = async (req, res) => {
     //lấy thông tin về tài khoản đề điền vào modal  
     res.locals.Thong_Tin_Tai_Khoan = await models.Khach_Hang.findOne({
       where:{
-        id : 1
+        id : req.session.userId
       }
     })
 
@@ -432,7 +432,7 @@ controller.addDatCho = async (req, res) => {
 
     let DatCho = {
         Tong_Tien: req.body.TongTien,
-        KhachHangId: 1
+        KhachHangId: req.session.userId
     }
 
     DatCho = await models.Dat_Cho.create(DatCho)
