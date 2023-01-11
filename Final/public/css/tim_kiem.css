@@ -189,6 +189,7 @@ body {
 /* Filter section */
 
 #filter {
+    height: 680px;
     background: white;
     /* border: 1px solid #ccc; */
     border-radius: 5px;
@@ -196,19 +197,28 @@ body {
 }
 
 .filter-head {
-    margin: 0 0 20px 12px;
+    margin: 0 0 20px 0px;
+    padding-left: 12px;
     height: 56px;
+    box-shadow: 0px 5px 10px -2px rgba(0,0,0,0.1);
     font-size: 1rem;
     font-weight: 500;
 }
 
 .filter-section {
-    margin-bottom: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
 .filter-label {
-    margin: 0 0 20px 12px;
-    font-weight: 450;
+    margin: 0 0 10px 12px;
+}
+
+.filter-label > a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
 }
 
 .btn-filter {
