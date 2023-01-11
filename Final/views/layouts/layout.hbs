@@ -42,7 +42,7 @@
                 <!-- for Bootstrap4: .ml-auto -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-end">
                     <div class="navbar-nav">
-                        <a href="#" class="nav-item nav-link ms-5">Thông tin</a>
+                        {{!-- <a href="#" class="nav-item nav-link ms-5">Thông tin</a> --}}
                             {{#if isLoggedin}}
                             <div class="nav-item dropdown ms-5">
                                 <!-- for Bootstrap4: data-toggle: "dropdown" -->
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                             {{else}}
-                            <a href="/login" class="nav-item nav-link ms-5 linkLogin">Login</a>
+                            <a href="/login" class="nav-item nav-link ms-5 linkLogin">Đăng nhập</a>
                             {{/if}}
                     </div>
                 </div>
@@ -96,8 +96,8 @@
                 <div class="col-3">
                     <h5 class="footer-label m-0">Giáo viên hướng dẫn</h5>
                     <ul class="footer-list">
-                        <li>Th.S Trần Thị Bích Hạnh</li>
-                        <li>Th.S Ngô Ngọc Đăng Khoa</li>
+                        <li>Trần Thị Bích Hạnh</li>
+                        <li>Đỗ Nguyên Kha</li>
                     </ul>
                 </div>
                 <div class="col-3">
