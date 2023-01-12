@@ -480,6 +480,8 @@ controller.addDatCho = async (req, res) => {
       CT_DatCho = await models.CT_Dat_Cho.create(CT_DatCho);
     }
 
+    
+
     res.redirect(`/chuyenxe/${req.body.ChuyenXeId}/datve/${req.body.ChuyenXeId}`)
 
 }
