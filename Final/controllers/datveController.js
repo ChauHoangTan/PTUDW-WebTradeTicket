@@ -480,6 +480,31 @@ controller.addDatCho = async (req, res) => {
       CT_DatCho = await models.CT_Dat_Cho.create(CT_DatCho);
     }
 
+    let ThongTin = {
+      Ho_Ten: req.body.fullname,
+      SDT: req.body.sdt,
+      email : req.body.emailaddress,
+      gender : req.body.sex
+  };
+
+  console.log(ThongTin.gender)
+
+  let check = await models.Khach_Hang.update(
+      {
+          Ho_Ten: ThongTin.Ho_Ten,
+          SDT: ThongTin.SDT,
+          email: ThongTin.email,
+          gender: ThongTin.gender
+      },
+      {
+          where:{
+              id: req.session.userId
+          }
+      }
+
+
+
+  )
     
 
     res.redirect(`/chuyenxe/${req.body.ChuyenXeId}/datve/${req.body.ChuyenXeId}`)

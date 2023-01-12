@@ -6,7 +6,7 @@ controller.showHistory = async (req, res) => {
 
     res.locals.lich_su_dat_ve = await models.Dat_Cho.findAll({
         where:{
-            KhachHangId: 1
+            KhachHangId: req.session.userId
             
         },
         include: [{

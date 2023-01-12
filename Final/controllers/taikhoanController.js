@@ -25,12 +25,14 @@ controller.addThongTin = async (req, res) => {
         gender : req.body.sex
     };
 
+    console.log(ThongTin.gender)
+
     let check = await models.Khach_Hang.update(
         {
             Ho_Ten: ThongTin.Ho_Ten,
             SDT: ThongTin.SDT,
             email: ThongTin.email,
-            gender: gender
+            gender: ThongTin.gender
         },
         {
             where:{
