@@ -24,22 +24,20 @@ controller.checkAccount = async (req,res)=>{
     const { isValidPassword, generateHash } = require('./password');
     let username = req.body.username;
     let password = req.body.password;
-
     for(i = 0; i < Object.keys(user).length; i++){
         if(username == user[i].username && isValidPassword(password, user[i].password)){
             if(user[i].usertype == 1){
-                req.session.userId = user[i].id
-                res.redirect('/Dashboard');
-                break;
+                req.session.userId = user[i].id;
+                return res.redirect('/Dashboard');
+               
             }
             else{
                 req.session.userId = user[i].id
-                res.redirect('/');
-                break;
+                return res.redirect('/');
+                
             }
         }
     }
-
+    return res.redirect('/login');
 }
-
 module.exports = controller;

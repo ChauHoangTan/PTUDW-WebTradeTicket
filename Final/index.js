@@ -76,6 +76,9 @@ app.use('/taikhoan/lichsudatve', require('./routes/lichsudatveRoute'));
 app.use('/login',require('./routes/loginRoute'));
 app.use('/logout',require('./routes/logoutRoute'));
 app.use('/signup',require('./routes/signupRoute'));
+app.use('/forgotpassword',require('./routes/forgotpasswordRoute'));
+app.use('/setpassword',require('./routes/setpasswordRoute'));
+app.use('/setpasswordER',require('./routes/setpassworderRoute'));
 
 // admin routes
 app.use('/Dashboard', require('./routes/admin/DashboardRoute'));

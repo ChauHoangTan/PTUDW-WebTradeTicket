@@ -47,7 +47,7 @@
         
             
         <div class="prevStep">
-            <a class="text-decoration-none btn btn-info" href="Confirm-PhoneN-FPW.html">Quên mật khẩu</a>
+            <a class="text-decoration-none btn btn-info" href="/forgotpassword">Quên mật khẩu</a>
         </div>
 
         <div class="nextStep">
@@ -71,29 +71,17 @@
         listPassword = listPassword.split(",");
 
         $("#sendBtn").click(function() {
-
             let valueUsername = $("#username").val();
             let valuePassword = $("#password").val();
 
             let checkUsername = "false";
-            let check = "false";
             for( i = 0; i < listPassword.length; i++){
                 if(listUsername[i] == valueUsername){
                     checkUsername = "true";
-                   
-                    if(listPassword[i] == valuePassword){
-                        check = "true";
-                        break;
-                    }
                 }
             } 
-            if(check == "false"){
-                if(checkUsername == "true"){
-                    $("#check").html("Mật khẩu không chính xác!")
-
-                }else{
-                    $("#check").html("Tài khoản không tồn tại!")      
-                }
+            if(checkUsername == "false"){
+                alert("Tài khoản không tồn tại")
             }
 
         });
