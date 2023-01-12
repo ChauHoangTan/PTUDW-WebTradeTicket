@@ -37,17 +37,23 @@ controller.showResultList = async (req, res) => {
             { 
                 model: models.Xe,
                 required: true,
-                include: [{ 
-                    model: models.Nha_Xe,
-                    required: true,
-                    where: {
-                        ten_Nha_Xe: {
-                            [Op.iLike]: `%${nha_xe}%`
-                        }
-                    }
-                }]
-            },
-            { model: models.Xe, include: [ models.Loai_Xe ] },
+                include: [
+                    { 
+                        model: models.Nha_Xe,
+                        required: true,
+                        where: {
+                            ten_Nha_Xe: {
+                                [Op.iLike]: `%${nha_xe}%`
+                            }
+                        },
+                        include: [{
+                            model: models.Nha_Xe_IMG,
+                            required: true,
+                        }]
+                    },
+                    { model: models.Loai_Xe }
+                ]
+            }
         ]
     };
 
