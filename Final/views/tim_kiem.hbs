@@ -9,7 +9,7 @@
         <div class="row hero-search-bottom">
             <!-- Input starting point -->
             <div class="col-3 dropdown" id="starting-form">
-                <div class="row">
+                <div class="row ps-3">
                     <div class="col-2 d-flex justify-content-center align-items-center input-icon">
                         <i class="fa-solid fa-location-dot" style="color: blue;"></i>
                     </div>
@@ -81,67 +81,69 @@
         <!-- Filter & Listing section start -->
         <div class="container">
             <div class="row" id="main">
-                <div class="col-3 filter d-flex flex-column" id="main-left">
+                <div class="col-3 filter" id="main-left">
                     <div id="filter">
                         <div class="filter-head d-flex align-items-center">
                             <span>Bộ lọc</span>
                         </div>
-                        <div class="filter-section">
+                        <div class="filter-section d-flex flex-column">
                             <div class="filter-label d-flex align-items-center">
-                                <span>Giờ đi:</span>
+                                <a data-bs-toggle="collapse" href="#filter-time" role="button" aria-controls="filter-time"><i class="fa-solid fa-caret-down"></i> Giờ đi</a>
                             </div>
-                            <div class="d-flex justify-content-around">
-                                <button class="btn btn-light btn-filter" value="dawn" name="filterTime">
-                                    Sáng sớm<br>
-                                    00:00 - 06:00
-                                </button>
-                                <button class="btn btn-light btn-filter" value="morning" name="filterTime">
-                                    Buổi sáng<br>
-                                    06:01 - 12:00
-                                </button>
-                            </div>
-                            <div class="d-flex justify-content-around">
-                                <button class="btn btn-light btn-filter" value="evening" name="filterTime">
-                                    Buổi chiều<br>
-                                    12:01 - 18:00
-                                </button>
-                                <button class="btn btn-light btn-filter" value="night" name="filterTime">
-                                    Buổi tối<br>
-                                    18:01 - 23:59
-                                </button>
-                            </div>
-                        </div>
-                        <div class="filter-section">
-                            <div class="filter-label d-flex align-items-center">
-                                <span>Giá vé:</span>
-                            </div>
-                            <div class="d-flex justify-content-around">
-                                <button class="btn btn-light btn-filter" value="pricerange1" name="filterPrice">
-                                    Dưới 250k
-                                </button>
-                                <button class="btn btn-light btn-filter" value="pricerange2" name="filterPrice">
-                                    250k-500k
-                                </button>
-                            </div>
-                            <div class="d-flex justify-content-around">
-                                <button class="btn btn-light btn-filter" value="pricerange3" name="filterPrice">
-                                    500k-1tr
-                                </button>
-                                <button class="btn btn-light btn-filter" value="pricerange4" name="filterPrice">
-                                    Trên 1tr
-                                </button>
+                            <div class="collapse" id="filter-time">
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="filterTime" group="filterTime" value="dawn">
+                                    <label class="form-check-label">Sáng sớm</label>
+                                </div>
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="filterTime" group="filterTime" value="morning">
+                                    <label class="form-check-label">Buổi sáng</label>
+                                </div>
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="filterTime" group="filterTime" value="evening">
+                                    <label class="form-check-label">Buổi chiều</label>
+                                </div>
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="filterTime" group="filterTime" value="night">
+                                    <label class="form-check-label">Buổi tối</label>
+                                </div>
                             </div>
                         </div>
                         <div class="filter-section d-flex flex-column">
                             <div class="filter-label d-flex align-items-center">
-                                <span>Nhà xe:</span>
+                                <a data-bs-toggle="collapse" href="#filter-price" role="button" aria-controls="filter-price"><i class="fa-solid fa-caret-down"></i> Giá vé</a>
                             </div>
-                            {{#each nha_xes}}
-                            <div class="filter-check d-flex align-items-center">
-                                <input class="form-check-input" type="radio" name="nhaxe" group="nhaxe" value="{{ten_Nha_Xe}}">
-                                <label class="form-check-label">{{ten_Nha_Xe}}</label>
+                            <div class="collapse" id="filter-price">
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="filterPrice" group="filterPrice" value="pricerange1">
+                                    <label class="form-check-label">Dưới 250k</label>
+                                </div>
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="filterPrice" group="filterPrice" value="pricerange2">
+                                    <label class="form-check-label">250k-500k</label>
+                                </div>
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="filterPrice" group="filterPrice" value="pricerange3">
+                                    <label class="form-check-label">500k-1tr</label>
+                                </div>
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="filterPrice" group="filterPrice" value="pricerange4">
+                                    <label class="form-check-label">Trên 1tr</label>
+                                </div>
                             </div>
-                            {{/each}}
+                        </div>
+                        <div class="filter-section d-flex flex-column">
+                            <div class="filter-label d-flex align-items-center">
+                                <a data-bs-toggle="collapse" href="#filter-nhaxe" role="button" aria-controls="filter-nhaxe"><i class="fa-solid fa-caret-down"></i> Nhà xe</a>
+                            </div>
+                            <div class="collapse" id="filter-nhaxe">
+                                {{#each nha_xes}}
+                                <div class="filter-check d-flex align-items-center">
+                                    <input class="form-check-input" type="radio" name="nhaxe" group="nhaxe" value="{{ten_Nha_Xe}}">
+                                    <label class="form-check-label">{{ten_Nha_Xe}}</label>
+                                </div>
+                                {{/each}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -173,7 +175,7 @@
                             </div>
                             <div class="col-6 info-container d-flex flex-column justify-content-center">
                                 <div class="d-flex">
-                                    <a class="operator-name">{{Xe.Nha_Xe.ten_Nha_Xe}}</a>
+                                    <a class="operator-name" href="/nhaxe/{{Xe.Nha_Xe.id}}">{{Xe.Nha_Xe.ten_Nha_Xe}}</a>
                                     <span class="operator-rating d-flex align-items-center">{{{generateStarList Xe.Nha_Xe.stars}}}</span>
                                 </div>
                                 <span class="bus-type">{{Xe.Loai_Xe.Ten_Loai}}</span>

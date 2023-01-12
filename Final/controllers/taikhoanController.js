@@ -7,7 +7,7 @@ controller.showDetails = async (req, res) => {
 
     res.locals.Thong_Tin_Tai_Khoan = await models.Khach_Hang.findOne({
         where:{
-            id:1
+            id: req.session.userId
         }
     })
 
@@ -21,18 +21,20 @@ controller.addThongTin = async (req, res) => {
     let ThongTin = {
         Ho_Ten: req.body.fullname,
         SDT: req.body.sdt,
-        email : req.body.emailaddress
+        email : req.body.emailaddress,
+        gender : req.body.sex
     };
 
     let check = await models.Khach_Hang.update(
         {
             Ho_Ten: ThongTin.Ho_Ten,
             SDT: ThongTin.SDT,
-            email: ThongTin.email
+            email: ThongTin.email,
+            gender: gender
         },
         {
             where:{
-                id: 1
+                id: req.session.userId
             }
         }
 

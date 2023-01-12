@@ -125,7 +125,7 @@ controller.showDetails= async (req, res) => {
         return String(day) +"/" + String(month) +"/" + String(year)
     }
 
-    console.log(detailsChuyenXe.Ngay_Di)
+   
 
     function convertToDateEnd(){
         let date = new Date(detailsChuyenXe.Ngay_Di)
@@ -212,6 +212,7 @@ controller.showDetails= async (req, res) => {
         Ngay_Den:Ngay_Den, 
         Tong_Thoi_Gian_Hanh_Trinh:detailsChuyenXe.Tong_Thoi_Gian_Hanh_Trinh
     }
+ 
     
     
     let Gia_Ve = detailsChuyenXe.Gia_Ve.slice(0,3)
@@ -227,7 +228,9 @@ controller.showDetails= async (req, res) => {
         Lien_He:'1900996678',
         So_Luong_Ghe:getXe.So_Luong_Ghe,
         Loai_Xe:getLoaiXe.Ten_Loai,
-        So_Luong_Ghe_Trong:So_Luong_Ghe_Trong
+        So_Luong_Ghe_Trong:So_Luong_Ghe_Trong,
+        Nha_Xe: getNhaXe.ten_Nha_Xe,
+        idNhaXe: getNhaXe.id
     }
 
 

@@ -142,7 +142,7 @@ function newDate(addDay){
         }
         let arriveTime = "";
         if(arriveHour > 24){
-          arriveHour -= 24;
+          arriveHour %= 24;
         }
         if(arriveHour < 10 ){
           arriveTime ="0"+arriveHour.toString()+":00:00";
@@ -234,7 +234,7 @@ function newDate(addDay){
         }
         let arriveTime1 = "";
         if(arriveHour1 > 24){
-          arriveHour1 -= 24;
+          arriveHour1 %= 24;
         }
         if(arriveHour1 < 10 ){
           arriveTime1 ="0"+arriveHour1.toString()+":00:00";
