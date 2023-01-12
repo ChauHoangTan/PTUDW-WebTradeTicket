@@ -22,10 +22,9 @@ controller.checkEmail = async(req,res) => {
     for(i = 0; i < Object.keys(user).length; i++){
         if(emailInput == user[i].email){
             return res.redirect('/login');
-            
         }
     }
-    return res.redirect('/forgotpassword');
+    return res.render('Forgot-Password',{layout:'layout2', Title: Title });
 }
 
 controller.getUserByEmail = async(req,res) =>{

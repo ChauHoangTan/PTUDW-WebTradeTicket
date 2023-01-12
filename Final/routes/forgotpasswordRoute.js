@@ -21,7 +21,8 @@ route.post('/',(req, res, next) => {
                         return res.render('Forgot-Password',{
                             done: 1,
                             email,
-                            layout:'layout2', Title: Title
+                            layout:'layout2',
+                            Title: Title
                     })
                     // .catch(err => {
                     //     return res.render('Forgot-Password',{
@@ -34,14 +35,11 @@ route.post('/',(req, res, next) => {
                 });
             }
             else{
-                return res.render('Forgot-Password'),{
-                    message: 'Có lỗi xảy ra vui lòng thực hiện lại',
-                    type :'alert danger',
+                return res.render('Forgot-Password',{
                     email,
-                    layout:'layout2', Title: Title
-
-                }
-
+                    layout:'layout2', 
+                    Title: Title
+                })
             }
         })
         .catch(error => next(error));
