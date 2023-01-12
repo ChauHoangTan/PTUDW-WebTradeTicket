@@ -16,7 +16,7 @@ controller.showDetails = async (req, res) => {
         },
         include: [
             { 
-                model: models.Danh_Gia ,
+                model: models.Danh_Gia,
                 required: true,
                 include: [{
                     model: models.Khach_Hang,
