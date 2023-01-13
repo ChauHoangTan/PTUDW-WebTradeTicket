@@ -16,7 +16,7 @@ controller.showDetails = async (req, res) => {
         },
         include: [
             { 
-                model: models.Danh_Gia ,
+                model: models.Danh_Gia,
                 required: true,
                 include: [{
                     model: models.Khach_Hang,
@@ -26,7 +26,7 @@ controller.showDetails = async (req, res) => {
             { model: models.Nha_Xe_IMG }
         ]
     });
-    console.log(nha_xe);
+
     res.render('nha_xe', { Title, nha_xe });
 }
 
@@ -34,9 +34,8 @@ controller.addReview = async (req, res) => {
     let id = req.body.nhaXeId;
     let danh_gia = {
         NhaXeId: req.body.nhaXeId,
+        KhachHangId: req.session.userId,
         stars: req.body.star,
-        // Ho_Ten: req.body.name,
-        // email: req.body.email,
         Noi_Dung: req.body.comment
     };
     review = await models.Danh_Gia.create(danh_gia);

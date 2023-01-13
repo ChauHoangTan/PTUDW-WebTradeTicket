@@ -104,13 +104,13 @@ controller.showDetails= async (req, res) => {
     //console.log(getImage)
     let findDiemDi = await models.Dia_Diem.findOne({
         where:{
-            id: detailsChuyenXe.Diem_Di
+            id: detailsChuyenXe.DiemDiId
         }
     })
     
     let findDiemDen = await models.Dia_Diem.findOne({
         where:{
-            id: detailsChuyenXe.Diem_Den
+            id: detailsChuyenXe.DiemDenId
         }
     })
 
@@ -124,6 +124,8 @@ controller.showDetails= async (req, res) => {
 
         return String(day) +"/" + String(month) +"/" + String(year)
     }
+
+   
 
     function convertToDateEnd(){
         let date = new Date(detailsChuyenXe.Ngay_Di)
@@ -210,6 +212,7 @@ controller.showDetails= async (req, res) => {
         Ngay_Den:Ngay_Den, 
         Tong_Thoi_Gian_Hanh_Trinh:detailsChuyenXe.Tong_Thoi_Gian_Hanh_Trinh
     }
+ 
     
     
     let Gia_Ve = detailsChuyenXe.Gia_Ve.slice(0,3)
@@ -225,11 +228,12 @@ controller.showDetails= async (req, res) => {
         Lien_He:'1900996678',
         So_Luong_Ghe:getXe.So_Luong_Ghe,
         Loai_Xe:getLoaiXe.Ten_Loai,
-        So_Luong_Ghe_Trong:So_Luong_Ghe_Trong
+        So_Luong_Ghe_Trong:So_Luong_Ghe_Trong,
+        Nha_Xe: getNhaXe.ten_Nha_Xe,
+        idNhaXe: getNhaXe.id
     }
 
 
-    
     res.render('chuyen_xe',{Title})
    
     

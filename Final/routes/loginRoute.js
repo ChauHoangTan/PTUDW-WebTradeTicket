@@ -12,4 +12,5 @@ route.post('/',(req,res) => {
     controller.checkAccount(req,res);
 });
 
+
 module.exports = route;

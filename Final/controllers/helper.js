@@ -1,5 +1,13 @@
 const helper = {};
 
+helper.toFixed = (value, offset) => {
+    return value.toFixed(offset);
+}
+
+helper.formatTime = (time) => {
+    return time.slice(0,-3);
+}
+
 helper.generateStarList = (stars) => {
     let str = '<div class="rating">';
     let star = Math.floor(stars);
@@ -31,5 +39,25 @@ helper.generateSeat = (Tinh_Trang) => {
     //console.log(Tinh_Trang)
     return str
 }
+
+helper.parseToDate = (dateDefault) => {
+    let date = new Date(dateDefault)
+    let day = date.getDate()
+    let month =  date.getMonth() + 1
+    let year = date.getFullYear()
+
+    return String(day) +"/" + String(month) +"/" + String(year)  
+}
+
+helper.calculateTimeEnd = (timeStart, totalTime) => {
+    let timeEnd = parseInt(timeStart.slice(0,2)) + parseInt(totalTime)
+    if(timeEnd > 23){
+        timeEnd = timeEnd - 24
+    }
+
+    return String(timeEnd) + ":00:00" 
+}
+
+
 
 module.exports = helper;

@@ -25,55 +25,70 @@
         <h2 class="hero-title text-center">Đi khắp mọi miền Tổ quốc bằng xe buýt</h2>
         <form class="container hero-search" action="/timkiem" method="GET">
             <!-- Current transporation -->
-            <div class="hero-search-top">
+            <div class="row hero-search-top">
                 <button class="btn btn-light" id="btn-bus">Xe khách</button>
             </div>
             <!-- Input section -->
             <div class="row hero-search-bottom">
                 <!-- Input starting point -->
                 <div class="col-3 dropdown" id="starting-form">
-                    <input 
-                        class="form-control dropdown-toggle" 
-                        data-bs-toggle="dropdown"
-                        type="text"
-                        placeholder="Tỉnh, thành phố nơi đi"
-                        autocomplete="off"
-                        value="{{diem_di}}"
-                        name="diemdi"
-                        required
-                    >
-                    <div class="dropdown-menu dropdown-menu-start dropdown-input">
-                        <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
-                        {{#each dia_diems}}
-                        <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
-                            {{name}}
-                        </a>
-                        {{/each}}
+                    <div class="row">
+                        <div class="col-2 d-flex justify-content-center align-items-center input-icon">
+                            <i class="fa-solid fa-location-dot" style="color: blue;"></i>
+                        </div>
+                        <div class="col-10 p-0">
+                            <input 
+                                class="form-control dropdown-toggle" 
+                                data-bs-toggle="dropdown"
+                                type="text"
+                                autocomplete="off"
+                                value="{{diem_di}}"
+                                placeholder="Điểm đi"
+                                name="diemdi"
+                                required
+                            >
+                            <div class="dropdown-menu dropdown-menu-start dropdown-input">
+                                <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
+                                {{#each dia_diems}}
+                                <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
+                                    {{name}}
+                                </a>
+                                {{/each}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Swap starting point and destination point -->
                 <button class="col-1 btn btn-light" type="button" id="btn-swap">
-                    <i class="fas fa-exchange-alt"></i>
+                    {{!-- <i class="fas fa-exchange-alt"></i> --}}
+                    <i class="fa-solid fa-right-long"></i>
                 </button>
                 <!-- Input destination point -->
                 <div class="col-3 dropdown" id="destination-form">
-                    <input 
-                        class="form-control dropdown-toggle" 
-                        data-bs-toggle="dropdown" 
-                        type="text" 
-                        placeholder="Tỉnh, thành phố nơi đến"
-                        autocomplete="off"
-                        value="{{diem_den}}"
-                        name="diemden"
-                        required
-                    >
-                    <div class="dropdown-menu dropdown-menu-start dropdown-input">
-                        <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
-                        {{#each dia_diems}}
-                        <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
-                            {{name}}
-                        </a>
-                        {{/each}}
+                    <div class="row">
+                        <div class="col-2 d-flex justify-content-center align-items-center input-icon">
+                            <i class="fa-solid fa-location-dot" style="color: red;"></i>
+                        </div>
+                        <div class="col-10 ps-0">
+                            <input 
+                                class="form-control dropdown-toggle" 
+                                data-bs-toggle="dropdown" 
+                                type="text" 
+                                autocomplete="off"
+                                value="{{diem_den}}"
+                                placeholder="Điểm đến"
+                                name="diemden"
+                                required
+                            >
+                            <div class="dropdown-menu dropdown-menu-start dropdown-input">
+                                <h4 class="dropdown-header">Tỉnh - Thành phố</h4>
+                                {{#each dia_diems}}
+                                <a class="dropdown-item" value="{{name}}" onclick="handleLocationInput()">
+                                    {{name}}
+                                </a>
+                                {{/each}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Input departure date -->
@@ -211,35 +226,49 @@
     <div class="container">
         <div class="row">
             <div class="col-4">
-                <h5>Nhà xe</h5>
+                <h5 class="footer-label">Nhà xe</h5>
                 <ul class="footer-list">
                     {{#each nha_xes}}
-                    <li><a href="/nhaxe/{{id}}">{{ten_Nha_Xe}}</a></li>
+                    <li><a href="/nhaxe/{{id}}">Xe {{ten_Nha_Xe}}</a></li>
                     {{/each}}
                 </ul>
             </div>
             <div class="col-4">
-                <h5>Tuyến đường</h5>
+                <h5 class="footer-label">Tuyến đường</h5>
                 <ul class="footer-list">
-                    <li><a href="#">Sài Gòn - Đồng Nai</a></li>
-                    <li><a href="#">Sài Gòn - Đà Lạt</a></li>
-                    <li><a href="#">Sài Gòn - Vũng Tàu</a></li>
-                    <li><a href="#">Sài Gòn - Đà Nẵng</a></li>
-                    <li><a href="#">Sài Gòn - Hà Nội</a></li>
-                    <li><a href="#">Quảng Bình - Quảng Trị</a></li>
-                    <li><a href="#">Đà Nẵng - Hà Nội</a></li>
+                    <li><a href="/timkiem?diemdi=Sài+Gòn&diemden=Đồng+Nai">
+                        Xe khách đi từ Sài Gòn đến Đồng Nai</a></li>
+                    <li><a href="/timkiem?diemdi=Sài+Gòn&diemden=Đà+Lạt">
+                        Xe khách đi từ Sài Gòn đến Đà Lạt</a></li>
+                    <li><a href="/timkiem?diemdi=Sài+Gòn&diemden=Vũng+Tàu">
+                        Xe khách đi từ Sài Gòn đến Vũng Tàu</a></li>
+                    <li><a href="/timkiem?diemdi=Sài+Gòn&diemden=Đà+Nẵng">
+                        Xe khách đi từ Sài Gòn đến Đà Nẵng</a></li>
+                    <li><a href="/timkiem?diemdi=Sài+Gòn&diemden=Hà+Nội">
+                        Xe khách đi từ Sài Gòn đến Hà Nội</a></li>
+                    <li><a href="/timkiem?diemdi=Quảng+Bình&diemden=Quảng+Trị">
+                        Xe khách đi từ Quảng Bình đến Quảng Trị</a></li>
+                    <li><a href="/timkiem?diemdi=Đà+Nẵng&diemden=Hà+Nội">
+                        Xe khách đi từ Đà Nẵng đến Hà Nội</a></li>
                 </ul>
             </div>
             <div class="col-4">
-                <h5><br></h5>
+                <h5 class="footer-label">Tuyến đường</h5>
                 <ul class="footer-list">
-                    <li><a href="#">Đà Nẵng - Quảng Ninh</a></li>
-                    <li><a href="#">Ninh Bình - Hải Phòng</a></li>
-                    <li><a href="#">Quảng Bình - Quảng Trị</a></li>
-                    <li><a href="#">Vinh - Hà Nội</a></li>
-                    <li><a href="#">Ninh Bình - Hải Phòng</a></li>
-                    <li><a href="#">Hà Nội - Lạng Sơn</a></li>
-                    <li><a href="#">Hà Nội - Lào Cai</a></li>
+                    <li><a href="/timkiem?diemdi=Đà+Nẵng&diemden=Quảng+Ninh">
+                        Xe khách đi từ Đà Nẵng đến Quảng Ninh</a></li>
+                    <li><a href="/timkiem?diemdi=Ninh+Bình&diemden=Hải+Phòng">
+                        Xe khách đi từ Ninh Bình đến Hải Phòng</a></li>
+                    <li><a href="/timkiem?diemdi=Quảng+Bình&diemden=Quảng+Trị">
+                        Xe khách đi từ Quảng Bình đến Quảng Trị</a></li>
+                    <li><a href="/timkiem?diemdi=Vinh&diemden=Hà+Nội">
+                        Xe khách đi từ Vinh đến Hà Nội</a></li>
+                    <li><a href="/timkiem?diemdi=Ninh+Bình&diemden=Hải+Phòng">
+                        Xe khách đi từ Ninh Bình đến Hải Phòng</a></li>
+                    <li><a href="/timkiem?diemdi=Hà+Nội&diemden=Lạng+Sơn">
+                        Xe khách đi từ Hà Nội đến Lạng Sơn</a></li>
+                    <li><a href="/timkiem?diemdi=Hà+Nội&diemden=Lào+Cai">
+                        Xe khách đi từ Hà Nội đến Lào Cai</a></li>
                 </ul>
             </div>
         </div>

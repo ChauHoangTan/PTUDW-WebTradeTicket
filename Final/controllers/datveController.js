@@ -96,13 +96,13 @@ controller.showDetails = async (req, res) => {
     //console.log(getImage)
     let findDiemDi = await models.Dia_Diem.findOne({
         where:{
-            id: detailsChuyenXe.Diem_Di
+            id: detailsChuyenXe.DiemDiId
         }
     })
     
     let findDiemDen = await models.Dia_Diem.findOne({
         where:{
-            id: detailsChuyenXe.Diem_Den
+            id: detailsChuyenXe.DiemDenId
         }
     })
 
@@ -371,7 +371,7 @@ controller.showDetails = async (req, res) => {
     //lấy thông tin về tài khoản đề điền vào modal  
     res.locals.Thong_Tin_Tai_Khoan = await models.Khach_Hang.findOne({
       where:{
-        id : 1
+        id : req.session.userId
       }
     })
 
@@ -430,9 +430,34 @@ controller.showDetails = async (req, res) => {
 
 controller.addDatCho = async (req, res) => {
 
+
+
+  // lấy danh sách các ghế checked từ post
+  let ghes = req.body.ghe
+
+  // lấy danh sách cách ghế đã được đặt bởi người khác
+  let ghesOld = req.body.GheOld.split(",")
+
+  // lấy danh sách ghế vừa mới chọn
+  let ghesNew = []
+  for(i = 0; i < ghes.length; i++){
+    let count = 0
+    for(j = 0; j < ghesOld.length; j++){
+      if(ghes[i] == ghesOld[j]){
+        count ++;
+        break;
+      }
+    }
+
+    if(count == 0){
+      ghesNew.push(ghes[i])
+    }
+  }
+
+
     let DatCho = {
         Tong_Tien: req.body.TongTien,
-        KhachHangId: 1
+        KhachHangId: req.session.userId
     }
 
     DatCho = await models.Dat_Cho.create(DatCho)
@@ -442,27 +467,6 @@ controller.addDatCho = async (req, res) => {
     // tìm cái idVe vừa mới push vào bảng đặt chỗ
     let idVe = Object.keys(temp).length
 
-    // lấy danh sách các ghế checked từ post
-    let ghes = req.body.ghe
-
-    // lấy danh sách cách ghế đã được đặt bởi người khác
-    let ghesOld = req.body.GheOld.split(",")
-
-    // lấy danh sách ghế vừa mới chọn
-    let ghesNew = []
-    for(i = 0; i < ghes.length; i++){
-      let count = 0
-      for(j = 0; j < ghesOld.length; j++){
-        if(ghes[i] == ghesOld[j]){
-          count ++;
-          break;
-        }
-      }
-
-      if(count == 0){
-        ghesNew.push(ghes[i])
-      }
-    }
 
     for(i = 0; i < ghesNew.length; i++){
       let CT_DatCho = {
@@ -475,6 +479,33 @@ controller.addDatCho = async (req, res) => {
 
       CT_DatCho = await models.CT_Dat_Cho.create(CT_DatCho);
     }
+
+    let ThongTin = {
+      Ho_Ten: req.body.fullname,
+      SDT: req.body.sdt,
+      email : req.body.emailaddress,
+      gender : req.body.sex
+  };
+
+  console.log(ThongTin.gender)
+
+  let check = await models.Khach_Hang.update(
+      {
+          Ho_Ten: ThongTin.Ho_Ten,
+          SDT: ThongTin.SDT,
+          email: ThongTin.email,
+          gender: ThongTin.gender
+      },
+      {
+          where:{
+              id: req.session.userId
+          }
+      }
+
+
+
+  )
+    
 
     res.redirect(`/chuyenxe/${req.body.ChuyenXeId}/datve/${req.body.ChuyenXeId}`)
 

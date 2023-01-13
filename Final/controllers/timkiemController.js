@@ -18,10 +18,12 @@ function formatDate(date) {
 }
 
 controller.showResultList = async (req, res) => {
+    let utc = new Date().toJSON().slice(0,10).replace(/-/g,'-');
+
     let page = req.query.page || 1;
     let diem_di = req.query.diemdi;
     let diem_den = req.query.diemden;
-    let ngay_di = new Date(req.query.ngaydi);
+    let ngay_di = req.query.ngaydi ? new Date(req.query.ngaydi) : new Date(utc);
     let nha_xe = req.query.nhaxe || '';
     let filter_time = req.query.filterTime;
     let filter_price = req.query.filterPrice;
@@ -35,17 +37,23 @@ controller.showResultList = async (req, res) => {
             { 
                 model: models.Xe,
                 required: true,
-                include: [{ 
-                    model: models.Nha_Xe,
-                    required: true,
-                    where: {
-                        ten_Nha_Xe: {
-                            [Op.iLike]: `%${nha_xe}%`
-                        }
-                    }
-                }]
-            },
-            { model: models.Xe, include: [ models.Loai_Xe ] }
+                include: [
+                    { 
+                        model: models.Nha_Xe,
+                        required: true,
+                        where: {
+                            ten_Nha_Xe: {
+                                [Op.iLike]: `%${nha_xe}%`
+                            }
+                        },
+                        include: [{
+                            model: models.Nha_Xe_IMG,
+                            required: true,
+                        }]
+                    },
+                    { model: models.Loai_Xe }
+                ]
+            }
         ]
     };
 

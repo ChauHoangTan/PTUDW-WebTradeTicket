@@ -11,9 +11,13 @@ app.engine('hbs', ehbs.engine({
     layoutsDir: __dirname + '/views/layouts',
     partialsDir: __dirname +  '/view/partials',
     helpers: {
+        toFixed: helper.toFixed,
+        formatTime: helper.formatTime,
         generateStarList: helper.generateStarList,
         createPagination: paginateHelper.createPagination,
-        generateSeat : helper.generateSeat
+        generateSeat : helper.generateSeat,
+        parseToDate: helper.parseToDate,
+        calculateTimeEnd: helper.calculateTimeEnd,
     },
     runtimeOptions: {
         allowProtoPropertiesByDefault: true
@@ -37,6 +41,31 @@ app.get('/createTables', (req, res) => {
     })
 });
 
+// body parser
+let bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false }));
+
+// cookie parser
+let cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+// session
+let session = require('express-session')
+app.use(session({
+    cookie: {httpOnly:true,  maxAge: 30*24*60*60*1000},
+    secret: 'VeXeMac',
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.use((req, res, next) =>{
+    res.locals.username = req.session.userId ? req.session.userId : '';
+    res.locals.isLoggedin =  req.session.userId ? true : false;
+    
+    next();
+})
+
 app.use('/', require('./routes/indexRoute'));
 app.use('/nhaxe', require('./routes/nhaxeRoute'));
 app.use('/chuyenxe', require('./routes/chuyenxeRoute'));
@@ -44,6 +73,12 @@ app.use('/timkiem', require('./routes/timkiemRoute'));
 app.use('/chuyenxe/:id/datve', require('./routes/datveRoute'));
 app.use('/taikhoan', require('./routes/taikhoanRoute'));
 app.use('/taikhoan/lichsudatve', require('./routes/lichsudatveRoute'));
+app.use('/login',require('./routes/loginRoute'));
+app.use('/logout',require('./routes/logoutRoute'));
+app.use('/signup',require('./routes/signupRoute'));
+app.use('/forgotpassword',require('./routes/forgotpasswordRoute'));
+app.use('/setpassword',require('./routes/setpasswordRoute'));
+app.use('/setpasswordER',require('./routes/setpassworderRoute'));
 
 // admin routes
 app.use('/Dashboard', require('./routes/admin/DashboardRoute'));

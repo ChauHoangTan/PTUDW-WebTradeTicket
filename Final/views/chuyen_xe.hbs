@@ -35,7 +35,7 @@
 
                                     <span>{{Nha_Xe}}</span>
 
-                                    <span class = "star">4.6 (1502) <i class="fas fa-star"></i></span>
+                                
                                 </div>
 
                                 <div class = "fixMargin">
@@ -85,17 +85,24 @@
                                     <span class = "field">Loại xe : </span>
                                     
                                     <span>{{Loai_Xe}}</span>
+
+                                    <a href="/nhaxe/{{idNhaXe}}" class="d-inline-block ms-5 text-success fst-italic">Đi đến nhà xe {{Nha_Xe}}</a>
                                 </div>
+
+                            
+
                                 
                             </div>
                         {{/with}}
+
+                        
                     </div>
                 </div>
             </div>
            
 
             
-    
+
         </div>
 
         <!-- Tạo border ngăn cách 2 session -->
@@ -119,9 +126,7 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="messages" aria-selected="false">Dịch vụ</button>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="rate-tab" data-bs-toggle="tab" data-bs-target="#rate" type="button" role="tab" aria-controls="messages" aria-selected="false">Đánh giá</button>
-                </li>
+                
                
             </ul>
 
@@ -209,68 +214,7 @@
                     {{{getNhaXe.Dich_Vu}}}
                 </div>
 
-                <!-- tab đánh giá -->
-                <div class="tab-pane" id="rate" role="tabpanel" aria-labelledby="rate-tab">
-                    <div class="container p-2">
-                        <span class = "star">4.6 (1502) <i class="fas fa-star"></i></span>
-                        <br>
-                        <span><i class="fas fa-star"></i></span>
-                        <span><i class="fas fa-star"></i></span>
-                        <span><i class="fas fa-star"></i></span>
-                        <span><i class="fas fa-star"></i></span>
-                        <span><i class="fas fa-star-half-alt"></i></span>
-                    </div>
-
-                    <div class="p-4">
-                        Đánh giá từ khách hàng : 
-                        <div class = "p-5">
-                            <div class="row justify-content-center align-items-center g-2">
-                                <div class="col">
-                                    <i class="far fa-user-circle user"></i>
-                                    <span>Hứa Lâm Chí Cường</span> 
-                                    <div>Đánh giá :<i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class = "cmt"> Nhận xét :
-                                        <ul>
-                                            <li>Xe chạy tốt, thoải mái</li>
-                                            <li>Nhân viên nhiệt tình</li>
-                                            <li>Dịch vụ tốt, giá bình dân</li>
-                                        </ul>
-                                    </div>
-                                    
-                                </div>
-             
-                            </div>
-         
-                            <div class="row justify-content-center align-items-center g-2">
-                                <div class="col">
-                                    <i class="far fa-user-circle user"></i>
-                                    <span>Châu Hoàng Tấn</span> 
-                                    <div>Đánh giá :<i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
-                                    </div>
-                                </div>
-                                
-                                <div class="col">
-                                    <div class = "cmt"> Nhận xét :
-                                        <ul>
-                                            <li>Xe chạy tốt, thoải mái</li>
-                                            <li>Nhân viên nhiệt tình</li>
-                                            <li>Dịch vụ tốt, giá bình dân</li>
-                                        </ul>
-                                    </div>
-                                    
-                                </div>
-             
-                            </div>
-                    </div>
-
-
-                </div>            
+                        
 
             </div>
         
